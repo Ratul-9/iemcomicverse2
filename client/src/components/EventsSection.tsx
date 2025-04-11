@@ -69,10 +69,18 @@ const EventsSection = () => {
   );
 
   return (
-    <section id="events" className="py-20 bg-[#F5F5F5] relative overflow-hidden">
+    <section id="events" className="py-20 bg-[#2E3192] relative overflow-hidden">
       {/* Comic-style background pattern */}
+      <div className="absolute inset-0 opacity-40" style={{ 
+        background: "url('https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?fit=crop&w=1920&h=1080&auto=format')",
+        backgroundSize: "cover", 
+        backgroundPosition: "center" 
+      }}></div>
+      
+      <div className="absolute inset-0 bg-gradient-to-r from-[#2E3192] to-transparent opacity-70"></div>
+      
       <div className="absolute inset-0" style={{ 
-        backgroundImage: "url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF3B3F' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')",
+        backgroundImage: "url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFEB3B' fill-opacity='0.07'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')",
       }}></div>
       
       {/* Decorative elements */}
@@ -90,13 +98,13 @@ const EventsSection = () => {
           className="text-center mb-16"
         >
           <div className="inline-block relative">
-            <h2 className="font-[Bangers] text-5xl text-[#FF3B3F] mb-4 relative z-10">
+            <h2 className="font-[Bangers] text-5xl text-white mb-4 relative z-10">
               EVENTS
-              <div className="absolute -bottom-2 left-0 right-0 h-2 bg-[#2E3192] transform skew-x-[-12deg]"></div>
+              <div className="absolute -bottom-2 left-0 right-0 h-2 bg-[#FF3B3F] transform skew-x-[-12deg]"></div>
             </h2>
             <div className="absolute -top-2 -left-2 -right-2 -bottom-2 bg-[#FFEB3B] rounded-lg opacity-20 transform rotate-2 z-0"></div>
           </div>
-          <p className="font-[Comic Neue] text-lg text-[#424242] max-w-2xl mx-auto mt-6">
+          <p className="font-[Comic Neue] text-lg text-white text-opacity-90 max-w-2xl mx-auto mt-6">
             Check out our exciting lineup of events! From panels with your favorite comic creators to cosplay competitions, we've got something for everyone.
           </p>
         </motion.div>
@@ -207,8 +215,8 @@ const EventsSection = () => {
                 onClick={() => embla && embla.scrollTo(index)}
                 className={`w-3 h-3 mx-1 p-0 rounded-full ${
                   selectedIndex === index 
-                    ? 'bg-[#FF3B3F]' 
-                    : 'bg-gray-300'
+                    ? 'bg-[#FFEB3B]' 
+                    : 'bg-white bg-opacity-30'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
