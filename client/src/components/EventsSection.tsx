@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { ArrowRight, MapPin, Clock, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, MapPin, Clock, ChevronLeft, ChevronRight, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { eventsData } from "@/data/comicfest";
@@ -51,9 +51,37 @@ const EventsSection = () => {
     };
   }, [embla]);
 
+  // Comic-style decorative elements
+  const ComicBurst = ({ className }: { className: string }) => (
+    <div className={`absolute z-0 ${className}`}>
+      <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 0L65 40L100 20L75 60L120 75L75 90L100 120L60 100L20 120L45 90L0 75L45 60L20 20L55 40L60 0Z" fill="#FFEB3B" fillOpacity="0.1"/>
+      </svg>
+    </div>
+  );
+
+  const ActionText = ({ className, text }: { className: string, text: string }) => (
+    <div className={`absolute z-0 ${className}`}>
+      <div className="bg-[#FF3B3F] text-white font-[Bangers] px-3 py-1 transform rotate-12 rounded-lg text-xl opacity-80">
+        {text} <Zap className="inline-block h-4 w-4 ml-1" />
+      </div>
+    </div>
+  );
+
   return (
-    <section id="events" className="py-20 bg-[#F5F5F5]">
-      <div className="container mx-auto px-4">
+    <section id="events" className="py-20 bg-[#F5F5F5] relative overflow-hidden">
+      {/* Comic-style background pattern */}
+      <div className="absolute inset-0" style={{ 
+        backgroundImage: "url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF3B3F' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')",
+      }}></div>
+      
+      {/* Decorative elements */}
+      <ComicBurst className="top-20 left-10" />
+      <ComicBurst className="bottom-20 right-10" />
+      <ActionText className="top-40 right-20" text="WOW!" />
+      <ActionText className="bottom-40 left-20" text="POW!" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,13 +89,27 @@ const EventsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-[Bangers] text-5xl text-[#FF3B3F] mb-4">EVENTS</h2>
-          <p className="font-[Comic Neue] text-lg text-[#424242] max-w-2xl mx-auto">
+          <div className="inline-block relative">
+            <h2 className="font-[Bangers] text-5xl text-[#FF3B3F] mb-4 relative z-10">
+              EVENTS
+              <div className="absolute -bottom-2 left-0 right-0 h-2 bg-[#2E3192] transform skew-x-[-12deg]"></div>
+            </h2>
+            <div className="absolute -top-2 -left-2 -right-2 -bottom-2 bg-[#FFEB3B] rounded-lg opacity-20 transform rotate-2 z-0"></div>
+          </div>
+          <p className="font-[Comic Neue] text-lg text-[#424242] max-w-2xl mx-auto mt-6">
             Check out our exciting lineup of events! From panels with your favorite comic creators to cosplay competitions, we've got something for everyone.
           </p>
         </motion.div>
         
         <div className="relative max-w-[1200px] mx-auto">
+          {/* Comic-style halftone pattern behind carousel */}
+          <div className="absolute -inset-4 rounded-xl" style={{ 
+            backgroundImage: "radial-gradient(#FF3B3F 1px, transparent 1px)",
+            backgroundSize: "20px 20px",
+            opacity: 0.1,
+            zIndex: 0
+          }}></div>
+          
           {/* Carousel Navigation */}
           <div className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-6 z-10">
             <Button 
@@ -94,7 +136,7 @@ const EventsSection = () => {
           </div>
           
           {/* Carousel */}
-          <div className="overflow-hidden" ref={viewportRef}>
+          <div className="overflow-hidden relative z-10" ref={viewportRef}>
             <div className="flex">
               {eventsData.map((event) => (
                 <div 
@@ -104,7 +146,12 @@ const EventsSection = () => {
                   onMouseLeave={() => setHoveredId(null)}
                 >
                   <div className={`transition-all duration-300 ${hoveredId !== null && hoveredId !== event.id ? 'opacity-40 scale-95' : ''}`}>
-                    <Card className="h-full bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105 flex flex-col mx-2">
+                    <Card className="h-full bg-white rounded-lg overflow-hidden shadow-xl transition-transform hover:scale-105 flex flex-col mx-2 relative">
+                      {/* Comic-style frame */}
+                      <div className="absolute inset-0 border-[3px] border-[#2E3192] opacity-0 hover:opacity-10 transition-opacity rounded-lg" style={{
+                        clipPath: "polygon(0% 3%, 3% 0%, 97% 0%, 100% 3%, 100% 97%, 97% 100%, 3% 100%, 0% 97%)"
+                      }}></div>
+                      
                       <div className="relative">
                         <img 
                           src={event.image} 
@@ -112,7 +159,7 @@ const EventsSection = () => {
                           className="w-full h-48 object-cover" 
                         />
                         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
-                        <Badge className={`absolute top-4 right-4 ${event.color} text-white`}>
+                        <Badge className={`absolute top-4 right-4 ${event.color} text-white transform rotate-3`}>
                           {event.date}
                         </Badge>
                       </div>
@@ -176,9 +223,15 @@ const EventsSection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-12 text-center"
         >
-          <Button asChild className="px-8 py-4 h-auto bg-[#FF3B3F] text-white font-bold rounded-md hover:bg-opacity-90 transition-colors">
-            <a href="#allevents">View All Events</a>
-          </Button>
+          <div className="relative inline-block">
+            <Button 
+              asChild 
+              className="px-8 py-4 h-auto bg-[#FF3B3F] text-white font-bold rounded-md hover:bg-opacity-90 transition-colors relative z-10"
+            >
+              <a href="#allevents">View All Events</a>
+            </Button>
+            <div className="absolute inset-0 bg-[#FFEB3B] rounded-md transform rotate-3 translate-x-1 translate-y-1 -z-10"></div>
+          </div>
         </motion.div>
       </div>
     </section>
