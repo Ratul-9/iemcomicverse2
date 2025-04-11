@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { eventsData } from "@/data/comicfest";
 import { useState, useEffect, useCallback } from "react";
+import { Link } from "wouter";
 import useEmblaCarousel from "embla-carousel-react";
 
 const EventsSection = () => {
@@ -133,9 +134,14 @@ const EventsSection = () => {
                       </CardContent>
                       
                       <CardFooter className="border-t p-4">
-                        <Button variant="link" className="text-[#FF3B3F] p-0 font-[Comic Neue] font-bold">
-                          Event Details <ArrowRight className="ml-1 h-4 w-4" />
-                        </Button>
+                        <Link href={`/event/${event.id}`}>
+                          <Button 
+                            variant="link" 
+                            className="text-[#FF3B3F] p-0 font-[Comic Neue] font-bold"
+                          >
+                            Event Details <ArrowRight className="ml-1 h-4 w-4" />
+                          </Button>
+                        </Link>
                       </CardFooter>
                     </Card>
                   </div>

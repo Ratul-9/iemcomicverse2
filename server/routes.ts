@@ -6,7 +6,7 @@ import path from 'path';
 export async function registerRoutes(app: Express): Promise<Server> {
   // API routes for ComicFest app
   
-  // Route to retrieve events
+  // Route to retrieve all events
   app.get('/api/events', (req, res) => {
     res.json({
       events: [
@@ -33,6 +33,44 @@ export async function registerRoutes(app: Express): Promise<Server> {
         // More events...
       ]
     });
+  });
+  
+  // Route to retrieve a single event by ID
+  app.get('/api/events/:id', (req, res) => {
+    const eventId = parseInt(req.params.id);
+    
+    // In a real app, you would fetch this from a database
+    const events = [
+      {
+        id: 1,
+        name: "Opening Ceremony",
+        date: "May 15, 2024",
+        time: "10:00 AM",
+        venue: "Main Hall",
+        description: "Join us for the official start of ComicFest with special guest appearances and exciting announcements!",
+        image: "https://images.unsplash.com/photo-1560523159-4a9692d222f9?w=600&h=400&fit=crop&auto=format",
+        color: "bg-[#FF3B3F]"
+      },
+      {
+        id: 2,
+        name: "Comic Artist Panel",
+        date: "May 15, 2024",
+        time: "11:30 AM",
+        venue: "Panel Room A",
+        description: "Meet renowned comic artists and learn about their creative processes, inspirations, and upcoming projects.",
+        image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&h=400&fit=crop&auto=format",
+        color: "bg-[#2E3192]"
+      },
+      // Add the rest of the events data here
+    ];
+    
+    const event = events.find(e => e.id === eventId);
+    
+    if (!event) {
+      return res.status(404).json({ message: "Event not found" });
+    }
+    
+    res.json({ event });
   });
   
   // Route to retrieve collaborators
