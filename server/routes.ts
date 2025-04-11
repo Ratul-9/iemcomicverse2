@@ -6,26 +6,31 @@ import path from 'path';
 export async function registerRoutes(app: Express): Promise<Server> {
   // API routes for ComicFest app
   
-  // Route to retrieve event schedule
+  // Route to retrieve events
   app.get('/api/events', (req, res) => {
     res.json({
       events: [
         {
-          title: "DAY 1: MAY 15",
-          color: "bg-[#FF3B3F]",
-          textColor: "white",
-          accentColor: "[#FF3B3F]",
-          schedule: [
-            {
-              time: "10:00 AM",
-              title: "Opening Ceremony",
-              location: "Main Hall",
-              duration: "45 min"
-            },
-            // More events...
-          ]
+          id: 1,
+          name: "Opening Ceremony",
+          date: "May 15, 2024",
+          time: "10:00 AM",
+          venue: "Main Hall",
+          description: "Join us for the official start of ComicFest with special guest appearances and exciting announcements!",
+          image: "https://images.unsplash.com/photo-1560523159-4a9692d222f9?w=600&h=400&fit=crop&auto=format",
+          color: "bg-[#FF3B3F]"
         },
-        // More days...
+        {
+          id: 2,
+          name: "Comic Artist Panel",
+          date: "May 15, 2024",
+          time: "11:30 AM",
+          venue: "Panel Room A",
+          description: "Meet renowned comic artists and learn about their creative processes, inspirations, and upcoming projects.",
+          image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&h=400&fit=crop&auto=format",
+          color: "bg-[#2E3192]"
+        },
+        // More events...
       ]
     });
   });

@@ -1,118 +1,94 @@
-// Event Schedule Data
+// Events Data
 export const eventsData = [
   {
-    title: "DAY 1: MAY 15",
-    color: "bg-[#FF3B3F]",
-    textColor: "white",
-    accentColor: "[#FF3B3F]",
-    schedule: [
-      {
-        time: "10:00 AM",
-        title: "Opening Ceremony",
-        location: "Main Hall",
-        duration: "45 min"
-      },
-      {
-        time: "11:30 AM",
-        title: "Comic Artist Panel",
-        location: "Panel Room A",
-        duration: "1 hour"
-      },
-      {
-        time: "1:00 PM",
-        title: "Lunch Break",
-        location: "Food Court",
-        duration: "1 hour"
-      },
-      {
-        time: "2:30 PM",
-        title: "Cosplay Workshop",
-        location: "Workshop Room",
-        duration: "2 hours"
-      },
-      {
-        time: "5:00 PM",
-        title: "Meet & Greet",
-        location: "Main Hall",
-        duration: "2 hours"
-      }
-    ]
+    id: 1,
+    name: "Opening Ceremony",
+    date: "May 15, 2024",
+    time: "10:00 AM",
+    venue: "Main Hall",
+    description: "Join us for the official start of ComicFest with special guest appearances and exciting announcements!",
+    image: "https://images.unsplash.com/photo-1560523159-4a9692d222f9?w=600&h=400&fit=crop&auto=format",
+    color: "bg-[#FF3B3F]"
   },
   {
-    title: "DAY 2: MAY 16",
-    color: "bg-[#2E3192]",
-    textColor: "white",
-    accentColor: "[#2E3192]",
-    schedule: [
-      {
-        time: "9:30 AM",
-        title: "Drawing Competition",
-        location: "Art Hall",
-        duration: "2 hours"
-      },
-      {
-        time: "11:30 AM",
-        title: "Superhero Movie Panel",
-        location: "Theater",
-        duration: "1.5 hours"
-      },
-      {
-        time: "1:00 PM",
-        title: "Lunch Break",
-        location: "Food Court",
-        duration: "1 hour"
-      },
-      {
-        time: "2:00 PM",
-        title: "Cosplay Contest",
-        location: "Main Stage",
-        duration: "3 hours"
-      },
-      {
-        time: "6:00 PM",
-        title: "After Party",
-        location: "Courtyard",
-        duration: "4 hours"
-      }
-    ]
+    id: 2,
+    name: "Comic Artist Panel",
+    date: "May 15, 2024",
+    time: "11:30 AM",
+    venue: "Panel Room A",
+    description: "Meet renowned comic artists and learn about their creative processes, inspirations, and upcoming projects.",
+    image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&h=400&fit=crop&auto=format",
+    color: "bg-[#2E3192]"
   },
   {
-    title: "DAY 3: MAY 17",
-    color: "bg-[#FFEB3B]",
-    textColor: "dark",
-    accentColor: "[#FFEB3B]",
-    schedule: [
-      {
-        time: "10:00 AM",
-        title: "Comic Book Swap",
-        location: "Exhibition Hall",
-        duration: "2 hours"
-      },
-      {
-        time: "12:00 PM",
-        title: "Lunch With Artists",
-        location: "Dining Hall",
-        duration: "1.5 hours"
-      },
-      {
-        time: "2:00 PM",
-        title: "Voice Actor Q&A",
-        location: "Panel Room B",
-        duration: "1 hour"
-      },
-      {
-        time: "3:30 PM",
-        title: "Fan Art Showcase",
-        location: "Gallery",
-        duration: "1.5 hours"
-      },
-      {
-        time: "5:00 PM",
-        title: "Closing Ceremony",
-        location: "Main Hall",
-        duration: "1 hour"
-      }
-    ]
+    id: 3,
+    name: "Cosplay Workshop",
+    date: "May 15, 2024",
+    time: "2:30 PM",
+    venue: "Workshop Room",
+    description: "Learn tips and tricks from professional cosplayers on creating amazing costumes and props.",
+    image: "https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?w=600&h=400&fit=crop&auto=format",
+    color: "bg-[#FF3B3F]"
+  },
+  {
+    id: 4,
+    name: "Drawing Competition",
+    date: "May 16, 2024",
+    time: "9:30 AM",
+    venue: "Art Hall",
+    description: "Show off your artistic skills in our annual drawing competition with amazing prizes to be won!",
+    image: "https://images.unsplash.com/photo-1618004912476-29818d81ae2e?w=600&h=400&fit=crop&auto=format",
+    color: "bg-[#2E3192]"
+  },
+  {
+    id: 5,
+    name: "Superhero Movie Panel",
+    date: "May 16, 2024",
+    time: "11:30 AM",
+    venue: "Theater",
+    description: "Discuss the latest superhero movies and upcoming releases with film critics and fellow fans.",
+    image: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?w=600&h=400&fit=crop&auto=format",
+    color: "bg-[#FFEB3B]"
+  },
+  {
+    id: 6,
+    name: "Cosplay Contest",
+    date: "May 16, 2024",
+    time: "2:00 PM",
+    venue: "Main Stage",
+    description: "Our flagship event where cosplayers compete for prizes in various categories. Don't miss the spectacular performances!",
+    image: "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=600&h=400&fit=crop&auto=format",
+    color: "bg-[#FF3B3F]"
+  },
+  {
+    id: 7,
+    name: "Comic Book Swap",
+    date: "May 17, 2024",
+    time: "10:00 AM",
+    venue: "Exhibition Hall",
+    description: "Bring your comics to trade with other collectors and find rare editions to add to your collection.",
+    image: "https://images.unsplash.com/photo-1588497859490-85d1c17db96d?w=600&h=400&fit=crop&auto=format",
+    color: "bg-[#2E3192]"
+  },
+  {
+    id: 8,
+    name: "Voice Actor Q&A",
+    date: "May 17, 2024",
+    time: "2:00 PM",
+    venue: "Panel Room B",
+    description: "Meet the voices behind your favorite animated characters and ask them questions about their work.",
+    image: "https://images.unsplash.com/photo-1589903308904-1010c2294adc?w=600&h=400&fit=crop&auto=format",
+    color: "bg-[#FFEB3B]"
+  },
+  {
+    id: 9,
+    name: "Closing Ceremony",
+    date: "May 17, 2024",
+    time: "5:00 PM",
+    venue: "Main Hall",
+    description: "We wrap up ComicFest with award announcements, special performances, and a preview of next year's event.",
+    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&h=400&fit=crop&auto=format",
+    color: "bg-[#FF3B3F]"
   }
 ];
 
