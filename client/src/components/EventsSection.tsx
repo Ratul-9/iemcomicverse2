@@ -131,7 +131,7 @@ const EventsSection = () => {
             </Button>
           </div>
           
-          <div className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-6 z-10">
+          <div className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-12 z-10">
             <Button 
               onClick={scrollNext} 
               variant="outline" 
