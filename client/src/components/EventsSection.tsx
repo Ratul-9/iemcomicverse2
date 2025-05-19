@@ -119,7 +119,7 @@ const EventsSection = () => {
           }}></div>
           
           {/* Carousel Navigation */}
-          <div className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-6 z-10">
+          <div className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-12 z-10">
             <Button 
               onClick={scrollPrev} 
               variant="outline" 
