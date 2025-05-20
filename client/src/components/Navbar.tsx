@@ -20,7 +20,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between py-3">
           <div className="flex items-center">
-            <span className="font-[Bangers] text-2xl text-[#FF3B3F]">College ComicFest</span>
+            <span className="font-[Bangers] text-2xl text-[#FF3B3F]">ComicVerse</span>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
