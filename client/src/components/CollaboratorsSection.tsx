@@ -98,17 +98,27 @@ const CollaboratorsSection = () => {
             <motion.div 
               key={index} 
               variants={item}
-              className="p-4 w-full h-full flex items-center justify-center transform transition-all hover:scale-110 hover:rotate-3"
+              className="w-full h-40 [perspective:1000px]"
             >
-              <div className="bg-white p-4 rounded-lg shadow-md border-2 border-gray-100 flex items-center justify-center w-full h-32">
-                <img 
-                  src={collaborator.logo} 
-                  alt={collaborator.name} 
-                  className="max-w-full max-h-20" 
-                />
-              </div>
-            </motion.div>
-          ))}
+            <div className="relative w-full h-full transition-transform duration-700 transform-style preserve-3d group hover:rotate-y-180">
+      
+            {/* Front side */}
+            <div className="absolute w-full h-full backface-hidden bg-white p-4 rounded-lg shadow-md border-2 border-gray-100 flex items-center justify-center">
+              <img 
+                src={collaborator.logo} 
+                alt={collaborator.name} 
+                className="max-w-full max-h-20" 
+              />
+            </div>
+      
+            {/* Back side */}
+            <div className="absolute w-full h-full backface-hidden bg-[#2E3192] text-white p-4 rounded-lg shadow-md border-2 border-gray-100 transform rotate-y-180 flex flex-col items-center justify-center text-center">
+              <h3 className="font-bold text-lg mb-2">{collaborator.name}</h3>
+              <p className="text-sm">Collaborator Desc</p>
+            </div>
+          </div>
+        </motion.div>
+        ))}
         </motion.div>
         
         <motion.div 
