@@ -85,8 +85,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-[Comic Neue] font-bold text-xl">Location</h3>
-                  <p>Student Center, University Campus</p>
-                  <p>123 College Ave, Anytown, USA</p>
+                  <p>Institute of Engineering and Management, Management House</p>
+                  <p>D -1, Street No. 13, EP Block, Sector V, Bidhannagar, Kolkata, West Bengal 700091, Kolkata, INDIA</p>
                 </div>
               </div>
             </div>
@@ -194,7 +194,7 @@ const ContactSection = () => {
             <h3 className="font-[Bangers] text-2xl text-center text-white mb-4">EVENT LOCATION</h3>
             <div className="bg-gray-300 w-full h-80 rounded-lg">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2168338155896!2d-73.98775908429341!3d40.75797604231037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1621505384083!5m2!1sen!2sus" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.1729990665267!2d88.43483987507773!3d22.572632079491672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275a90e337bc3%3A0x83415f007fc5f363!2sInstitute%20of%20Engineering%20and%20Management%20Block-GP!5e0!3m2!1sen!2sin!4v1747723691025!5m2!1sen!2sin"
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 

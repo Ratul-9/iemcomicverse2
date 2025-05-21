@@ -21,15 +21,15 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
             className="text-white"
           >
-            <h4 className="font-[Comic Neue] font-bold text-[#FFEB3B] mb-2">May 15-17, 2024</h4>
-            <h1 className="font-[Bangers] text-5xl md:text-7xl mb-4 text-white">COLLEGE<br /><span className="text-[#FF3B3F]">COMIC</span><span className="text-[#FFEB3B]">FEST</span></h1>
+            <h4 className="font-[Comic Neue] font-bold text-[#FFEB3B] mb-2">July 20-21, 2025</h4>
+            <h1 className="font-[Bangers] text-5xl md:text-7xl mb-4 text-white">IEM<br /><span className="text-[#FF3B3F]">COMIC</span><span className="text-[#FFEB3B]">VERSE</span></h1>
             <p className="font-[Comic Neue] text-lg mb-6">Join us for the most exciting comic convention on campus! Three days filled with amazing guests, panels, cosplay contests, and much more!</p>
             <div className="flex flex-wrap gap-4">
               <Button asChild className="px-6 py-6 h-auto bg-[#FF3B3F] text-white font-bold rounded-md hover:bg-opacity-90 transition-colors">
                 <a href="#events">Explore Events</a>
               </Button>
               <Button asChild className="px-6 py-6 h-auto bg-[#FFEB3B] text-[#212121] font-bold rounded-md hover:bg-opacity-90 transition-colors">
-                <a href="#tickets">Get Tickets</a>
+                <a href="#tickets">Register Now</a>
               </Button>
             </div>
           </motion.div>

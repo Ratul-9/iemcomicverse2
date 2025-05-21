@@ -1,179 +1,112 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "wouter";
 import { scrollToSection } from "@/lib/utils";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+  const navItems = [
+    { id: "home", label: "Home" },
+    { id: "events", label: "Events" },
+    { id: "collaborators", label: "Collaborators" },
+    { id: "guests", label: "Guests" },
+    { id: "team", label: "Team" },
+    { id: "contact", label: "Contact", isButton: true }
+  ];
 
   return (
-    <header className="fixed w-full bg-white shadow-md z-50">
-      <div className="container mx-auto px-4">
-        <nav className="flex items-center justify-between py-3">
-          <div className="flex items-center">
-            <span className="font-[Bangers] text-2xl text-[#FF3B3F]">ComicVerse</span>
-          </div>
-          
-          <div className="hidden md:flex items-center space-x-8">
-            <a 
-              href="#home" 
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('home');
-              }} 
-              className="font-[Comic Neue] font-bold text-[#212121] hover:text-[#FF3B3F] transition-colors cursor-pointer"
+    <header className="fixed w-full z-50">
+      {/* Added gradient background for better logo contrast */}
+      <div className="bg-gradient-to-r from-white to-gray-50 shadow-md">
+        <div className="container mx-auto px-4">
+          {/* Adjusted height for better proportions */}
+          <nav className="flex items-center justify-between py-4 h-20">
+            {/* Logo container with proper padding and sizing */}
+            <div className="flex items-center">
+              <div className="p-2 rounded-lg overflow-hidden">
+                <img
+                  src={logo}
+                  alt="ComicVerse Logo"
+                  className="h-14 w-auto object-contain cursor-pointer hover:opacity-90 transition-all duration-300"
+                  onClick={() => scrollToSection("home")}
+                />
+              </div>
+            </div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-6 h-full">
+              {navItems.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.id);
+                  }}
+                  className={`font-[Comic Neue] font-bold text-lg ${
+                    item.isButton
+                      ? "px-5 py-3 rounded-md bg-[#FF3B3F] text-white hover:bg-[#ff5154] shadow-md"
+                      : "text-[#212121] hover:text-[#FF3B3F]"
+                  } transition-colors cursor-pointer`}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+
+            {/* Mobile menu button - improved touch target */}
+            <button
+              className="block md:hidden focus:outline-none p-3"
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
             >
-              Home
-            </a>
-            <a 
-              href="#events" 
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('events');
-              }} 
-              className="font-[Comic Neue] font-bold text-[#212121] hover:text-[#FF3B3F] transition-colors cursor-pointer"
-            >
-              Events
-            </a>
-            <a 
-              href="#collaborators" 
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('collaborators');
-              }} 
-              className="font-[Comic Neue] font-bold text-[#212121] hover:text-[#FF3B3F] transition-colors cursor-pointer"
-            >
-              Collaborators
-            </a>
-            <a 
-              href="#guests" 
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('guests');
-              }} 
-              className="font-[Comic Neue] font-bold text-[#212121] hover:text-[#FF3B3F] transition-colors cursor-pointer"
-            >
-              Guests
-            </a>
-            <a 
-              href="#team" 
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('team');
-              }} 
-              className="font-[Comic Neue] font-bold text-[#212121] hover:text-[#FF3B3F] transition-colors cursor-pointer"
-            >
-              Team
-            </a>
-            <a 
-              href="#contact" 
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('contact');
-              }} 
-              className="font-[Comic Neue] font-bold px-4 py-2 rounded-md bg-[#FF3B3F] text-white hover:bg-opacity-90 transition-colors cursor-pointer"
-            >
-              Contact
-            </a>
-          </div>
-          
-          <button 
-            className="block md:hidden focus:outline-none" 
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="text-2xl text-[#212121]" /> : <Menu className="text-2xl text-[#212121]" />}
-          </button>
-        </nav>
-        
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div 
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden py-4"
-            >
-              <a 
-                href="#home" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('home');
-                  closeMenu();
-                }} 
-                className="block font-[Comic Neue] font-bold py-2 text-[#212121] hover:text-[#FF3B3F] cursor-pointer"
+              {isMenuOpen ? (
+                <X className="h-7 w-7 text-[#212121]" />
+              ) : (
+                <Menu className="h-7 w-7 text-[#212121]" />
+              )}
+            </button>
+          </nav>
+
+          {/* Mobile Menu */}
+          <AnimatePresence>
+            {isMenuOpen && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="md:hidden bg-white shadow-inner"
               >
-                Home
-              </a>
-              <a 
-                href="#events" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('events');
-                  closeMenu();
-                }} 
-                className="block font-[Comic Neue] font-bold py-2 text-[#212121] hover:text-[#FF3B3F] cursor-pointer"
-              >
-                Events
-              </a>
-              <a 
-                href="#collaborators" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('collaborators');
-                  closeMenu();
-                }} 
-                className="block font-[Comic Neue] font-bold py-2 text-[#212121] hover:text-[#FF3B3F] cursor-pointer"
-              >
-                Collaborators
-              </a>
-              <a 
-                href="#guests" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('guests');
-                  closeMenu();
-                }} 
-                className="block font-[Comic Neue] font-bold py-2 text-[#212121] hover:text-[#FF3B3F] cursor-pointer"
-              >
-                Guests
-              </a>
-              <a 
-                href="#team" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('team');
-                  closeMenu();
-                }} 
-                className="block font-[Comic Neue] font-bold py-2 text-[#212121] hover:text-[#FF3B3F] cursor-pointer"
-              >
-                Team
-              </a>
-              <a 
-                href="#contact" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('contact');
-                  closeMenu();
-                }} 
-                className="block font-[Comic Neue] font-bold py-2 text-[#FF3B3F] cursor-pointer"
-              >
-                Contact
-              </a>
-            </motion.div>
-          )}
-        </AnimatePresence>
+                <div className="flex flex-col space-y-3 px-4 py-3">
+                  {navItems.map((item) => (
+                    <a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollToSection(item.id);
+                        closeMenu();
+                      }}
+                      className={`font-[Comic Neue] font-bold text-lg py-3 px-4 rounded ${
+                        item.isButton
+                          ? "bg-[#FF3B3F] text-white text-center shadow-sm hover:bg-[#ff5154]"
+                          : "text-[#212121] hover:bg-gray-100"
+                      } transition-colors`}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </header>
   );
