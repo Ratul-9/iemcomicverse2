@@ -22,7 +22,19 @@ const HeroSection = () => {
             className="text-white"
           >
             <h4 className="font-[Comic Neue] font-bold text-[#FFEB3B] mb-2">July 20-21, 2025</h4>
-            <h1 className="font-[Bangers] text-5xl md:text-7xl mb-4 text-white">IEM<br /><span className="text-[#FF3B3F]">COMIC</span><span className="text-[#FFEB3B]">VERSE</span></h1>
+            <h1 className="font-[Bangers] text-5xl md:text-7xl mb-4 text-white transition-transform duration-300 ease-out group cursor-pointer">
+              <span className="inline-block group-hover:scale-110 group-hover:drop-shadow-[2px_2px_0_rgba(0,0,0,0.4)] transition-transform duration-300">
+                IEM
+              </span>
+              <br />
+              <span className="inline-block group-hover:scale-110 group-hover:drop-shadow-[2px_2px_0_rgba(0,0,0,0.4)] transition-transform duration-300 text-[#FF3B3F]">
+                COMIC
+              </span>
+            <span className="inline-block group-hover:scale-110 group-hover:drop-shadow-[2px_2px_0_rgba(0,0,0,0.4)] transition-transform duration-300 text-[#FFEB3B]">
+                VERSE
+            </span>
+            </h1>
+
             <p className="font-[Comic Neue] text-lg mb-6">Join us for the most exciting comic convention on campus! Three days filled with amazing guests, panels, cosplay contests, and much more!</p>
             <div className="flex flex-wrap gap-4">
               <Button asChild className="px-6 py-6 h-auto bg-[#FF3B3F] text-white font-bold rounded-md hover:bg-opacity-90 transition-colors">

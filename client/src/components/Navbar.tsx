@@ -21,25 +21,23 @@ const Navbar = () => {
 
   return (
     <header className="fixed w-full z-50">
-      {/* Added gradient background for better logo contrast */}
-      <div className="bg-gradient-to-r from-white to-gray-50 shadow-md">
+      <div className="bg-gradient-to-r from-yellow-100 via-white to-pink-100 shadow-[0_4px_10px_rgba(0,0,0,0.15)] border-b border-black">
         <div className="container mx-auto px-4">
-          {/* Adjusted height for better proportions */}
-          <nav className="flex items-center justify-between py-4 h-20">
-            {/* Logo container with proper padding and sizing */}
-            <div className="flex items-center">
-              <div className="p-2 rounded-lg overflow-hidden">
+          <nav className="flex items-center justify-between py-4 h-20 relative">
+            {/* Logo Wrapper */}
+            <div className="relative">
+              <div className="flex items-center min-w-[100px]">
                 <img
                   src={logo}
                   alt="ComicVerse Logo"
-                  className="h-14 w-auto object-contain cursor-pointer hover:opacity-90 transition-all duration-300"
+                  className="h-24 w-auto object-contain cursor-pointer hover:scale-105 transition-transform duration-300 drop-shadow-md"
                   onClick={() => scrollToSection("home")}
                 />
               </div>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-6 h-full">
+            <div className="hidden md:flex items-center space-x-6">
               {navItems.map((item) => (
                 <a
                   key={item.id}
@@ -48,27 +46,27 @@ const Navbar = () => {
                     e.preventDefault();
                     scrollToSection(item.id);
                   }}
-                  className={`font-[Comic Neue] font-bold text-lg ${
+                  className={`font-[Comic Neue] font-extrabold text-lg tracking-wide ${
                     item.isButton
-                      ? "px-5 py-3 rounded-md bg-[#FF3B3F] text-white hover:bg-[#ff5154] shadow-md"
-                      : "text-[#212121] hover:text-[#FF3B3F]"
-                  } transition-colors cursor-pointer`}
+                      ? "px-5 py-2 rounded-full bg-red-500 text-white border-2 border-black shadow-md hover:bg-red-600"
+                      : "text-[#212121] hover:text-blue-600 hover:underline"
+                  } transition-all cursor-pointer`}
                 >
                   {item.label}
                 </a>
               ))}
             </div>
 
-            {/* Mobile menu button - improved touch target */}
+            {/* Mobile Menu Button */}
             <button
-              className="block md:hidden focus:outline-none p-3"
+              className="block md:hidden focus:outline-none p-3 z-50"
               onClick={toggleMenu}
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
-                <X className="h-7 w-7 text-[#212121]" />
+                <X className="h-7 w-7 text-black" />
               ) : (
-                <Menu className="h-7 w-7 text-[#212121]" />
+                <Menu className="h-7 w-7 text-black" />
               )}
             </button>
           </nav>
@@ -77,11 +75,11 @@ const Navbar = () => {
           <AnimatePresence>
             {isMenuOpen && (
               <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="md:hidden bg-white shadow-inner"
+                initial={{ y: -20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -20, opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                className="md:hidden bg-white border-t border-black shadow-inner rounded-b-lg"
               >
                 <div className="flex flex-col space-y-3 px-4 py-3">
                   {navItems.map((item) => (
@@ -93,10 +91,10 @@ const Navbar = () => {
                         scrollToSection(item.id);
                         closeMenu();
                       }}
-                      className={`font-[Comic Neue] font-bold text-lg py-3 px-4 rounded ${
+                      className={`font-[Comic Neue] font-extrabold text-lg py-3 px-4 rounded-lg ${
                         item.isButton
-                          ? "bg-[#FF3B3F] text-white text-center shadow-sm hover:bg-[#ff5154]"
-                          : "text-[#212121] hover:bg-gray-100"
+                          ? "bg-red-500 text-white text-center border-2 border-black shadow hover:bg-red-600"
+                          : "text-[#212121] hover:bg-yellow-100"
                       } transition-colors`}
                     >
                       {item.label}
