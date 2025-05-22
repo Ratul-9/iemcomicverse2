@@ -46,7 +46,7 @@ const Navbar = () => {
                     e.preventDefault();
                     scrollToSection(item.id);
                   }}
-                  className={`font-[Comic Neue] font-extrabold text-lg tracking-wide ${
+                  className={`font-[Comic Neue] font-bold text-lg tracking-wide ${
                     item.isButton
                       ? "px-5 py-2 rounded-full bg-red-500 text-white border-2 border-black shadow-md hover:bg-red-600"
                       : "text-[#212121] hover:text-blue-600 hover:underline"
