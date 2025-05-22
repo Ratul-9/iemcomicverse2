@@ -95,36 +95,36 @@ export const eventsData = [
 // Collaborators Data
 export const collaboratorsData = [
   {
-    name: "Comic Publisher",
-    logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&auto=format",
+    name: "Rotary Club IEM",
+    logo: "/collaborators/Rotary_Club_Cllb1.jpg",
   },
   {
-    name: "Entertainment Company",
-    logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&auto=format",
+    name: "Lions Club IEM",
+    logo: "",
   },
   {
-    name: "Gaming Studio",
-    logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&auto=format",
+    name: "Otaku Guild ",
+    logo: "",
   },
   {
-    name: "Local Art Store",
-    logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&auto=format",
+    name: "The Literary Society IEM",
+    logo: "",
   },
   {
-    name: "College Media Club",
-    logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&auto=format",
+    name: "Kolkata Anime Club",
+    logo: "",
   },
   {
-    name: "Local Comic Shop",
-    logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&auto=format",
+    name: "",
+    logo: "",
   },
   {
-    name: "Animation Studio",
-    logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&auto=format",
+    name: "",
+    logo: "",
   },
   {
-    name: "Tech Company",
-    logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&auto=format",
+    name: "",
+    logo: "",
   },
 ];
 

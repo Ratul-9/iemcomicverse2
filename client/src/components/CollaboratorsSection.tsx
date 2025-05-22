@@ -94,31 +94,32 @@ const CollaboratorsSection = () => {
           viewport={{ once: true }}
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center mb-16"
         >
-          {collaboratorsData.map((collaborator, index) => (
-            <motion.div 
-              key={index} 
-              variants={item}
-              className="w-full h-40 [perspective:1000px]"
-            >
-            <div className="relative w-full h-full transition-transform duration-700 transform-style preserve-3d group hover:rotate-y-180">
-      
-            {/* Front side */}
-            <div className="absolute w-full h-full backface-hidden bg-white p-4 rounded-lg shadow-md border-2 border-gray-100 flex items-center justify-center">
-              <img 
-                src={collaborator.logo} 
-                alt={collaborator.name} 
-                className="max-w-full max-h-20" 
-              />
-            </div>
-      
-            {/* Back side */}
-            <div className="absolute w-full h-full backface-hidden bg-[#2E3192] text-white p-4 rounded-lg shadow-md border-2 border-gray-100 transform rotate-y-180 flex flex-col items-center justify-center text-center">
-              <h3 className="font-bold text-lg mb-2">{collaborator.name}</h3>
-              <p className="text-sm">Collaborator Desc</p>
-            </div>
-          </div>
-        </motion.div>
+          {collaboratorsData
+            .filter(collab => collab.name.trim() !== "") // Skip empty entries
+            .map((collaborator, index) => (
+              <motion.div
+                key={index}
+                variants={item}
+                className="w-full h-40 [perspective:1000px]"
+              >
+                <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group hover:rotate-y-180">
+                  {/* Front Side */}
+                  <div className="absolute w-full h-full backface-hidden bg-white rounded-xl border-4 border-[#2E3192] flex items-center justify-center p-4">
+                    <p className="font-[Bangers] text-xl text-center text-[#FF3B3F]">{collaborator.name}</p>
+                  </div>
+
+                  {/* Back Side */}
+                  <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-[#2E3192] rounded-xl flex items-center justify-center p-4">
+                    {collaborator.logo ? (
+                      <img src={collaborator.logo} alt={collaborator.name} className="max-h-20 object-contain" />
+                    ) : (
+                      <p className="text-white font-[Comic Neue] text-center">Logo Coming Soon</p>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
         ))}
+
         </motion.div>
         
         <motion.div 
@@ -128,8 +129,8 @@ const CollaboratorsSection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="relative mt-20 mb-24"
         >
-          <SpeechBubble author="Jane Smith, CEO of Comic Publishers International">
-            "We're proud to support College ComicFest and the incredible creativity of students. This event showcases the amazing talent and passion for comics and pop culture on campus!"
+          <SpeechBubble author="Tor Baap, ComicVerse Organizing Team">
+            "We're proud to support IEM ComicVerse and the incredible creativity of students. This event showcases the amazing talent and passion for comics and pop culture on campus!"
           </SpeechBubble>
         </motion.div>
         
