@@ -24,7 +24,7 @@ const Footer = () => {
           <div>
             <h4 className="font-[Bangers] text-2xl text-[#FFEB3B] mb-4">COLLEGE COMICFEST</h4>
             <p className="font-[Comic Neue] mb-4">The ultimate celebration of comics, art, and pop culture on campus!</p>
-            <p className="font-[Comic Neue] text-sm">© 2024 College ComicFest. All rights reserved.</p>
+            <p className="font-[Comic Neue] text-sm">© 2025 IEM ComicVerse. All rights reserved.</p>
           </div>
           
           <div>
@@ -71,7 +71,7 @@ const Footer = () => {
         
         <div className="mt-10 pt-6 border-t border-gray-700 text-center text-sm">
           <p className="font-[Comic Neue] flex items-center justify-center">
-            Designed with <Heart className="text-[#FF3B3F] mx-1 h-4 w-4" /> by the ComicFest Team
+            Designed with <Heart className="text-[#FF3B3F] mx-1 h-4 w-4" /> by the ComicVerse Team
           </p>
         </div>
       </div>

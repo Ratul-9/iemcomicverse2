@@ -55,7 +55,7 @@ const ContactSection = () => {
           >
             <h2 className="font-[Bangers] text-5xl text-[#FFEB3B] mb-6">CONTACT US</h2>
             <p className="font-[Comic Neue] text-lg mb-8">
-              Have questions about ComicFest? We're here to help! Reach out to us through any of these channels.
+              Have questions about ComicVerse? We're here to help!
             </p>
             
             <div className="space-y-6">
@@ -65,7 +65,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-[Comic Neue] font-bold text-xl">Email</h3>
-                  <p>info@collegecomicfest.edu</p>
+                  <p>Will be given soon</p>
                 </div>
               </div>
               
@@ -75,7 +75,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-[Comic Neue] font-bold text-xl">Phone</h3>
-                  <p>(555) 123-4567</p>
+                  <p>Will be given soon</p>
                 </div>
               </div>
               
@@ -95,17 +95,9 @@ const ContactSection = () => {
               <h3 className="font-[Comic Neue] font-bold text-xl mb-4">Follow Us</h3>
               <div className="flex space-x-4">
                 <a href="#" className="w-10 h-10 rounded-full bg-[#FF3B3F] flex items-center justify-center hover:bg-opacity-80 transition-colors">
-                  <Facebook size={20} />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-[#FF3B3F] flex items-center justify-center hover:bg-opacity-80 transition-colors">
-                  <Twitter size={20} />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-[#FF3B3F] flex items-center justify-center hover:bg-opacity-80 transition-colors">
                   <Instagram size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-[#FF3B3F] flex items-center justify-center hover:bg-opacity-80 transition-colors">
-                  <FaTiktok size={20} />
-                </a>
+               
               </div>
             </div>
           </motion.div>

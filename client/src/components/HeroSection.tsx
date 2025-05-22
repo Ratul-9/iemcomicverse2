@@ -21,18 +21,12 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
             className="text-white"
           >
-            <h4 className="font-[Comic Neue] font-bold text-[#FFEB3B] mb-2">July 20-21, 2025</h4>
-            <h1 className="font-[Bangers] text-5xl md:text-7xl mb-4 text-white transition-transform duration-300 ease-out group cursor-pointer">
-              <span className="inline-block group-hover:scale-110 group-hover:drop-shadow-[2px_2px_0_rgba(0,0,0,0.4)] transition-transform duration-300">
-                IEM
-              </span>
+            <h4 className="font-[Comic Neue] font-bold text-[#FFEB3B] mb-2">July 19-20, 2025</h4>
+            <h1 className="font-[Bangers] text-5xl md:text-7xl mb-4 text-white">
+              <span className="inline-block">IEM</span>
               <br />
-              <span className="inline-block group-hover:scale-110 group-hover:drop-shadow-[2px_2px_0_rgba(0,0,0,0.4)] transition-transform duration-300 text-[#FF3B3F]">
-                COMIC
-              </span>
-            <span className="inline-block group-hover:scale-110 group-hover:drop-shadow-[2px_2px_0_rgba(0,0,0,0.4)] transition-transform duration-300 text-[#FFEB3B]">
-                VERSE
-            </span>
+              <span className="inline-block text-[#FF3B3F]">COMIC</span>
+              <span className="inline-block text-[#FFEB3B]">VERSE</span>
             </h1>
 
             <p className="font-[Comic Neue] text-lg mb-6">Join us for the most exciting comic convention on campus! Three days filled with amazing guests, panels, cosplay contests, and much more!</p>
@@ -55,12 +49,16 @@ const HeroSection = () => {
               clipPath: "polygon(0% 3%, 3% 0%, 97% 0%, 100% 3%, 100% 97%, 97% 100%, 3% 100%, 0% 97%)" 
             }}
           >
-            <img 
-              src="https://images.unsplash.com/photo-1534809027769-b00d750a6bac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-              alt="ComicFest Poster" 
-              className="w-full h-auto"
-            />
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1534809027769-b00d750a6bac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                alt="ComicFest Poster" 
+                className="w-full h-auto comic-effect"
+              />
+              <div className="absolute inset-0 bg-dot-pattern pointer-events-none mix-blend-multiply opacity-40"></div>
+            </div>
           </motion.div>
+
         </div>
         
         <motion.div 

@@ -27,3 +27,17 @@
     transform: rotateY(180deg);
   }
 }
+
+/* Comic-style filter */
+.comic-effect {
+  filter: contrast(1.2) saturate(1.3) brightness(1.05);
+  image-rendering: pixelated;
+}
+
+/* Optional: dot pattern overlay to mimic halftone comic effect */
+.bg-dot-pattern {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 6px 6px;
+  color: black;
+  opacity: 0.3;
+}
