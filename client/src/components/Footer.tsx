@@ -22,7 +22,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h4 className="font-[Bangers] text-2xl text-[#FFEB3B] mb-4">COLLEGE COMICFEST</h4>
+            <h4 className="font-[Bangers] text-2xl text-[#FFEB3B] mb-4">COMICVERSE</h4>
             <p className="font-[Comic Neue] mb-4">The ultimate celebration of comics, art, and pop culture on campus!</p>
             <p className="font-[Comic Neue] text-sm">© 2025 IEM ComicVerse. All rights reserved.</p>
           </div>

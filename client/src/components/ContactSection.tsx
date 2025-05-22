@@ -65,7 +65,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-[Comic Neue] font-bold text-xl">Email</h3>
-                  <p>Will be given soon</p>
+                  <p className="font-bold">iemcomicverse@gmail.com</p>
                 </div>
               </div>
               
@@ -75,7 +75,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-[Comic Neue] font-bold text-xl">Phone</h3>
-                  <p>Will be given soon</p>
+                  <p>(+91) 7908448126, 7076573303</p>
                 </div>
               </div>
               
