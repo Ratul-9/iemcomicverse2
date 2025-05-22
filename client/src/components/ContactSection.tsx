@@ -94,7 +94,7 @@ const ContactSection = () => {
             <div className="mt-8">
               <h3 className="font-[Comic Neue] font-bold text-xl mb-4">Follow Us</h3>
               <div className="flex space-x-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-[#FF3B3F] flex items-center justify-center hover:bg-opacity-80 transition-colors">
+                <a href="https://www.instagram.com/iemcomicverse?igsh=bWp6eDVydmpueGNq&utm_source=qr" className="w-10 h-10 rounded-full bg-[#FF3B3F] flex items-center justify-center hover:bg-opacity-80 transition-colors">
                   <Instagram size={20} />
                 </a>
                

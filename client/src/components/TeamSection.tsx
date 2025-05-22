@@ -59,7 +59,7 @@ const TeamSection = () => {
             </h2>
           </div>
           <p className="font-[Comic Neue] text-lg text-[#424242] max-w-2xl mx-auto mt-8">
-            The dedicated organizers who make ComicFest possible year after year!
+            The dedicated organizers who make ComicVerse possible year after year!
           </p>
         </motion.div>
         
@@ -146,7 +146,7 @@ const TeamSection = () => {
             </div>
             <CardContent className="p-6">
               <p className="font-[Comic Neue] text-center mb-6">
-                We're always looking for passionate volunteers to help make ComicFest even better. If you love comics and events, we want you!
+                We're always looking for passionate volunteers to help make ComicVerse even better. If you love comics and events, we want you!
               </p>
               <div className="text-center">
                 <div className="relative inline-block">
@@ -154,7 +154,7 @@ const TeamSection = () => {
                     asChild 
                     className="px-6 py-3 h-auto bg-[#2E3192] text-white font-bold rounded-md hover:bg-opacity-90 transition-colors relative z-10"
                   >
-                    <a href="#volunteer">
+                    <a href="https://forms.gle/hrMsRDH9HWn88taw9">
                       Volunteer Sign-up
                     </a>
                   </Button>
