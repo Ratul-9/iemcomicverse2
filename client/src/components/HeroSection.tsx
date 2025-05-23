@@ -173,26 +173,59 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-white"
+            style={{ y: textY }}
+            className="text-white relative"
           >
-            <h4 className="font-[Comic Neue] font-bold text-[#FFEB3B] mb-2">July 20-21, 2025</h4>
-            <h1 className="font-[Bangers] text-5xl md:text-7xl mb-4 text-white transition-transform duration-300 ease-out group cursor-pointer">
-              <span className="inline-block group-hover:scale-110 group-hover:drop-shadow-[2px_2px_0_rgba(0,0,0,0.4)] transition-transform duration-300">
-                IEM
-              </span>
-              <br />
-              <span className="inline-block group-hover:scale-110 group-hover:drop-shadow-[2px_2px_0_rgba(0,0,0,0.4)] transition-transform duration-300 text-[#FF3B3F]">
-                COMIC
-              </span>
-            <span className="inline-block group-hover:scale-110 group-hover:drop-shadow-[2px_2px_0_rgba(0,0,0,0.4)] transition-transform duration-300 text-[#FFEB3B]">
-                VERSE
-            </span>
-            </h1>
+            {/* Date Badge with Comic Style */}
+            <motion.div
+              initial={{ opacity: 0, y: -30, rotateX: -90 }}
+              animate={{ opacity: 1, y: 0, rotateX: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="inline-block mb-4"
+            >
+              <div className="bg-[#FFEB3B] text-[#212121] px-6 py-2 rounded-full font-[Comic Neue] font-bold relative overflow-hidden">
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
+                  animate={{ x: ["-100%", "100%"] }}
+                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                />
+                <span className="relative z-10">July 20-21, 2025</span>
+              </div>
+            </motion.div>
 
-            
+            {/* Enhanced Title with Letter Animation */}
+            <div 
+              className="font-[Bangers] text-5xl md:text-7xl mb-6 cursor-pointer"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              {comicWords.map((word, wordIndex) => (
+                <div key={wordIndex} className="block">
+                  {word.split("").map((letter, letterIndex) => (
+                    <motion.span
+                      key={letterIndex}
+                      className={`inline-block ${wordColors[wordIndex]} relative`}
+                      custom={wordIndex * 3 + letterIndex}
+                      variants={letterVariants}
+                      initial="hidden"
+                      animate="visible"
+                      whileHover={{ 
+                        scale: 1.2, 
+                        rotate: [-5, 5, -5, 0],
+                        y: -10,
+                        textShadow: "0 0 20px currentColor"
+                      }}
+                      style={{
+                        filter: isHovered ? "drop-shadow(3px 3px 0 rgba(0,0,0,0.5))" : "drop-shadow(2px 2px 0 rgba(0,0,0,0.3))",
+                        transition: "filter 0.3s ease"
+                      }}
+                    >
+                      {letter}
+                    </motion.span>
+                  ))}
+                </div>
+              ))}
+            </div>
 
             {/* Enhanced Description */}
             <motion.p 
