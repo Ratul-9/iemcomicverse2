@@ -44,7 +44,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="#faq" className="font-[Comic Neue] hover:text-[#FFEB3B] transition-colors">FAQ</a></li>
               <li><a href="#rules" className="font-[Comic Neue] hover:text-[#FFEB3B] transition-colors">Event Rules</a></li>
-              <li><a href="#accessibility" className="font-[Comic Neue] hover:text-[#FFEB3B] transition-colors">Accessibility</a></li>
+              <li><a href="https://drive.google.com/file/d/1WCoWT4W_zpAIaO_3xuY1BDlSqw-Ev0iB/view?usp=drive_link" className="font-[Comic Neue] hover:text-[#FFEB3B] transition-colors">Event Brochure</a></li>
               <li><a href="#schedule" className="font-[Comic Neue] hover:text-[#FFEB3B] transition-colors">Full Schedule</a></li>
               <li><a href="#press" className="font-[Comic Neue] hover:text-[#FFEB3B] transition-colors">Press Kit</a></li>
             </ul>
