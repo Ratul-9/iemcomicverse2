@@ -58,7 +58,6 @@ const CollaboratorsSection = () => {
         backgroundPosition: "center" 
       }}></div>
       
-      <div className="absolute inset-0 bg-gradient-to-b from-[#2E3192] to-[#FF3B3F] opacity-70"></div>
 
       
       {/* Comic style background pattern */}
