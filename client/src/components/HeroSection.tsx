@@ -192,15 +192,7 @@ const HeroSection = () => {
             </span>
             </h1>
 
-            <p className="font-[Comic Neue] text-lg mb-6">Join us for the most exciting comic convention on campus! Three days filled with amazing guests, panels, cosplay contests, and much more!</p>
-            <div className="flex flex-wrap gap-4">
-              <Button asChild className="px-6 py-6 h-auto bg-[#FF3B3F] text-white font-bold rounded-md hover:bg-opacity-90 transition-colors">
-                <a href="#events">Explore Events</a>
-              </Button>
-              <Button asChild className="px-6 py-6 h-auto bg-[#FFEB3B] text-[#212121] font-bold rounded-md hover:bg-opacity-90 transition-colors">
-                <a href="#tickets">Register Now</a>
-              </Button>
-            </div>
+            
 
             {/* Enhanced Description */}
             <motion.p 
