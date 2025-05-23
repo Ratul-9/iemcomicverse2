@@ -97,27 +97,27 @@ const CollaboratorsSection = () => {
           {collaboratorsData
             .filter(collab => collab.name.trim() !== "") // Skip empty entries
             .map((collaborator, index) => (
-              <motion.div
-                key={index}
-                variants={item}
-                className="w-full h-40 [perspective:1000px]"
-              >
-                <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group hover:rotate-y-180">
-                  {/* Front Side */}
-                  <div className="absolute w-full h-full backface-hidden bg-white rounded-xl border-4 border-[#2E3192] flex items-center justify-center p-4">
-                    <p className="font-[Bangers] text-xl text-center text-[#FF3B3F]">{collaborator.name}</p>
-                  </div>
+                <motion.div
+                  key={index}
+                  variants={item}
+                  className="w-full h-40 [perspective:1000px]"
+                >
+                  <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group hover:rotate-y-180">
+                    {/* Front Side */}
+                    <div className="absolute w-full h-full backface-hidden bg-white rounded-xl border-4 border-[#2E3192] flex items-center justify-center p-4">
+                      <p className="font-[Bangers] text-xl text-center text-[#FF3B3F]">{collaborator.name}</p>
+                    </div>
 
-                  {/* Back Side */}
-                  <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-[#2E3192] rounded-xl flex items-center justify-center p-4">
-                    {collaborator.logo ? (
-                      <img src={collaborator.logo} alt={collaborator.name} className="max-h-20 object-contain" />
-                    ) : (
-                      <p className="text-white font-[Comic Neue] text-center">Logo Coming Soon</p>
-                    )}
+                    {/* Back Side */}
+                    <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-[#2E3192] rounded-xl flex items-center justify-center p-4">
+                      {collaborator.logo ? (
+                        <img src={collaborator.logo} alt={collaborator.name} className="max-h-20 object-contain" />
+                      ) : (
+                        <p className="text-white font-[Comic Neue] text-center">Logo Coming Soon</p>
+                      )}
+                    </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
         ))}
 
         </motion.div>
