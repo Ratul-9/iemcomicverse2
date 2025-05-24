@@ -154,7 +154,7 @@ const TeamSection = () => {
                     asChild 
                     className="px-6 py-3 h-auto bg-[#2E3192] text-white font-bold rounded-md hover:bg-opacity-90 transition-colors relative z-10"
                   >
-                    <a href="https://forms.gle/hrMsRDH9HWn88taw9">
+                    <a href="https://forms.gle/hrMsRDH9HWn88taw9" target="_blank">
                       Volunteer Sign-up
                     </a>
                   </Button>

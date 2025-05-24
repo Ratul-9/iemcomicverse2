@@ -191,7 +191,7 @@ const HeroSection = () => {
                   animate={{ x: ["-100%", "100%"] }}
                   transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
                 />
-                <span className="relative z-10">July 20-21, 2025</span>
+                <span className="relative z-10">July 19-20, 2025</span>
               </div>
             </motion.div>
 
@@ -237,7 +237,7 @@ const HeroSection = () => {
               className="font-[Comic Neue] text-lg mb-8 leading-relaxed"
             >
               Join us for the most <span className="text-[#FFEB3B] font-bold">exciting</span> comic convention on campus! 
-              Three days filled with <span className="text-[#FF3B3F] font-bold">amazing guests</span>, panels, 
+              Two days filled with <span className="text-[#FF3B3F] font-bold">amazing guests</span>, panels, 
               cosplay contests, and <span className="text-[#00BCD4] font-bold">much more!</span>
             </motion.p>
 
@@ -272,7 +272,7 @@ const HeroSection = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Button asChild className="px-8 py-6 h-auto bg-gradient-to-r from-[#FFEB3B] to-[#FFF176] text-[#212121] font-bold rounded-xl hover:from-[#FFF176] hover:to-[#FFEB3B] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
-                  <a href="#tickets">
+                  <a href="https://drive.google.com/file/d/1WCoWT4W_zpAIaO_3xuY1BDlSqw-Ev0iB/view?usp=drive_link" target="_blank">
                     <motion.div
                       className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10"
                       animate={{ x: ["-100%", "100%"] }}
@@ -280,7 +280,7 @@ const HeroSection = () => {
                     />
                     <span className="relative z-10 flex items-center gap-2">
                       <Star size={20} />
-                      Register Now
+                      Check Out Event Brochure!
                     </span>
                   </a>
                 </Button>

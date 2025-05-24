@@ -69,15 +69,22 @@ const CollaboratorsSection = () => {
   );
   
   return (
+<<<<<<< HEAD
     <section id="collaborators" className="py-20 bg-gradient-to-br from-[#FF3B3F] via-[#2E3192] to-[#FF3B3F] relative overflow-hidden">
       {/* Background image and overlay - keeping as requested */}
+=======
+    <section id="collaborators" className="py-20 bg-gradient-to-b from-[#2E3192] to-[#FF3B3F] relative overflow-hidden">
+
+
+      {/* Background image and overlay like hero section */}
+>>>>>>> 208f3434eb084feeec30c423d050c761ec785b7d
       <div className="absolute inset-0 opacity-30" style={{ 
         background: "url('https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?fit=crop&w=1920&h=1080&auto=format')",
         backgroundSize: "cover", 
         backgroundPosition: "center" 
       }}></div>
       
-      <div className="absolute inset-0 bg-gradient-to-r from-[#FF3B3F] to-[#2E3192] opacity-70"></div>
+
       
       {/* Enhanced comic halftone pattern */}
       <div className="absolute inset-0" style={{ 
