@@ -16,7 +16,7 @@ const Navbar = () => {
     { id: "collaborators", label: "Collaborators" },
     { id: "guests", label: "Guests" },
     { id: "team", label: "Team" },
-    { id: "contact", label: "Contact", isButton: true }
+    { id: "contact", label: "Contact", isButton: true },
   ];
 
   return (
@@ -39,21 +39,25 @@ const Navbar = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-6">
               {navItems.map((item) => (
-                <a
+                <motion.a
                   key={item.id}
                   href={`#${item.id}`}
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection(item.id);
                   }}
-                  className={`font-[Comic Neue] font-bold text-lg tracking-wide ${
+                  whileHover={{ scale: 1.1 }}
+                  className={`relative group font-[Comic Neue] font-bold text-lg tracking-wide ${
                     item.isButton
-                      ? "px-5 py-2 rounded-full bg-red-500 text-white border-2 border-black shadow-md hover:bg-red-600"
-                      : "text-[#212121] hover:text-blue-600 hover:underline"
-                  } transition-all cursor-pointer`}
+                      ? "px-5 py-2 rounded-full bg-red-500 text-white border-2 border-black shadow-md hover:bg-red-600 transition-all cursor-pointer"
+                      : "text-[#212121] hover:text-blue-600 transition-colors cursor-pointer"
+                  }`}
                 >
                   {item.label}
-                </a>
+                  {!item.isButton && (
+                    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                  )}
+                </motion.a>
               ))}
             </div>
 
@@ -83,7 +87,7 @@ const Navbar = () => {
               >
                 <div className="flex flex-col space-y-3 px-4 py-3">
                   {navItems.map((item) => (
-                    <a
+                    <motion.a
                       key={item.id}
                       href={`#${item.id}`}
                       onClick={(e) => {
@@ -91,14 +95,15 @@ const Navbar = () => {
                         scrollToSection(item.id);
                         closeMenu();
                       }}
+                      whileHover={{ scale: 1.05, boxShadow: "0px 4px 15px rgba(0,0,0,0.2)" }}
                       className={`font-[Comic Neue] font-extrabold text-lg py-3 px-4 rounded-lg ${
                         item.isButton
-                          ? "bg-red-500 text-white text-center border-2 border-black shadow hover:bg-red-600"
-                          : "text-[#212121] hover:bg-yellow-100"
-                      } transition-colors`}
+                          ? "bg-red-500 text-white text-center border-2 border-black shadow hover:bg-red-600 transition-all cursor-pointer"
+                          : "text-[#212121] hover:bg-yellow-100 transition-colors cursor-pointer"
+                      }`}
                     >
                       {item.label}
-                    </a>
+                    </motion.a>
                   ))}
                 </div>
               </motion.div>

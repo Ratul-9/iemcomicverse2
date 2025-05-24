@@ -2,6 +2,8 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Star, Zap, Heart, Sparkles } from "lucide-react";
 import { useState, useEffect } from "react";
+import logo1 from './logo1.jpg';
+import logo2 from './logo2.jpg';
 
 const HeroSection = () => {
   const { scrollY } = useScroll();
@@ -327,7 +329,7 @@ const HeroSection = () => {
                   }}
                 >
                   <img 
-                    src="https://images.unsplash.com/photo-1534809027769-b00d750a6bac?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=700" 
+                    src={logo1} 
                     alt="Main Comic Event" 
                     className="w-full h-full object-cover rounded-xl"
                   />
@@ -402,7 +404,7 @@ const HeroSection = () => {
                   }}
                 >
                   <img 
-                    src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=600" 
+                    src={logo2}
                     alt="Cosplay Contest" 
                     className="w-full h-full object-cover rounded-lg"
                   />
