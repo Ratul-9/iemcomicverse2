@@ -1,19 +1,18 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { ArrowRight, MapPin, Clock, ChevronLeft, ChevronRight, Zap, Star, Sparkles } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Zap, Star, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "wouter";
 import useEmblaCarousel from "embla-carousel-react";
-
+import zearena from './ZEARENA.png';
+import conpedia from './CONPEDIA.png';
 // Sample events data (5 cards)
 const eventsData = [
   {
     id: 1,
-    name: "Comic Creator Panel",
-    venue: "Main Hall",
-    time: "10:00 AM - 12:00 PM",
+    name: "Conpedia",
     date: "Day 1",
     description: "Meet your favorite comic creators and learn about their creative process. Q&A session included with industry professionals.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=400&h=300",
@@ -21,19 +20,15 @@ const eventsData = [
   },
   {
     id: 2,
-    name: "Cosplay Competition",
-    venue: "Arena Stage",
-    time: "2:00 PM - 5:00 PM",
+    name: "IEM's Got Latent",
     date: "Day 1",
     description: "Show off your best costume! Prizes for best original, best craftsmanship, and fan favorite categories.",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?fit=crop&w=400&h=300",
+    image:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=400&h=300",
     color: "bg-[#2E3192]"
   },
   {
     id: 3,
-    name: "Digital Art Workshop",
-    venue: "Workshop Room A",
-    time: "11:00 AM - 1:00 PM",
+    name: "ARTS",
     date: "Day 2",
     description: "Learn digital illustration techniques from professional artists. Tablets provided for hands-on experience.",
     image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?fit=crop&w=400&h=300",
@@ -41,23 +36,35 @@ const eventsData = [
   },
   {
     id: 4,
-    name: "Superhero Movie Marathon",
-    venue: "Cinema Hall",
-    time: "6:00 PM - 11:00 PM",
+    name: "ZE ARENA",
     date: "Day 2",
     description: "Back-to-back screening of classic superhero movies with director commentary and trivia games.",
-    image: "https://images.unsplash.com/photo-1489599162715-27e6b82659d2?fit=crop&w=400&h=300",
+    image: zearena,
     color: "bg-[#FF3B3F]"
   },
   {
     id: 5,
-    name: "Comic Trading Fair",
-    venue: "Exhibition Floor",
-    time: "9:00 AM - 6:00 PM",
+    name: "CONPEDIA",
+    date: "Both Days",
+    description: "Buy, sell, and trade rare comics. Special appearances by comic shop owners and collectors worldwide.",
+    image: conpedia,
+    color: "bg-[#2E3192]"
+  },
+  {
+    id: 1,
+    name: "R Cade",
     date: "Both Days",
     description: "Buy, sell, and trade rare comics. Special appearances by comic shop owners and collectors worldwide.",
     image: "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?fit=crop&w=400&h=300",
     color: "bg-[#2E3192]"
+  },
+  {
+    id: 4,
+    name: "Cosplay Carnival",
+    date: "Day 2",
+    description: "Back-to-back screening of classic superhero movies with director commentary and trivia games.",
+    image: "https://images.unsplash.com/photo-1489599162715-27e6b82659d2?fit=crop&w=400&h=300",
+    color: "bg-[#FF3B3F]"
   }
 ];
 
@@ -215,17 +222,19 @@ const EventsSection = () => {
               {eventsData.map((event, index) => (
                 <div 
                   key={event.id} 
-                  className="flex-[0_0_20%] min-w-0 pl-4 first:pl-0 lg:flex-[0_0_25%] md:flex-[0_0_33.333%] sm:flex-[0_0_50%] xs:flex-[0_0_100%]"
+                  className="flex-[0_0_25%] min-w-0 pl-4 first:pl-0 lg:flex-[0_0_33.333%] md:flex-[0_0_50%] sm:flex-[0_0_66.666%] xs:flex-[0_0_100%]"
+
                   onMouseEnter={() => setHoveredId(event.id)}
                   onMouseLeave={() => setHoveredId(null)}
                 >
                   <motion.div 
-                    className={`transition-all duration-500 ${hoveredId !== null && hoveredId !== event.id ? 'opacity-40 scale-95' : ''}`}
-                    whileHover={{ 
-                      y: -8,
-                      transition: { duration: 0.3, ease: "easeOut" }
-                    }}
-                  >
+  className="transition-all duration-500"
+  whileHover={{ 
+    y: -8,
+    transition: { duration: 0.3, ease: "easeOut" }
+  }}
+>
+
                     <Card className="h-full bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col mx-2 relative border-4 border-[#2E3192] group hover:border-[#FF3B3F] transition-all duration-300">
                       
                       {/* Comic book speech bubble */}
@@ -302,34 +311,7 @@ const EventsSection = () => {
                           <div className="absolute -bottom-1 left-0 w-full h-1 bg-[#FFEB3B] transform skew-x-[-12deg] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </motion.h3>
                         
-                        {/* Info items with hover animations */}
-                        <motion.div 
-                          className="flex items-center mb-2 text-[#424242] group/item hover:text-[#FF3B3F] transition-colors"
-                          whileHover={{ x: 5 }}
-                        >
-                          <motion.div
-                            whileHover={{ rotate: 360 }}
-                            transition={{ duration: 0.5 }}
-                          >
-                            <MapPin size={16} className="mr-2 text-[#FF3B3F]" />
-                          </motion.div>
-                          <span className="font-[Comic Neue] font-bold">{event.venue}</span>
-                        </motion.div>
-                        
-                        <motion.div 
-                          className="flex items-center mb-4 text-[#424242] group/item hover:text-[#FF3B3F] transition-colors"
-                          whileHover={{ x: 5 }}
-                        >
-                          <motion.div
-                            whileHover={{ rotate: 360 }}
-                            transition={{ duration: 0.5 }}
-                          >
-                            <Clock size={16} className="mr-2 text-[#FF3B3F]" />
-                          </motion.div>
-                          <span className="font-[Comic Neue]">{event.time}</span>
-                        </motion.div>
-                        
-                        <p className="text-sm text-[#424242] line-clamp-3 font-[Comic Neue]">{event.description}</p>
+                        <p className="text-sm text-[#424242] line-clamp-3 font-[Comic Neue] mb-4">{event.description}</p>
                         
                         {/* Comic book dots decoration */}
                         <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -440,13 +422,7 @@ const EventsSection = () => {
         </motion.div>
       </div>
       
-      {/* Add CSS for shimmer animation */}
-      <style jsx>{`
-        @keyframes shimmer {
-          0% { background-position: -200% -200%; }
-          100% { background-position: 200% 200%; }
-        }
-      `}</style>
+     
     </section>
   );
 };
