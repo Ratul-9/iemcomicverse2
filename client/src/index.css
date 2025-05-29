@@ -41,3 +41,9 @@
   color: black;
   opacity: 0.3;
 }
+@font-face {
+  font-family: 'AkiraExpanded';
+  src: url('./assets/AkiraExpanded.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}

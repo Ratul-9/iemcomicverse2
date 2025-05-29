@@ -29,13 +29,7 @@ const HeroSection = () => {
   }, []);
 
   // Floating comic elements data
-  const floatingElements = [
-    { icon: Star, color: "#FFEB3B", delay: 0, duration: 3, scale: 1.2 },
-    { icon: Zap, color: "#FF3B3F", delay: 0.5, duration: 2.5, scale: 1 },
-    { icon: Heart, color: "#E91E63", delay: 1, duration: 3.5, scale: 0.8 },
-    { icon: Sparkles, color: "#00BCD4", delay: 1.5, duration: 2.8, scale: 1.1 },
-    { icon: Star, color: "#9C27B0", delay: 2, duration: 3.2, scale: 0.9 },
-  ];
+
 
   // Comic burst animation variants
   const burstVariants = {
@@ -68,21 +62,12 @@ const HeroSection = () => {
   const wordColors = ["text-white", "text-[#FF3B3F]", "text-[#FFEB3B]"];
 
   return (
-    <section 
-      id="home" 
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#2E3192] via-[#1A1F71] to-[#0F1357] overflow-hidden pt-16"
-    >
-      {/* Dynamic Background with Parallax */}
-      <motion.div 
-        className="absolute inset-0 opacity-30"
-        style={{ 
-          y: backgroundY,
-          background: "url('https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?fit=crop&w=1920&h=1080&auto=format')",
-          backgroundSize: "cover", 
-          backgroundPosition: "center",
-          filter: "hue-rotate(45deg) saturate(1.2)"
-        }}
-      />
+   <section 
+  id="home" 
+  className="relative min-h-screen flex items-center justify-center bg-transparent overflow-hidden pt-16"
+>
+
+      
       
       {/* Animated Grid Pattern */}
       <div className="absolute inset-0 opacity-10">
@@ -107,62 +92,9 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Floating Comic Elements */}
-      <AnimatePresence>
-        {floatingElements.map((element, index) => {
-          const Icon = element.icon;
-          return (
-            <motion.div
-              key={index}
-              className="absolute pointer-events-none z-5"
-              style={{
-                left: `${20 + (index * 15)}%`,
-                top: `${30 + (index * 10)}%`,
-                y: floatingY,
-              }}
-              initial={{ opacity: 0, scale: 0, rotate: 0 }}
-              animate={{ 
-                opacity: [0.4, 0.8, 0.4], 
-                scale: [element.scale * 0.8, element.scale * 1.2, element.scale],
-                rotate: [0, 360],
-                y: [-20, 20, -20]
-              }}
-              transition={{
-                duration: element.duration,
-                delay: element.delay,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
-              <Icon 
-                size={32} 
-                color={element.color}
-                style={{ filter: "drop-shadow(0 0 10px currentColor)" }}
-              />
-            </motion.div>
-          );
-        })}
-      </AnimatePresence>
+     
 
-      {/* Comic Burst Effects */}
-      <motion.div
-        className="absolute top-20 right-20 pointer-events-none"
-        variants={burstVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <div className="w-24 h-24 bg-gradient-to-r from-[#FF3B3F] to-[#FFEB3B] rounded-full opacity-20 blur-sm" />
-      </motion.div>
-
-      <motion.div
-        className="absolute bottom-32 left-16 pointer-events-none"
-        variants={burstVariants}
-        initial="hidden"
-        animate="visible"
-        transition={{ delay: 1.5 }}
-      >
-        <div className="w-16 h-16 bg-gradient-to-r from-[#00BCD4] to-[#9C27B0] rounded-full opacity-30 blur-sm" />
-      </motion.div>
+      
 
       {/* Interactive Light Effect */}
       <motion.div
@@ -350,22 +282,10 @@ const HeroSection = () => {
                   <div className="absolute inset-2 border-2 border-white/50 rounded-lg" />
                 </div>
                 
-                {/* Enhanced "POP!" Text with Animation */}
-                <motion.div
-                  className="absolute -top-8 -right-8 bg-gradient-to-r from-[#FFEB3B] to-[#FFF176] text-[#212121] px-4 py-2 rounded-full font-[Bangers] text-2xl font-bold shadow-xl transform rotate-15 border-3 border-white"
-                  initial={{ scale: 0, rotate: 0, y: -20 }}
-                  animate={{ scale: 1, rotate: 15, y: 0 }}
-                  transition={{ delay: 1, type: "spring", stiffness: 300 }}
-                  whileHover={{ scale: 1.2, rotate: 20, y: -5 }}
-                >
-                  <motion.span
-                    animate={{ textShadow: ["0 0 0px #FF3B3F", "0 0 20px #FF3B3F", "0 0 0px #FF3B3F"] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    POP!
-                  </motion.span>
+                
+               
                   <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-[#FF3B3F] rounded-full animate-bounce" />
-                </motion.div>
+                
               </div>
             </motion.div>
 
@@ -424,22 +344,9 @@ const HeroSection = () => {
                   <div className="absolute inset-2 border-2 border-white/40 rounded-md" />
                 </div>
                 
-                {/* Enhanced "BOOM!" Badge */}
-                <motion.div
-                  className="absolute -bottom-6 -right-6 bg-gradient-to-r from-[#FF3B3F] to-[#FF6B6F] text-white px-4 py-2 rounded-full font-[Bangers] text-xl font-bold shadow-xl transform -rotate-15 border-3 border-white"
-                  initial={{ scale: 0, rotate: 0 }}
-                  animate={{ scale: 1, rotate: -15 }}
-                  transition={{ delay: 1.2, type: "spring", stiffness: 400 }}
-                  whileHover={{ scale: 1.25, rotate: -20 }}
-                >
-                  <motion.span
-                    animate={{ color: ["#FFFFFF", "#FFEB3B", "#FFFFFF"] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    BOOM!
-                  </motion.span>
-                  <div className="absolute -top-1 -left-1 w-2 h-2 bg-[#FFEB3B] rounded-full animate-ping" />
-                </motion.div>
+               
+                
+                
               </div>
             </motion.div>
 
@@ -498,25 +405,8 @@ const HeroSection = () => {
                   <div className="absolute inset-2 border-2 border-white/40 rounded-md" />
                 </div>
                 
-                {/* Enhanced "ZAP!" Badge */}
-                <motion.div
-                  className="absolute -top-6 -left-6 bg-gradient-to-r from-[#00BCD4] to-[#4FC3F7] text-white px-4 py-2 rounded-full font-[Bangers] text-xl font-bold shadow-xl transform rotate-18 border-3 border-white"
-                  initial={{ scale: 0, rotate: 0 }}
-                  animate={{ scale: 1, rotate: 18 }}
-                  transition={{ delay: 1.4, type: "spring", stiffness: 350 }}
-                  whileHover={{ scale: 1.25, rotate: 25 }}
-                >
-                  <motion.span
-                    animate={{ 
-                      textShadow: ["0 0 0px #FFEB3B", "0 0 15px #FFEB3B", "0 0 0px #FFEB3B"],
-                      color: ["#FFFFFF", "#FFEB3B", "#FFFFFF"]
-                    }}
-                    transition={{ duration: 1.8, repeat: Infinity }}
-                  >
-                    ZAP!
-                  </motion.span>
-                  <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-[#FFEB3B] rounded-full animate-bounce" />
-                </motion.div>
+              
+                  
               </div>
             </motion.div>
 

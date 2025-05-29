@@ -59,13 +59,9 @@ const TeamSection = () => {
   );
 
   return (
-    <section id="team" className="py-20 bg-gradient-to-b from-[#F5F5F5] to-[#E8E8E8] relative overflow-hidden">
-      {/* Background image and overlay */}
-      <div className="absolute inset-0 opacity-20" style={{ 
-        background: "url('https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?fit=crop&w=1920&h=1080&auto=format')",
-        backgroundSize: "cover", 
-        backgroundPosition: "center" 
-      }}></div>
+    <section id="team" className="py-20 bg-transparent relative overflow-hidden">
+
+     
 
       {/* Enhanced comic halftone pattern */}
       <div className="absolute inset-0" style={{ 
@@ -76,13 +72,7 @@ const TeamSection = () => {
         opacity: 0.1
       }}></div>
       
-      {/* Enhanced decorative elements */}
-      <ComicBurst className="top-10 left-10" color="#2E3192" />
-      <ComicBurst className="top-32 right-16" color="#FF3B3F" />
-      <ComicBurst className="bottom-20 left-1/4" color="#FFEB3B" />
-      <ComicZap className="top-1/4 right-1/3" />
-      <ComicZap className="bottom-1/3 left-1/4" />
-      
+   
       <div className="container mx-auto px-4 relative z-10">
         {/* Enhanced Header */}
         <motion.div 

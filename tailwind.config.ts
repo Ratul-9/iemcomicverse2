@@ -88,3 +88,16 @@ export default {
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;
+const config: Config = {
+  content: [
+    "./client/src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        akira: ['AkiraExpanded', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [],
+};

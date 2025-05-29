@@ -49,35 +49,15 @@ const CollaboratorsSection = () => {
     </div>
   );
   
-  // Enhanced comic decorative elements
-  const ComicBurst = ({ className, color }: { className: string, color: string }) => (
-    <div className={`absolute z-0 ${className} animate-pulse`}>
-      <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50 0L60 25L85 15L70 40L100 50L70 60L85 85L60 75L50 100L40 75L15 85L30 60L0 50L30 40L15 15L40 25L50 0Z" 
-              fill={color} fillOpacity="0.3" stroke={color} strokeWidth="2"/>
-      </svg>
-    </div>
-  );
+
   
-  const ComicZap = ({ className }: { className: string }) => (
-    <div className={`absolute z-0 ${className} transform rotate-12`}>
-      <div className="font-[Bangers] text-4xl text-[#FFEB3B] opacity-30 
-                      drop-shadow-[0_0_10px_rgba(255,235,59,0.5)] animate-bounce">
-        ZAP!
-      </div>
-    </div>
-  );
+
   
   return (
-    <section id="collaborators" className="py-20 bg-gradient-to-b from-[#2E3192] to-[#FF3B3F] relative overflow-hidden">
+  <section id="collaborators" className="py-20 bg-transparent relative overflow-hidden">
 
 
-      {/* Background image and overlay like hero section */}
-      <div className="absolute inset-0 opacity-30" style={{ 
-        background: "url('https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?fit=crop&w=1920&h=1080&auto=format')",
-        backgroundSize: "cover", 
-        backgroundPosition: "center" 
-      }}></div>
+      
       
 
       
@@ -90,12 +70,7 @@ const CollaboratorsSection = () => {
         opacity: 0.1
       }}></div>
       
-      {/* Enhanced decorative elements */}
-      <ComicBurst className="top-10 left-10" color="#FFEB3B" />
-      <ComicBurst className="top-32 right-16" color="#FF3B3F" />
-      <ComicBurst className="bottom-20 left-1/4" color="#2E3192" />
-      <ComicZap className="top-1/4 right-1/3" />
-      <ComicZap className="bottom-1/3 left-1/4" />
+    
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div 
@@ -114,16 +89,9 @@ const CollaboratorsSection = () => {
               OUR COLLABORATORS
             </h2>
             {/* Multiple underline layers for comic effect */}
-            <div className="absolute -bottom-2 left-0 right-0 h-2 bg-[#FFEB3B] transform rotate-1"></div>
-            <div className="absolute -bottom-4 left-1/4 right-1/4 h-2 bg-[#FF3B3F] transform -rotate-1"></div>
-            <div className="absolute -bottom-6 left-1/3 right-1/3 h-1 bg-black transform rotate-2"></div>
+            
           </div>
-          
-          <p className="font-[Comic Neue] text-xl text-white text-opacity-95 max-w-3xl mx-auto mt-6 
-                       bg-black bg-opacity-20 p-4 rounded-2xl border-2 border-white border-opacity-30">
-            ComicFest wouldn't be possible without the support of these amazing partners and sponsors! 
-            <span className="font-[Bangers] text-[#FFEB3B] ml-2">POW!</span>
-          </p>
+        
         </motion.div>
         
         <motion.div 
@@ -210,10 +178,14 @@ const CollaboratorsSection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="relative mt-16 mb-16"
         >
+HEAD
           <SpeechBubble author="">
             "We're proud to support IEM ComicVerse and the incredible creativity of students! 
             <span className="font-[Bangers] text-[#FF3B3F] not-italic">AMAZING!</span>
           </SpeechBubble>
+=======
+         
+0655df8 (added major changes)
         </motion.div>
         
         <motion.div 

@@ -1,68 +1,52 @@
 import { motion } from "framer-motion";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { ArrowRight, ChevronLeft, ChevronRight, Zap, Star, Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight, Zap, Star, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "wouter";
 import useEmblaCarousel from "embla-carousel-react";
-import zearena from './ZEARENA.png';
-import conpedia from './CONPEDIA.png';
+
 // Sample events data (5 cards)
 const eventsData = [
   {
     id: 1,
-    name: "Conpedia",
-    date: "Day 1",
-    description: "Meet your favorite comic creators and learn about their creative process. Q&A session included with industry professionals.",
+    
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=400&h=300",
     color: "bg-[#FF3B3F]"
   },
   {
     id: 2,
-    name: "IEM's Got Latent",
-    date: "Day 1",
-    description: "Show off your best costume! Prizes for best original, best craftsmanship, and fan favorite categories.",
+    
     image:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=400&h=300",
     color: "bg-[#2E3192]"
   },
   {
     id: 3,
-    name: "ARTS",
-    date: "Day 2",
-    description: "Learn digital illustration techniques from professional artists. Tablets provided for hands-on experience.",
+   
     image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?fit=crop&w=400&h=300",
     color: "bg-[#FFEB3B] text-[#2E3192]"
   },
   {
     id: 4,
-    name: "ZE ARENA",
-    date: "Day 2",
-    description: "Back-to-back screening of classic superhero movies with director commentary and trivia games.",
-    image: zearena,
+   
+    image: "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?fit=crop&w=400&h=300",
     color: "bg-[#FF3B3F]"
   },
   {
     id: 5,
-    name: "CONPEDIA",
-    date: "Both Days",
-    description: "Buy, sell, and trade rare comics. Special appearances by comic shop owners and collectors worldwide.",
-    image: conpedia,
+ 
+    image: "https://images.unsplash.com/photo-1489599162715-27e6b82659d2?fit=crop&w=400&h=300",
     color: "bg-[#2E3192]"
   },
   {
-    id: 1,
-    name: "R Cade",
-    date: "Both Days",
-    description: "Buy, sell, and trade rare comics. Special appearances by comic shop owners and collectors worldwide.",
+    id: 6,
+  
     image: "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?fit=crop&w=400&h=300",
     color: "bg-[#2E3192]"
   },
   {
-    id: 4,
-    name: "Cosplay Carnival",
-    date: "Day 2",
-    description: "Back-to-back screening of classic superhero movies with director commentary and trivia games.",
+    id: 7,
+   
     image: "https://images.unsplash.com/photo-1489599162715-27e6b82659d2?fit=crop&w=400&h=300",
     color: "bg-[#FF3B3F]"
   }
@@ -87,7 +71,7 @@ const EventsSection = () => {
     if (!embla) return;
     
     const autoplay = setInterval(() => {
-      if (!hoveredId) { // Only auto-scroll if user is not hovering over any card
+      if (!hoveredId) {
         embla.scrollNext();
       }
     }, 4000);
@@ -104,7 +88,7 @@ const EventsSection = () => {
     };
     
     embla.on("select", onSelect);
-    onSelect(); // Call once to initialize
+    onSelect();
     
     return () => {
       embla.off("select", onSelect);
@@ -128,40 +112,18 @@ const EventsSection = () => {
     </div>
   );
 
-  // Comic book sound effects for cards
-  const ComicSoundEffect = ({ text, className }: { text: string, className: string }) => (
-    <motion.div 
-      initial={{ scale: 0, rotate: -45 }}
-      animate={{ scale: 1, rotate: 0 }}
-      className={`absolute ${className} z-20 pointer-events-none`}
-    >
-      <div className="bg-[#FFEB3B] text-[#2E3192] font-[Bangers] text-sm px-2 py-1 rounded-full border-2 border-[#2E3192] shadow-lg transform -rotate-12">
-        {text}
-      </div>
-    </motion.div>
-  );
-
   return (
-    <section id="events" className="py-20 bg-[#2E3192] relative overflow-hidden">
-      {/* Comic-style background pattern */}
-      <div className="absolute inset-0 opacity-40" style={{ 
-        background: "url('https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?fit=crop&w=1920&h=1080&auto=format')",
-        backgroundSize: "cover", 
-        backgroundPosition: "center" 
-      }}></div>
+    <section id="events" className="py-20 bg-transparent relative overflow-hidden">
+
+    
       
-      <div className="absolute inset-0 bg-gradient-to-r from-[#2E3192] to-transparent opacity-70"></div>
+      
       
       <div className="absolute inset-0" style={{ 
         backgroundImage: "url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFEB3B' fill-opacity='0.07'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')",
       }}></div>
       
-      {/* Decorative elements */}
-      <ComicBurst className="top-20 left-10" />
-      <ComicBurst className="bottom-20 right-10" />
-      <ActionText className="top-40 right-20" text="WOW!" />
-      <ActionText className="bottom-40 left-20" text="POW!" />
-      
+     
       <div className="container mx-auto px-4 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -177,20 +139,9 @@ const EventsSection = () => {
             </h2>
             <div className="absolute -top-2 -left-2 -right-2 -bottom-2 bg-[#FFEB3B] rounded-lg opacity-20 transform rotate-2 z-0"></div>
           </div>
-          <p className="font-[Comic Neue] text-lg text-white text-opacity-90 max-w-2xl mx-auto mt-6">
-            Check out our exciting lineup of events! From panels with your favorite comic creators to cosplay competitions, we've got something for everyone.
-          </p>
         </motion.div>
         
         <div className="relative max-w-[1200px] mx-auto">
-          {/* Comic-style halftone pattern behind carousel */}
-          <div className="absolute -inset-4 rounded-xl" style={{ 
-            backgroundImage: "radial-gradient(#FF3B3F 1px, transparent 1px)",
-            backgroundSize: "20px 20px",
-            opacity: 0.1,
-            zIndex: 0
-          }}></div>
-          
           {/* Carousel Navigation */}
           <div className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-12 z-10">
             <Button 
@@ -221,157 +172,62 @@ const EventsSection = () => {
             <div className="flex">
               {eventsData.map((event, index) => (
                 <div 
-                  key={event.id} 
-                  className="flex-[0_0_25%] min-w-0 pl-4 first:pl-0 lg:flex-[0_0_33.333%] md:flex-[0_0_50%] sm:flex-[0_0_66.666%] xs:flex-[0_0_100%]"
-
+                  key={`${event.id}-${index}`} 
+                  className="flex-[0_0_25%] min-w-0 py-8 pl-4 first:pl-0 lg:flex-[0_0_33.333%] md:flex-[0_0_50%] sm:flex-[0_0_66.666%] xs:flex-[0_0_100%]"
                   onMouseEnter={() => setHoveredId(event.id)}
                   onMouseLeave={() => setHoveredId(null)}
                 >
-                  <motion.div 
-  className="transition-all duration-500"
-  whileHover={{ 
-    y: -8,
-    transition: { duration: 0.3, ease: "easeOut" }
-  }}
+                  <Link href={`/event/${event.id}`}>
+                    <motion.div
+  className="transition-all duration-500 cursor-pointer mx-2 overflow-visible"
+  whileHover={{ y: -8, scale: 1.05, transition: { duration: 0.3, ease: "easeOut" } }}
+  whileTap={{ scale: 0.95 }}
 >
 
-                    <Card className="h-full bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col mx-2 relative border-4 border-[#2E3192] group hover:border-[#FF3B3F] transition-all duration-300">
-                      
-                      {/* Comic book speech bubble */}
-                      {hoveredId === event.id && (
-                        <ComicSoundEffect 
-                          text="ZOOM!" 
-                          className="top-2 right-2" 
-                        />
-                      )}
-                      
-                      {/* Animated background pattern */}
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300" 
-                           style={{
-                             backgroundImage: "repeating-linear-gradient(45deg, #FFEB3B 0px, #FFEB3B 10px, transparent 10px, transparent 20px)",
-                           }}></div>
-                      
-                      {/* Comic-style corner decorations */}
-                      <div className="absolute top-0 left-0 w-8 h-8 bg-[#FFEB3B] transform rotate-45 -translate-x-4 -translate-y-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <div className="absolute top-0 right-0 w-8 h-8 bg-[#FF3B3F] transform rotate-45 translate-x-4 -translate-y-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      
-                      <div className="relative overflow-hidden">
-                        <motion.img 
-                          src={event.image} 
-                          alt={event.name}
-                          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" 
-                          whileHover={{ scale: 1.1 }}
-                        />
+                      <div className="relative h-80 bg-white rounded-2xl overflow-hidden shadow-2xl border-4 border-[#2E3192] group hover:border-[#FF3B3F] transition-all duration-300">
                         
-                        {/* Comic book halftone overlay */}
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
-                             style={{
-                               backgroundImage: "radial-gradient(circle, #2E3192 1px, transparent 1px)",
-                               backgroundSize: "8px 8px"
-                             }}></div>
-                        
-                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-transparent to-black opacity-60"></div>
-                        
-                        {/* Animated badge */}
-                        <motion.div
-                          initial={{ scale: 1, rotate: 3 }}
-                          whileHover={{ scale: 1.1, rotate: -3 }}
-                          className="absolute top-4 right-4"
-                        >
-                          <Badge className={`${event.color} text-white border-2 border-white shadow-lg font-[Bangers] text-sm px-3 py-1`}>
-                            {event.date}
-                            <Star className="inline-block h-3 w-3 ml-1" />
-                          </Badge>
-                        </motion.div>
-                        
-                        {/* Sparkle effects */}
-                        <motion.div 
-                          animate={{ 
-                            scale: [1, 1.2, 1],
-                            opacity: [0.5, 1, 0.5]
-                          }}
-                          transition={{ 
-                            duration: 2,
-                            repeat: Infinity,
-                            delay: index * 0.3
-                          }}
-                          className="absolute top-6 left-6"
-                        >
-                          <Sparkles className="h-4 w-4 text-[#FFEB3B]" />
-                        </motion.div>
-                      </div>
-                      
-                      <CardContent className="p-6 flex-grow relative">
-                        {/* Comic book title styling */}
-                        <motion.h3 
-                          className="font-[Bangers] text-2xl text-[#2E3192] mb-3 relative"
-                          whileHover={{ scale: 1.05 }}
-                        >
-                          {event.name}
-                          <div className="absolute -bottom-1 left-0 w-full h-1 bg-[#FFEB3B] transform skew-x-[-12deg] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        </motion.h3>
-                        
-                        <p className="text-sm text-[#424242] line-clamp-3 font-[Comic Neue] mb-4">{event.description}</p>
-                        
-                        {/* Comic book dots decoration */}
-                        <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <div className="flex flex-col space-y-1">
-                            <div className="w-2 h-2 bg-[#FFEB3B] rounded-full"></div>
-                            <div className="w-2 h-2 bg-[#FF3B3F] rounded-full"></div>
-                            <div className="w-2 h-2 bg-[#2E3192] rounded-full"></div>
-                          </div>
+                        {/* Image */}
+                        <div className="relative h-full overflow-hidden">
+                          <motion.img 
+                            src={event.image} 
+                            alt={`Event ${event.id}`}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                          />
+                          
+                          {/* Comic book halftone overlay */}
+                          <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
+                               style={{
+                                 backgroundImage: "radial-gradient(circle, #2E3192 1px, transparent 1px)",
+                                 backgroundSize: "8px 8px"
+                               }}></div>
+                          
+                          {/* Gradient overlay for date visibility */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                          
+                         
+                          
+                          
+                          
+                          {/* Hover overlay */}
+                          <div className="absolute inset-0 bg-[#FF3B3F] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                         </div>
-                      </CardContent>
-                      
-                      <CardFooter className="border-t-4 border-[#2E3192] p-4 bg-gradient-to-r from-transparent to-[#2E3192] to-opacity-5 relative overflow-hidden">
-                        {/* Animated background effect */}
-                        <motion.div 
-                          className="absolute inset-0 bg-[#FFEB3B] opacity-0 group-hover:opacity-10"
-                          initial={{ x: "-100%" }}
-                          whileHover={{ x: "100%" }}
-                          transition={{ duration: 0.6 }}
-                        ></motion.div>
                         
-                        <Link href={`/event/${event.id}`}>
-                          <motion.div
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                          >
-                            <Button 
-                              variant="link" 
-                              className="text-[#FF3B3F] p-0 font-[Comic Neue] font-bold text-base hover:text-[#2E3192] transition-colors group/btn relative"
-                            >
-                              <span className="relative z-10">Event Details</span>
-                              <motion.div
-                                whileHover={{ x: 5 }}
-                                transition={{ duration: 0.2 }}
-                                className="inline-block"
-                              >
-                                <ArrowRight className="ml-1 h-4 w-4" />
-                              </motion.div>
-                              
-                              {/* Underline animation */}
-                              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#2E3192] group-hover/btn:w-full transition-all duration-300"></div>
-                            </Button>
-                          </motion.div>
-                        </Link>
-                      </CardFooter>
-                      
-                      {/* Comic book style border effect */}
-                      <div className="absolute inset-0 border-4 border-transparent group-hover:border-[#FFEB3B] rounded-2xl transition-all duration-300 pointer-events-none"
-                           style={{
-                             background: "linear-gradient(45deg, transparent 30%, rgba(255,235,59,0.1) 50%, transparent 70%)",
-                             backgroundSize: "200% 200%",
-                             animation: hoveredId === event.id ? "shimmer 2s ease-in-out infinite" : "none"
-                           }}></div>
-                    </Card>
-                  </motion.div>
+                        {/* Comic book style border effect */}
+                        <div className="absolute inset-0 border-4 border-transparent group-hover:border-[#FFEB3B] rounded-2xl transition-all duration-300 pointer-events-none"
+                             style={{
+                               background: "linear-gradient(45deg, transparent 30%, rgba(255,235,59,0.1) 50%, transparent 70%)",
+                               backgroundSize: "200% 200%",
+                               animation: hoveredId === event.id ? "shimmer 2s ease-in-out infinite" : "none"
+                             }}></div>
+                      </div>
+                    </motion.div>
+                  </Link>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Navigation Dots with comic styling */}
+          {/* Navigation Dots */}
           <div className="flex justify-center mt-8">
             {eventsData.map((_, index) => (
               <motion.div
@@ -394,34 +250,9 @@ const EventsSection = () => {
             ))}
           </div>
         </div>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 text-center"
-        >
-          <div className="relative inline-block">
-            <motion.div
-              whileHover={{ scale: 1.05, rotate: -1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button 
-                asChild 
-                className="px-8 py-4 h-auto bg-[#FF3B3F] text-white font-[Bangers] text-lg rounded-xl hover:bg-opacity-90 transition-all duration-300 relative z-10 border-4 border-[#2E3192] shadow-xl"
-              >
-                <a href="#allevents">
-                  View All Events
-                  <Zap className="ml-2 h-5 w-5" />
-                </a>
-              </Button>
-            </motion.div>
-            <div className="absolute inset-0 bg-[#FFEB3B] rounded-xl transform rotate-3 translate-x-1 translate-y-1 -z-10"></div>
-          </div>
-        </motion.div>
       </div>
       
+      {/* CSS for shimmer animation */}
      
     </section>
   );

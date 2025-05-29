@@ -1,28 +1,48 @@
-import { Switch, Route } from "wouter";
-import { queryClient } from "./lib/queryClient";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "@/components/ui/toaster";
-import NotFound from "@/pages/not-found";
-import Home from "@/pages/Home";
-import EventDetail from "@/pages/EventDetail";
+// src/pages/Home.tsx
 
-function Router() {
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import EventsSection from "@/components/EventsSection";
+import GuestsSection from "@/components/GuestsSection";
+import TeamSection from "@/components/TeamSection";
+import CollaboratorsSection from "@/components/CollaboratorsSection";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
+import logo1 from "@/web bg.png"; 
+import mobileBg from "@/mobile1.png";
+const Home = () => {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/event/:id" component={EventDetail} />
-      <Route component={NotFound} />
-    </Switch>
-  );
-}
+    <div className="relative">
+      {/* Fixed Background */}
+      <div
+        className="fixed inset-0 z-[-10] bg-cover bg-center"
+       style={{
+  backgroundImage: `url(${logo1})`,
+}}
 
-function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <Router />
-      <Toaster />
-    </QueryClientProvider>
-  );
-}
 
-export default App;
+      />
+      
+  {/* Mobile Background */}
+  <div
+    className="fixed inset-0 z-[-10] bg-cover bg-center block sm:hidden"
+    style={{
+      backgroundImage: `url(${mobileBg})`,
+    }}
+  />
+
+      {/* Foreground Content */}
+      <Navbar />
+      <HeroSection />
+      <EventsSection />
+      <CollaboratorsSection />
+      <GuestsSection />
+      <TeamSection />
+      
+      <ContactSection />
+      <Footer />
+    </div>
+  );
+};
+
+export default Home;
