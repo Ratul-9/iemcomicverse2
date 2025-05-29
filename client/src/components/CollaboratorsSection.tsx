@@ -210,13 +210,12 @@ const CollaboratorsSection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="relative mt-16 mb-16"
         >
-          <SpeechBubble author="Jane Smith, CEO of Comic Publishers International">
-            "We're proud to support College ComicFest and the incredible creativity of students! 
-            <span className="font-[Bangers] text-[#FF3B3F] not-italic">AMAZING!</span>"
+          <SpeechBubble author="">
+            "We're proud to support IEM ComicVerse and the incredible creativity of students! 
+            <span className="font-[Bangers] text-[#FF3B3F] not-italic">AMAZING!</span>
           </SpeechBubble>
         </motion.div>
         
-        {/* Enhanced CTA button with deep blue theme */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
