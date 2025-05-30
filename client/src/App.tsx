@@ -1,48 +1,42 @@
-// src/pages/Home.tsx
+import { useState } from 'react';
+import Home from './pages/Home';
+import VideoLoader from './components/VideoLoader';
 
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import EventsSection from "@/components/EventsSection";
-import GuestsSection from "@/components/GuestsSection";
-import TeamSection from "@/components/TeamSection";
-import CollaboratorsSection from "@/components/CollaboratorsSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
-import logo1 from "@/web bg.png"; 
-import mobileBg from "@/mobile1.png";
-const Home = () => {
+function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [showContent, setShowContent] = useState(false);
+
+  const handleVideoEnd = () => {
+    setIsLoading(false);
+    // Small delay for smooth transition
+    setTimeout(() => {
+      setShowContent(true);
+    }, 500);
+  };
+
+  const handleSkipIntro = () => {
+    setIsLoading(false);
+    setTimeout(() => {
+      setShowContent(true);
+    }, 300);
+  };
+
   return (
-    <div className="relative">
-      {/* Fixed Background */}
-      <div
-        className="fixed inset-0 z-[-10] bg-cover bg-center"
-       style={{
-  backgroundImage: `url(${logo1})`,
-}}
-
-
-      />
+    <div className="App">
+      {isLoading && (
+        <VideoLoader 
+          onVideoEnd={handleVideoEnd}
+          onSkip={handleSkipIntro}
+        />
+      )}
       
-  {/* Mobile Background */}
-  <div
-    className="fixed inset-0 z-[-10] bg-cover bg-center block sm:hidden"
-    style={{
-      backgroundImage: `url(${mobileBg})`,
-    }}
-  />
-
-      {/* Foreground Content */}
-      <Navbar />
-      <HeroSection />
-      <EventsSection />
-      <CollaboratorsSection />
-      <GuestsSection />
-      <TeamSection />
-      
-      <ContactSection />
-      <Footer />
+      {showContent && (
+        <div className={`transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
+          <Home />
+        </div>
+      )}
     </div>
   );
-};
+}
 
-export default Home;
+export default App;

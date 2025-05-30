@@ -4,6 +4,9 @@ import { ChevronDown, Star, Zap, Heart, Sparkles } from "lucide-react";
 import { useState, useEffect } from "react";
 import logo1 from './logo1.jpg';
 import logo2 from './logo2.jpg';
+import bg1 from './bg1.png';
+import logo3 from './logo3.jpg';
+import cmcLogo from './cmc.png';
 
 const HeroSection = () => {
   const { scrollY } = useScroll();
@@ -28,9 +31,6 @@ const HeroSection = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Floating comic elements data
-
-
   // Comic burst animation variants
   const burstVariants = {
     hidden: { scale: 0, rotate: 0, opacity: 0 },
@@ -42,32 +42,23 @@ const HeroSection = () => {
     }
   };
 
-  // Text reveal animation
-  const letterVariants = {
-    hidden: { y: 50, opacity: 0, rotateX: -90 },
-    visible: (i: number) => ({
-      y: 0,
-      opacity: 1,
-      rotateX: 0,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.6,
-        type: "spring",
-        stiffness: 100
-      }
-    })
-  };
-
-  const comicWords = ["IEM", "COMIC", "VERSE"];
-  const wordColors = ["text-white", "text-[#FF3B3F]", "text-[#FFEB3B]"];
-
   return (
-   <section 
-  id="home" 
-  className="relative min-h-screen flex items-center justify-center bg-transparent overflow-hidden pt-16"
->
-
-      
+    <section 
+      id="home" 
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
+      style={{
+        backgroundImage: `url(${bg1})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'scroll'
+      }}
+    >
+      {/* Background Overlay for better text readability 
+      <motion.div 
+        className="absolute inset-0 bg-black/40"
+        style={{ y: backgroundY }}
+      />*/}
       
       {/* Animated Grid Pattern */}
       <div className="absolute inset-0 opacity-10">
@@ -92,10 +83,6 @@ const HeroSection = () => {
         />
       </div>
 
-     
-
-      
-
       {/* Interactive Light Effect */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
@@ -104,7 +91,7 @@ const HeroSection = () => {
         }}
       />
       
-      <div className="container mx-auto px-4 z-10">
+      <div className="container mx-auto px-4 z-10 relative">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div 
             style={{ y: textY }}
@@ -123,43 +110,65 @@ const HeroSection = () => {
                   animate={{ x: ["-100%", "100%"] }}
                   transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
                 />
-                <span className="relative z-10">July 19-20, 2025</span>
+                <span className="relative z-10">July 19 to 20, 2025</span>
               </div>
             </motion.div>
 
-            {/* Enhanced Title with Letter Animation */}
-            <div 
-              className="font-[Bangers] text-5xl md:text-7xl mb-6 cursor-pointer"
+            {/* CMC Logo Image instead of Text */}
+            {/* CMC Logo Image - Adjustable positioning */}
+            <motion.div 
+              className="mb-6 cursor-pointer flex justify-start"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
+              initial={{ opacity: 0, scale: 0.8, y: 50 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, type: "spring", stiffness: 100 }}
+              whileHover={{ 
+                scale: 1.05,
+                rotate: [0, 2, -2, 0],
+                transition: { duration: 0.4, type: "spring", stiffness: 300 }
+              }}
             >
-              {comicWords.map((word, wordIndex) => (
-                <div key={wordIndex} className="block">
-                  {word.split("").map((letter, letterIndex) => (
-                    <motion.span
-                      key={letterIndex}
-                      className={`inline-block ${wordColors[wordIndex]} relative`}
-                      custom={wordIndex * 3 + letterIndex}
-                      variants={letterVariants}
-                      initial="hidden"
-                      animate="visible"
-                      whileHover={{ 
-                        scale: 1.2, 
-                        rotate: [-5, 5, -5, 0],
-                        y: -10,
-                        textShadow: "0 0 20px currentColor"
-                      }}
-                      style={{
-                        filter: isHovered ? "drop-shadow(3px 3px 0 rgba(0,0,0,0.5))" : "drop-shadow(2px 2px 0 rgba(0,0,0,0.3))",
-                        transition: "filter 0.3s ease"
-                      }}
-                    >
-                      {letter}
-                    </motion.span>
-                  ))}
-                </div>
-              ))}
-            </div>
+              <div className="relative -ml-10 md:-ml-12 flex items-center justify-center">
+                <motion.img 
+                  src={cmcLogo} 
+                  alt="CMC Logo" 
+                  className="h-32 md:h-40 w-auto object-contain"
+                  style={{
+                    filter: isHovered 
+                      ? "drop-shadow(0 0 30px rgba(255,235,59,0.6)) drop-shadow(3px 3px 0 rgba(0,0,0,0.3))" 
+                      : "drop-shadow(0 0 15px rgba(255,235,59,0.3)) drop-shadow(2px 2px 0 rgba(0,0,0,0.2))",
+                    transition: "filter 0.3s ease"
+                  }}
+                  animate={{
+                    filter: [
+                      "drop-shadow(0 0 15px rgba(255,235,59,0.3))",
+                      "drop-shadow(0 0 25px rgba(255,235,59,0.5))",
+                      "drop-shadow(0 0 15px rgba(255,235,59,0.3))"
+                    ]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+                
+                {/* Animated glow effect around the logo */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-[#FFEB3B]/20 via-[#FF3B3F]/20 to-[#00BCD4]/20 rounded-lg blur-lg -z-10"
+                  animate={{
+                    opacity: [0.3, 0.6, 0.3],
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+              </div>
+            </motion.div>
 
             {/* Enhanced Description */}
             <motion.p 
@@ -212,7 +221,7 @@ const HeroSection = () => {
                     />
                     <span className="relative z-10 flex items-center gap-2">
                       <Star size={20} />
-                      Check Out Event Brochure!
+                      Register Now
                     </span>
                   </a>
                 </Button>
@@ -220,7 +229,7 @@ const HeroSection = () => {
             </motion.div>
           </motion.div>
           
-          {/* Enhanced Three-Image Collage - Positioned Lower */}
+          {/* Enhanced Three-Image Collage with Rounded Borders - Positioned Lower */}
           <motion.div 
             className="relative h-[500px] md:h-[600px] w-full group mt-16"
             initial={{ opacity: 0 }}
@@ -230,7 +239,7 @@ const HeroSection = () => {
             {/* Main Center Image - Positioned Lower */}
             <motion.div
               className="absolute top-16 left-1/2 transform -translate-x-1/2 z-30"
-              initial={{ scale: 0, rotate: -20, y: 150, rotateY: 45 }}
+              initial={{ scale: 0, rotate: -20, y: 1, rotateY: 45 }}
               animate={{ scale: 1, rotate: 0, y: 0, rotateY: 0 }}
               transition={{ 
                 duration: 1, 
@@ -249,16 +258,8 @@ const HeroSection = () => {
               }}
             >
               <div className="relative">
-                {/* Enhanced Glow Effect */}
-                <div className="absolute -inset-6 bg-gradient-to-r from-[#FF3B3F] via-[#FFEB3B] to-[#00BCD4] rounded-3xl opacity-70 blur-2xl animate-pulse" />
-                <div className="absolute -inset-4 bg-gradient-to-br from-[#FF3B3F] to-[#FFEB3B] rounded-2xl opacity-60 blur-lg group-hover:opacity-90 transition-opacity duration-300" />
-                
                 <div 
-                  className="relative bg-white p-3 w-72 h-80 overflow-hidden shadow-2xl border-4 border-white"
-                  style={{ 
-                    clipPath: "polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%)",
-                    transform: "rotate(-3deg)"
-                  }}
+                  className="relative bg-white p-4 w-72 h-80 overflow-hidden shadow-2xl rounded-2xl border-4 border-white transform -rotate-3"
                 >
                   <img 
                     src={logo1} 
@@ -266,34 +267,23 @@ const HeroSection = () => {
                     className="w-full h-full object-cover rounded-xl"
                   />
                   {/* Enhanced Comic Halftone Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#FF3B3F]/15 to-[#FFEB3B]/25 mix-blend-multiply" />
-                  <div className="absolute inset-0 bg-gradient-to-tl from-[#00BCD4]/10 to-transparent mix-blend-screen" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#FF3B3F]/15 to-[#FFEB3B]/25 mix-blend-multiply rounded-xl" />
+                  <div className="absolute inset-0 bg-gradient-to-tl from-[#00BCD4]/10 to-transparent mix-blend-screen rounded-xl" />
                   
-                  {/* Comic Book Dots Pattern */}
-                  <div 
-                    className="absolute inset-0 opacity-20"
-                    style={{
-                      backgroundImage: "radial-gradient(circle, rgba(255,59,63,0.3) 1px, transparent 1px)",
-                      backgroundSize: "12px 12px",
-                    }}
-                  />
-                  
+                 
                   {/* Inner Border Effect */}
                   <div className="absolute inset-2 border-2 border-white/50 rounded-lg" />
                 </div>
                 
-                
-               
-                  <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-[#FF3B3F] rounded-full animate-bounce" />
-                
+                <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-[#FF3B3F] rounded-full animate-bounce" />
               </div>
             </motion.div>
 
             {/* Left Image - Positioned Lower */}
             <motion.div
               className="absolute top-28 -left-8 z-20"
-              initial={{ scale: 0, rotate: 30, x: -150, rotateY: -45 }}
-              animate={{ scale: 1, rotate: 0, x: 0, rotateY: 0 }}
+              initial={{ scale: 0, rotate: 30, x: 300, rotateY: -45 }}
+              animate={{ scale: 1, rotate: 0, x: 300, rotateY: 0 }}
               transition={{ 
                 duration: 0.9, 
                 delay: 0.4, 
@@ -312,16 +302,8 @@ const HeroSection = () => {
               }}
             >
               <div className="relative">
-                {/* Enhanced Glow Effect */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#00BCD4] via-[#9C27B0] to-[#E91E63] rounded-2xl opacity-60 blur-xl animate-pulse" />
-                <div className="absolute -inset-3 bg-gradient-to-br from-[#00BCD4] to-[#9C27B0] rounded-xl opacity-50 blur-md" />
-                
                 <div 
-                  className="relative bg-white p-3 w-52 h-64 overflow-hidden shadow-2xl border-3 border-white"
-                  style={{ 
-                    clipPath: "polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%)",
-                    transform: "rotate(12deg)"
-                  }}
+                  className="relative bg-white p-3 w-52 h-64 overflow-hidden shadow-2xl rounded-xl border-3 border-white transform rotate-12"
                 >
                   <img 
                     src={logo2}
@@ -329,12 +311,12 @@ const HeroSection = () => {
                     className="w-full h-full object-cover rounded-lg"
                   />
                   {/* Enhanced Comic Effects */}
-                  <div className="absolute inset-0 bg-gradient-to-tl from-[#00BCD4]/20 to-transparent mix-blend-multiply" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#9C27B0]/15 mix-blend-overlay" />
+                  <div className="absolute inset-0 bg-gradient-to-tl from-[#00BCD4]/20 to-transparent mix-blend-multiply rounded-lg" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#9C27B0]/15 mix-blend-overlay rounded-lg" />
                   
                   {/* Halftone Pattern */}
                   <div 
-                    className="absolute inset-0 opacity-15"
+                    className="absolute inset-0 opacity-15 rounded-lg"
                     style={{
                       backgroundImage: "radial-gradient(circle, rgba(0,188,212,0.4) 1px, transparent 1px)",
                       backgroundSize: "10px 10px",
@@ -343,10 +325,6 @@ const HeroSection = () => {
                   
                   <div className="absolute inset-2 border-2 border-white/40 rounded-md" />
                 </div>
-                
-               
-                
-                
               </div>
             </motion.div>
 
@@ -373,29 +351,21 @@ const HeroSection = () => {
               }}
             >
               <div className="relative">
-                {/* Enhanced Glow Effect */}
-                <div className="absolute -inset-4 bg-gradient-to-l from-[#E91E63] via-[#FF9800] to-[#FFEB3B] rounded-2xl opacity-60 blur-xl animate-pulse" />
-                <div className="absolute -inset-3 bg-gradient-to-br from-[#E91E63] to-[#FF9800] rounded-xl opacity-50 blur-md" />
-                
                 <div 
-                  className="relative bg-white p-3 w-52 h-64 overflow-hidden shadow-2xl border-3 border-white"
-                  style={{ 
-                    clipPath: "polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%)",
-                    transform: "rotate(-8deg)"
-                  }}
+                  className="relative bg-white p-3 w-52 h-64 overflow-hidden shadow-2xl rounded-xl border-3 border-white transform -rotate-8"
                 >
                   <img 
-                    src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=600" 
+                    src={logo3} 
                     alt="Artist Alley" 
                     className="w-full h-full object-cover rounded-lg"
                   />
                   {/* Enhanced Comic Effects */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#E91E63]/20 to-transparent mix-blend-multiply" />
-                  <div className="absolute inset-0 bg-gradient-to-bl from-transparent to-[#FF9800]/15 mix-blend-overlay" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#E91E63]/20 to-transparent mix-blend-multiply rounded-lg" />
+                  <div className="absolute inset-0 bg-gradient-to-bl from-transparent to-[#FF9800]/15 mix-blend-overlay rounded-lg" />
                   
                   {/* Halftone Pattern */}
                   <div 
-                    className="absolute inset-0 opacity-15"
+                    className="absolute inset-0 opacity-15 rounded-lg"
                     style={{
                       backgroundImage: "radial-gradient(circle, rgba(233,30,99,0.4) 1px, transparent 1px)",
                       backgroundSize: "8px 8px",
@@ -404,13 +374,8 @@ const HeroSection = () => {
                   
                   <div className="absolute inset-2 border-2 border-white/40 rounded-md" />
                 </div>
-                
-              
-                  
               </div>
             </motion.div>
-
-            {/* ... (remaining decorative elements remain the same) */}
           </motion.div>
         </div>
         

@@ -54,3 +54,9 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'HighRise';
+  src: url('./assets/HighriseFont-Bold-Demo.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

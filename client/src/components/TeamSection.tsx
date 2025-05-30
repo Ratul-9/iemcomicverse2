@@ -188,7 +188,8 @@ const TeamSection = () => {
           </div>
         </motion.div>
 
-        {/* Join Team Card 
+        {/* 
+        Join Team Card 
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -241,7 +242,8 @@ const TeamSection = () => {
                              group-hover:rotate-2 -z-10"></div>
             </div>
           </div>
-        </motion.div>*/}
+        </motion.div>
+        */}
       </div>
     </section>
   );

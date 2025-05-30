@@ -21,12 +21,24 @@ C:.
 |       |   App.tsx
 |       |   index.css
 |       |   main.tsx
+|       |   mobile1.png
+|       |   web bg.png
 |       |   
 |       +---assets
+|       |       Akira Expanded Demo.otf
+|       |       ComicVerse Brochure.pdf
 |       |       logo.png
+|       |       Sequel100Black-95.ttf
 |       |       
 |       +---components
+|       |   |   bg1.png
+|       |   |   collaborator1.jpg
+|       |   |   collaborator2.jpg
+|       |   |   collaborator3.jpg
+|       |   |   collaborator4.jpg
+|       |   |   collaborator5.jpg
 |       |   |   CollaboratorsSection.tsx
+|       |   |   CONPEDIA.png
 |       |   |   ContactSection.tsx
 |       |   |   EventsSection.tsx
 |       |   |   Footer.tsx
@@ -35,8 +47,11 @@ C:.
 |       |   |   Loader.tsx
 |       |   |   logo1.jpg
 |       |   |   logo2.jpg
+|       |   |   logo3.jpg
 |       |   |   Navbar.tsx
 |       |   |   TeamSection.tsx
+|       |   |   VideoLoader.tsx
+|       |   |   ZEARENA.png
 |       |   |   
 |       |   \---ui
 |       |           accordion.tsx
@@ -229,59 +244,54 @@ C:.
 |   |       yaml.ps1
 |   |       
 |   +---.vite
-|   |   \---deps
-|   |           @radix-ui_react-label.js
-|   |           @radix-ui_react-label.js.map
-|   |           @radix-ui_react-select.js
-|   |           @radix-ui_react-select.js.map
-|   |           @radix-ui_react-slot.js
-|   |           @radix-ui_react-slot.js.map
-|   |           @radix-ui_react-toast.js
-|   |           @radix-ui_react-toast.js.map
-|   |           @tanstack_react-query.js
-|   |           @tanstack_react-query.js.map
-|   |           chunk-3TFVT2CW.js
-|   |           chunk-3TFVT2CW.js.map
-|   |           chunk-4MBMRILA.js
-|   |           chunk-4MBMRILA.js.map
-|   |           chunk-RDHMCQ3E.js
-|   |           chunk-RDHMCQ3E.js.map
-|   |           chunk-S77I6LSE.js
-|   |           chunk-S77I6LSE.js.map
-|   |           chunk-TQG5UYZM.js
-|   |           chunk-TQG5UYZM.js.map
-|   |           chunk-WERSD76P.js
-|   |           chunk-WERSD76P.js.map
-|   |           chunk-YC77YPB4.js
-|   |           chunk-YC77YPB4.js.map
-|   |           class-variance-authority.js
-|   |           class-variance-authority.js.map
-|   |           clsx.js
-|   |           clsx.js.map
-|   |           embla-carousel-react.js
-|   |           embla-carousel-react.js.map
-|   |           framer-motion.js
-|   |           framer-motion.js.map
-|   |           lucide-react.js
-|   |           lucide-react.js.map
+|   |   +---deps
+|   |   |       @radix-ui_react-label.js
+|   |   |       @radix-ui_react-label.js.map
+|   |   |       @radix-ui_react-select.js
+|   |   |       @radix-ui_react-select.js.map
+|   |   |       @radix-ui_react-slot.js
+|   |   |       @radix-ui_react-slot.js.map
+|   |   |       chunk-6PXSGDAH.js
+|   |   |       chunk-6PXSGDAH.js.map
+|   |   |       chunk-DRWLMN53.js
+|   |   |       chunk-DRWLMN53.js.map
+|   |   |       chunk-G3PMV62Z.js
+|   |   |       chunk-G3PMV62Z.js.map
+|   |   |       chunk-OR7UTWKI.js
+|   |   |       chunk-OR7UTWKI.js.map
+|   |   |       chunk-PJEEZAML.js
+|   |   |       chunk-PJEEZAML.js.map
+|   |   |       chunk-ZJS6KCFM.js
+|   |   |       chunk-ZJS6KCFM.js.map
+|   |   |       class-variance-authority.js
+|   |   |       class-variance-authority.js.map
+|   |   |       clsx.js
+|   |   |       clsx.js.map
+|   |   |       embla-carousel-react.js
+|   |   |       embla-carousel-react.js.map
+|   |   |       framer-motion.js
+|   |   |       framer-motion.js.map
+|   |   |       lucide-react.js
+|   |   |       lucide-react.js.map
+|   |   |       package.json
+|   |   |       react-dom.js
+|   |   |       react-dom.js.map
+|   |   |       react-dom_client.js
+|   |   |       react-dom_client.js.map
+|   |   |       react.js
+|   |   |       react.js.map
+|   |   |       react_jsx-dev-runtime.js
+|   |   |       react_jsx-dev-runtime.js.map
+|   |   |       react_jsx-runtime.js
+|   |   |       react_jsx-runtime.js.map
+|   |   |       tailwind-merge.js
+|   |   |       tailwind-merge.js.map
+|   |   |       wouter.js
+|   |   |       wouter.js.map
+|   |   |       _metadata.json
+|   |   |       
+|   |   \---deps_temp_ff2cea43
 |   |           package.json
-|   |           react-dom.js
-|   |           react-dom.js.map
-|   |           react-dom_client.js
-|   |           react-dom_client.js.map
-|   |           react-icons_fa.js
-|   |           react-icons_fa.js.map
-|   |           react.js
-|   |           react.js.map
-|   |           react_jsx-dev-runtime.js
-|   |           react_jsx-dev-runtime.js.map
-|   |           react_jsx-runtime.js
-|   |           react_jsx-runtime.js.map
-|   |           tailwind-merge.js
-|   |           tailwind-merge.js.map
-|   |           wouter.js
-|   |           wouter.js.map
-|   |           _metadata.json
 |   |           
 |   +---@alloc
 |   |   \---quick-lru
@@ -6466,6 +6476,7 @@ C:.
 |   |   |   |       cors.js
 |   |   |   |       createimagebitmap.js
 |   |   |   |       credential-management.js
+|   |   |   |       cross-document-view-transitions.js
 |   |   |   |       cryptography.js
 |   |   |   |       css-all.js
 |   |   |   |       css-anchor-positioning.js

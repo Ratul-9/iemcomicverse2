@@ -7,19 +7,6 @@ import collaborator2 from './collaborator2.jpg';
 import collaborator3 from './collaborator3.jpg';
 import collaborator4 from './collaborator4.jpg';
 import collaborator5 from './collaborator5.jpg';
-import fontUrl from '../assets/Sequel1000Black-95.ttf?url';
-
-
-<style>
-        {`
-          @font-face {
-            font-family: 'Sequel1000Black';
-            src: url(${fontUrl}) format('truetype');
-            font-weight: normal;
-            font-style: normal;
-          }
-        `}
-      </style>
 
 const CollaboratorsSection = () => {
   const container = {
@@ -37,43 +24,16 @@ const CollaboratorsSection = () => {
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
   };
   
-  // Smaller comic style speech bubble with enhanced design
-  const SpeechBubble = ({ children, author }: { children: React.ReactNode, author: string }) => (
-    <div className="relative max-w-2xl mx-auto">
-      <div className="relative bg-white rounded-2xl p-6 shadow-xl border-3 border-black transform rotate-1 hover:rotate-0 transition-transform duration-300">
-        {/* Comic book style background layers */}
-        <div className="absolute -top-1 -left-1 -right-1 -bottom-1 bg-[#FF3B3F] rounded-2xl -z-10 transform rotate-2"></div>
-        <div className="absolute -top-2 -left-2 -right-2 -bottom-2 bg-[#FFEB3B] rounded-2xl -z-20 transform -rotate-1"></div>
-        
-        {/* Content */}
-        <div className="font-[Comic Neue] text-lg italic text-[#212121] mb-4 relative z-10 leading-relaxed">
-          {children}
-        </div>
-        <p className="font-[Bangers] text-lg text-[#2E3192] transform -rotate-1">- {author}</p>
-        
-        {/* Enhanced speech bubble tail */}
-        <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
-          <svg width="35" height="35" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M25 0C25 25 0 25 0 50C25 37.5 50 37.5 50 25C37.5 12.5 25 0 25 0Z" fill="white"/>
-            <path d="M25 0C25 25 0 25 0 50C25 37.5 50 37.5 50 25C37.5 12.5 25 0 25 0Z" stroke="black" strokeWidth="3"/>
-          </svg>
-        </div>
-      </div>
-    </div>
-  );
-  
-
-  
-
+  const collaborators = [
+    { name: "Kolkata Anime Club", logo: collaborator1 },
+    { name: "IEM Literary Society", logo: collaborator2 },
+    { name: "Otaku Guild", logo: collaborator3 },
+    { name: "Lions Club Of Kolkata IEM", logo: collaborator4 },
+    { name: "Rotary Club of Salt Lake Silicon Valley", logo: collaborator5 }
+  ];
   
   return (
-  <section id="collaborators" className="py-20 bg-transparent relative overflow-hidden">
-
-
-      
-      
-
-      
+    <section id="collaborators" className="py-20 bg-transparent relative overflow-hidden">
       {/* Enhanced comic halftone pattern */}
       <div className="absolute inset-0" style={{ 
         backgroundImage: `radial-gradient(circle at 25% 25%, #FFEB3B 2px, transparent 2px),
@@ -83,117 +43,80 @@ const CollaboratorsSection = () => {
         opacity: 0.1
       }}></div>
       
-    
-      
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          {/* Enhanced title with comic effects */}
-          <div className="relative inline-block mb-8">
-        <>
-  
-
-  <h2
-        className="text-6xl text-white mb-4 relative z-10 transform -rotate-1
-                   drop-shadow-[4px_4px_0px_#000000]
-                   hover:drop-shadow-[6px_6px_0px_#000000]
-                   transition-all duration-300"
-        style={{ fontFamily: 'Sequel1000Black' }}
-      >
-        OUR COLLABORATORS
-      </h2>
-</>
-
-            {/* Multiple underline layers for comic effect */}
-            
-          </div>
-        
-        </motion.div>
-        
-        <motion.div 
+        <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="max-w-6xl mx-auto mb-16"
+          className="max-w-7xl mx-auto"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 
-                          items-center justify-items-center
-                          md:[&>*:nth-child(4)]:col-start-1 md:[&>*:nth-child(4)]:col-end-2
-                          md:[&>*:nth-child(5)]:col-start-3 md:[&>*:nth-child(5)]:col-end-4
-                          lg:[&>*:nth-child(4)]:col-start-auto lg:[&>*:nth-child(4)]:col-end-auto
-                          lg:[&>*:nth-child(5)]:col-start-auto lg:[&>*:nth-child(5)]:col-end-auto">
-          {/* Static 5 collaborator cards with image placeholders - Made bigger */}
-          {[
-            { name: "Kolkata Anime Club", logo: collaborator1 },
-            { name: "IEM Literary Society", logo: collaborator2 },
-            { name: "Otaku Guild", logo: collaborator3 },
-            { name: "Lions Club Of Kolkata IEM", logo: collaborator4 },
-            { name: "Rotary Club of Salt Lake Silicon Valley", logo: collaborator5 }
-          ].map((collaborator, index) => (
-            <motion.div 
-              key={index} 
-              variants={item}
-              className="w-full max-w-sm"
+          <div className="bg-purple-950 bg-opacity-60 rounded-3xl p-8 md:p-12 backdrop-blur-sm relative overflow-hidden">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
             >
-              {/* Enhanced comic-style card with modern hover effects - Made bigger */}
-              <div className="relative group cursor-pointer">
-                {/* Main card - Increased height and padding */}
-                <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 h-64 border-4 border-black
-                               transform transition-all duration-300 ease-out
-                               hover:scale-105 hover:-translate-y-2
-                               shadow-[8px_8px_0px_0px_#000000]
-                               hover:shadow-[12px_12px_0px_0px_#000000,_16px_16px_0px_0px_#FF3B3F,_20px_20px_0px_0px_#FFEB3B]
-                               relative z-10">
-                  
-                  {/* Content container */}
-                  <div className="flex flex-col items-center justify-center h-full text-center">
-                    {/* Logo container - Made bigger */}
-                    <div className="mb-6 transition-transform duration-300 group-hover:scale-110">
-                      <img 
-                        src={collaborator.logo} 
-                        alt={collaborator.name} 
-                        className="max-w-full max-h-20 object-contain filter drop-shadow-md
-                                   group-hover:drop-shadow-lg transition-all duration-300" 
-                      />
+              <h2 className="text-6xl md:text-7xl lg:text-8xl text-white mb-4 relative z-10 
+                           drop-shadow-[4px_4px_0px_#000000] font-black uppercase tracking-wider">
+                OUR COLLABORATORS
+              </h2>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 
+                          justify-items-center">
+              {collaborators.map((collaborator, index) => (
+                <motion.div 
+                  key={index} 
+                  variants={item}
+                  className="w-full max-w-sm"
+                >
+                  <div className="relative group cursor-pointer h-full">
+                    <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl border-4 border-black p-6
+                                   transform transition-all duration-300 ease-out
+                                   hover:scale-105 hover:-translate-y-3
+                                   shadow-[6px_6px_0px_0px_#000000]
+                                   hover:shadow-[10px_10px_0px_0px_#000000]
+                                   flex flex-col h-full"
+                                   style={{ minHeight: '280px' }}>
+                      
+                      {/* Logo container */}
+                      <div className="flex flex-col items-center justify-center h-full text-center">
+                        <div className="mb-6 transition-transform duration-300 group-hover:scale-110">
+                          <img 
+                            src={collaborator.logo} 
+                            alt={collaborator.name} 
+                            className="max-w-full max-h-20 object-contain filter drop-shadow-md
+                                       group-hover:drop-shadow-lg transition-all duration-300" 
+                          />
+                        </div>
+                        
+                        <h3 className="font-black text-xl text-[#FF3B3F] text-center
+                                       group-hover:text-[#2E3192] transition-colors uppercase">
+                          {collaborator.name}
+                        </h3>
+                      </div>
+                      
+                      {/* Comic corner decoration */}
+                      <div className="absolute top-3 right-3 w-8 h-8 bg-[#FFEB3B] 
+                                      border-2 border-black rounded-full transform rotate-12
+                                      transition-transform duration-300 group-hover:rotate-45 group-hover:scale-125">
+                        <div className="absolute inset-1 bg-[#FF3B3F] rounded-full"></div>
+                      </div>
                     </div>
                     
-                    {/* Name - Larger text */}
-                    <h3 className="font-[Bangers] text-xl text-[#2E3192] transform group-hover:-rotate-1 
-                                   transition-transform duration-300">
-                      {collaborator.name}
-                    </h3>
+                    {/* Background decorative layer */}
+                    <div className="absolute inset-0 bg-purple-800 bg-opacity-60 rounded-2xl
+                                   transform rotate-1 transition-transform duration-300
+                                   group-hover:rotate-2 -z-10"></div>
                   </div>
-                  
-                  {/* Comic corner decoration */}
-                  <div className="absolute top-3 right-3 w-8 h-8 bg-[#FFEB3B] 
-                                  border-2 border-black rounded-full transform rotate-12
-                                  transition-transform duration-300 group-hover:rotate-45 group-hover:scale-125">
-                    <div className="absolute inset-1 bg-[#FF3B3F] rounded-full"></div>
-                  </div>
-                </div>
-                
-                {/* Background decorative layers with deep blue gradient */}
-                <div className="absolute inset-0 bg-[#FF3B3F] rounded-3xl border-4 border-black
-                               transform rotate-2 transition-transform duration-300
-                               group-hover:rotate-3 -z-10"></div>
-                <div className="absolute inset-0 bg-[#FFEB3B] rounded-3xl border-4 border-black
-                               transform -rotate-1 transition-transform duration-300
-                               group-hover:-rotate-2 -z-20"></div>
-              </div>
-            </motion.div>
-          ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
-        
-     
-        
-       
       </div>
     </section>
   );

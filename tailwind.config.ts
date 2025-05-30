@@ -84,20 +84,12 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-    },
-  },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
-} satisfies Config;
-const config: Config = {
-  content: [
-    "./client/src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {
       fontFamily: {
-        akira: ['AkiraExpanded', 'sans-serif'],
+        akira: ['AkiraExpanded'],
+        highrise: ['HighRise'],
+        // ... other fonts
       },
     },
   },
-  plugins: [],
-};
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+}
