@@ -7,6 +7,19 @@ import collaborator2 from './collaborator2.jpg';
 import collaborator3 from './collaborator3.jpg';
 import collaborator4 from './collaborator4.jpg';
 import collaborator5 from './collaborator5.jpg';
+import fontUrl from '../assets/Sequel1000Black-95.ttf?url';
+
+
+<style>
+        {`
+          @font-face {
+            font-family: 'Sequel1000Black';
+            src: url(${fontUrl}) format('truetype');
+            font-weight: normal;
+            font-style: normal;
+          }
+        `}
+      </style>
 
 const CollaboratorsSection = () => {
   const container = {
@@ -82,12 +95,20 @@ const CollaboratorsSection = () => {
         >
           {/* Enhanced title with comic effects */}
           <div className="relative inline-block mb-8">
-            <h2 className="font-[Bangers] text-6xl text-white mb-4 relative z-10 transform -rotate-1
-                           drop-shadow-[4px_4px_0px_#000000] 
-                           hover:drop-shadow-[6px_6px_0px_#000000] 
-                           transition-all duration-300">
-              OUR COLLABORATORS
-            </h2>
+        <>
+  
+
+  <h2
+        className="text-6xl text-white mb-4 relative z-10 transform -rotate-1
+                   drop-shadow-[4px_4px_0px_#000000]
+                   hover:drop-shadow-[6px_6px_0px_#000000]
+                   transition-all duration-300"
+        style={{ fontFamily: 'Sequel1000Black' }}
+      >
+        OUR COLLABORATORS
+      </h2>
+</>
+
             {/* Multiple underline layers for comic effect */}
             
           </div>
@@ -170,54 +191,9 @@ const CollaboratorsSection = () => {
           </div>
         </motion.div>
         
-        {/* Enhanced speech bubble - Made smaller */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="relative mt-16 mb-16"
-        >
-HEAD
-          <SpeechBubble author="">
-            "We're proud to support IEM ComicVerse and the incredible creativity of students! 
-            <span className="font-[Bangers] text-[#FF3B3F] not-italic">AMAZING!</span>
-          </SpeechBubble>
-=======
-         
-0655df8 (added major changes)
-        </motion.div>
+     
         
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-12 text-center"
-        >
-          <div className="relative inline-block group">
-            <Button 
-              asChild 
-              className="px-10 py-6 h-auto bg-white text-[#2E3192] border-4 border-black
-                         font-[Bangers] text-xl rounded-2xl
-                         hover:bg-[#FFEB3B] hover:scale-105
-                         transform transition-all duration-300 ease-out
-                         shadow-[6px_6px_0px_0px_#000000]
-                         hover:shadow-[8px_8px_0px_0px_#000000]
-                         z-10 relative"
-            >
-              <a href="#becomepartner">BECOME A PARTNER!</a>
-            </Button>
-            
-            {/* Button background layers with deep blue gradient */}
-            <div className="absolute inset-0 bg-[#FF3B3F] rounded-2xl border-4 border-black
-                           transform rotate-3 transition-transform duration-300
-                           group-hover:rotate-6 -z-10"></div>
-            <div className="absolute inset-0 bg-[#2E3192] rounded-2xl border-4 border-black
-                           transform -rotate-2 transition-transform duration-300
-                           group-hover:-rotate-4 -z-20"></div>
-          </div>
-        </motion.div>
+       
       </div>
     </section>
   );
