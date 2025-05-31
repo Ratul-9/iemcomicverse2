@@ -12,49 +12,50 @@ import segment4 from './segment4.png';
 import segment5 from './segment5.png';
 import segment6 from './segment6.png';
 import segment7 from './segment7.png';
-// Sample events data (5 cards)
+
+// Sample events data (7 cards) - updated to route to individual event components
 const eventsData = [
   {
     id: 1,
-    
     image: segment1,
-    color: "bg-[#FF3B3F]"
+    color: "bg-[#FF3B3F]",
+    route: "/events/1"  // Routes to event1.tsx
   },
   {
     id: 2,
-    
     image: segment2,
-    color: "bg-[#2E3192]"
+    color: "bg-[#2E3192]",
+    route: "/events/2"  // Routes to event2.tsx
   },
   {
     id: 3,
-   
     image: segment3,
-    color: "bg-[#FFEB3B] text-[#2E3192]"
+    color: "bg-[#FFEB3B] text-[#2E3192]",
+    route: "/events/3"  // Routes to event3.tsx
   },
   {
     id: 4,
-   
     image: segment4,
-    color: "bg-[#FF3B3F]"
+    color: "bg-[#FF3B3F]",
+    route: "/events/4"  // Routes to event4.tsx
   },
   {
     id: 5,
- 
-    image:segment5,
-    color: "bg-[#2E3192]"
+    image: segment5,
+    color: "bg-[#2E3192]",
+    route: "/events/5"  // Routes to event5.tsx
   },
   {
     id: 6,
-  
     image: segment6,
-    color: "bg-[#2E3192]"
+    color: "bg-[#2E3192]",
+    route: "/events/6"  // Routes to event6.tsx
   },
   {
     id: 7,
-   
     image: segment7,
-    color: "bg-[#FF3B3F]"
+    color: "bg-[#FF3B3F]",
+    route: "/events/7"  // Routes to event7.tsx
   }
 ];
 
@@ -120,16 +121,11 @@ const EventsSection = () => {
 
   return (
     <section id="events" className="py-20 bg-transparent relative overflow-hidden">
-
-    
-      
-      
       
       <div className="absolute inset-0" style={{ 
         backgroundImage: "url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFEB3B' fill-opacity='0.07'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')",
       }}></div>
       
-     
       <div className="container mx-auto px-4 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -183,13 +179,13 @@ const EventsSection = () => {
                   onMouseEnter={() => setHoveredId(event.id)}
                   onMouseLeave={() => setHoveredId(null)}
                 >
-                  <Link href={`/event/${event.id}`}>
+                  {/* Updated Link to use the route property */}
+                  <Link href={event.route}>
                     <motion.div
-  className="transition-all duration-500 cursor-pointer mx-2 overflow-visible"
-  whileHover={{ y: -8, scale: 1.05, transition: { duration: 0.3, ease: "easeOut" } }}
-  whileTap={{ scale: 0.95 }}
->
-
+                      className="transition-all duration-500 cursor-pointer mx-2 overflow-visible"
+                      whileHover={{ y: -8, scale: 1.05, transition: { duration: 0.3, ease: "easeOut" } }}
+                      whileTap={{ scale: 0.95 }}
+                    >
                       <div className="relative h-80 bg-white rounded-2xl overflow-hidden shadow-2xl border-4 border-[#2E3192] group hover:border-[#FF3B3F] transition-all duration-300">
                         
                         {/* Image */}
@@ -209,10 +205,6 @@ const EventsSection = () => {
                           
                           {/* Gradient overlay for date visibility */}
                           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                          
-                         
-                          
-                          
                           
                           {/* Hover overlay */}
                           <div className="absolute inset-0 bg-[#FF3B3F] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
@@ -257,9 +249,6 @@ const EventsSection = () => {
           </div>
         </div>
       </div>
-      
-      {/* CSS for shimmer animation */}
-     
     </section>
   );
 };
