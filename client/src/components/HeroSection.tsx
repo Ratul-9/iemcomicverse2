@@ -2,10 +2,10 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Star, Zap, Heart, Sparkles } from "lucide-react";
 import { useState, useEffect } from "react";
-import logo1 from './logo1.jpg';
-import logo2 from './logo2.jpg';
+import logo1 from './logo1.png';
+
 import bg1 from './bg1.png';
-import logo3 from './logo3.jpg';
+
 import cmcLogo from './cmc.png';
 
 const HeroSection = () => {
@@ -129,6 +129,7 @@ const HeroSection = () => {
                 transition: { duration: 0.4, type: "spring", stiffness: 300 }
               }}
             >
+              
               <div className="relative -ml-10 md:-ml-12 flex items-center justify-center">
                 <motion.img 
                   src={cmcLogo} 
@@ -231,35 +232,36 @@ const HeroSection = () => {
           
           {/* Enhanced Three-Image Collage with Rounded Borders - Positioned Lower */}
           <motion.div 
-            className="relative h-[500px] md:h-[600px] w-full group mt-16"
+            className="relative h-[600px] md:h-[700px] w-full group mt-16"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {/* Main Center Image - Positioned Lower */}
+            {/* Main Center Image - Positioned Lower with Increased Height */}
             <motion.div
-              className="absolute top-16 left-1/2 transform -translate-x-1/2 z-30"
+              className="absolute top-10 left-1/2 transform -translate-x-1/2 z-30"
               initial={{ scale: 0, rotate: -20, y: 1, rotateY: 45 }}
               animate={{ scale: 1, rotate: 0, y: 0, rotateY: 0 }}
               transition={{ 
-                duration: 1, 
-                delay: 0.6, 
-                type: "spring", 
-                stiffness: 80,
-                damping: 12
+              duration: 1, 
+              delay: 0.6, 
+              type: "spring", 
+              stiffness: 80,
+              damping: 12
               }}
               whileHover={{ 
-                scale: 1.08, 
-                rotate: 3, 
-                y: -10,
-                zIndex: 40,
-                rotateY: 5,
-                transition: { duration: 0.4, type: "spring", stiffness: 300 }
+              scale: 1.08, 
+              rotate: 3, 
+              y: -10,
+              zIndex: 40,
+              rotateY: 5,
+              transition: { duration: 0.4, type: "spring", stiffness: 300 }
               }}
+              style={{ height: "450px" }} // Increased from 340px to 450px
             >
               <div className="relative">
                 <div 
-                  className="relative bg-white p-4 w-72 h-80 overflow-hidden shadow-2xl rounded-2xl border-4 border-white transform -rotate-3"
+                  className="relative bg-white p-4 w-80 h-96 overflow-hidden shadow-2xl rounded-2xl border-4 border-white transform -rotate-3"
                 >
                   <img 
                     src={logo1} 
@@ -274,108 +276,12 @@ const HeroSection = () => {
                   {/* Inner Border Effect */}
                   <div className="absolute inset-2 border-2 border-white/50 rounded-lg" />
                 </div>
-                
-                <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-[#FF3B3F] rounded-full animate-bounce" />
               </div>
             </motion.div>
 
-            {/* Left Image - Positioned Lower */}
-            <motion.div
-              className="absolute top-28 -left-8 z-20"
-              initial={{ scale: 0, rotate: 30, x: 300, rotateY: -45 }}
-              animate={{ scale: 1, rotate: 0, x: 300, rotateY: 0 }}
-              transition={{ 
-                duration: 0.9, 
-                delay: 0.4, 
-                type: "spring", 
-                stiffness: 100,
-                damping: 10
-              }}
-              whileHover={{ 
-                scale: 1.12, 
-                rotate: -5,
-                x: 15,
-                y: -8,
-                zIndex: 35,
-                rotateY: -8,
-                transition: { duration: 0.4, type: "spring", stiffness: 200 }
-              }}
-            >
-              <div className="relative">
-                <div 
-                  className="relative bg-white p-3 w-52 h-64 overflow-hidden shadow-2xl rounded-xl border-3 border-white transform rotate-12"
-                >
-                  <img 
-                    src={logo2}
-                    alt="Cosplay Contest" 
-                    className="w-full h-full object-cover rounded-lg"
-                  />
-                  {/* Enhanced Comic Effects */}
-                  <div className="absolute inset-0 bg-gradient-to-tl from-[#00BCD4]/20 to-transparent mix-blend-multiply rounded-lg" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#9C27B0]/15 mix-blend-overlay rounded-lg" />
-                  
-                  {/* Halftone Pattern */}
-                  <div 
-                    className="absolute inset-0 opacity-15 rounded-lg"
-                    style={{
-                      backgroundImage: "radial-gradient(circle, rgba(0,188,212,0.4) 1px, transparent 1px)",
-                      backgroundSize: "10px 10px",
-                    }}
-                  />
-                  
-                  <div className="absolute inset-2 border-2 border-white/40 rounded-md" />
-                </div>
-              </div>
-            </motion.div>
+            
 
-            {/* Right Image - Positioned Lower */}
-            <motion.div
-              className="absolute top-40 -right-8 z-20"
-              initial={{ scale: 0, rotate: -30, x: 150, rotateY: 45 }}
-              animate={{ scale: 1, rotate: 0, x: 0, rotateY: 0 }}
-              transition={{ 
-                duration: 0.9, 
-                delay: 0.8, 
-                type: "spring", 
-                stiffness: 90,
-                damping: 11
-              }}
-              whileHover={{ 
-                scale: 1.12, 
-                rotate: 6,
-                x: -15,
-                y: -8,
-                zIndex: 35,
-                rotateY: 8,
-                transition: { duration: 0.4, type: "spring", stiffness: 200 }
-              }}
-            >
-              <div className="relative">
-                <div 
-                  className="relative bg-white p-3 w-52 h-64 overflow-hidden shadow-2xl rounded-xl border-3 border-white transform -rotate-8"
-                >
-                  <img 
-                    src={logo3} 
-                    alt="Artist Alley" 
-                    className="w-full h-full object-cover rounded-lg"
-                  />
-                  {/* Enhanced Comic Effects */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#E91E63]/20 to-transparent mix-blend-multiply rounded-lg" />
-                  <div className="absolute inset-0 bg-gradient-to-bl from-transparent to-[#FF9800]/15 mix-blend-overlay rounded-lg" />
-                  
-                  {/* Halftone Pattern */}
-                  <div 
-                    className="absolute inset-0 opacity-15 rounded-lg"
-                    style={{
-                      backgroundImage: "radial-gradient(circle, rgba(233,30,99,0.4) 1px, transparent 1px)",
-                      backgroundSize: "8px 8px",
-                    }}
-                  />
-                  
-                  <div className="absolute inset-2 border-2 border-white/40 rounded-md" />
-                </div>
-              </div>
-            </motion.div>
+            
           </motion.div>
         </div>
         
