@@ -5,49 +5,55 @@ import { Badge } from "@/components/ui/badge";
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "wouter";
 import useEmblaCarousel from "embla-carousel-react";
-
+import segment1 from './segment1.png';
+import segment2 from './segment2.png';
+import segment3 from './segment3.png';
+import segment4 from './segment4.png';
+import segment5 from './segment5.png';
+import segment6 from './segment6.png';
+import segment7 from './segment7.png';
 // Sample events data (5 cards)
 const eventsData = [
   {
     id: 1,
     
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=400&h=300",
+    image: segment1,
     color: "bg-[#FF3B3F]"
   },
   {
     id: 2,
     
-    image:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=400&h=300",
+    image: segment2,
     color: "bg-[#2E3192]"
   },
   {
     id: 3,
    
-    image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?fit=crop&w=400&h=300",
+    image: segment3,
     color: "bg-[#FFEB3B] text-[#2E3192]"
   },
   {
     id: 4,
    
-    image: "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?fit=crop&w=400&h=300",
+    image: segment4,
     color: "bg-[#FF3B3F]"
   },
   {
     id: 5,
  
-    image: "https://images.unsplash.com/photo-1489599162715-27e6b82659d2?fit=crop&w=400&h=300",
+    image:segment5,
     color: "bg-[#2E3192]"
   },
   {
     id: 6,
   
-    image: "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?fit=crop&w=400&h=300",
+    image: segment6,
     color: "bg-[#2E3192]"
   },
   {
     id: 7,
    
-    image: "https://images.unsplash.com/photo-1489599162715-27e6b82659d2?fit=crop&w=400&h=300",
+    image: segment7,
     color: "bg-[#FF3B3F]"
   }
 ];
