@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { collaboratorsData } from "@/data/comicfest";
+
 import collaborator1 from './collaborator1.jpg';
 import collaborator2 from './collaborator2.jpg';
 import collaborator3 from './collaborator3.jpg';
@@ -93,7 +91,7 @@ const CollaboratorsSection = () => {
                           />
                         </div>
                         
-                        <h3 className="font-black text-xl text-[#FF3B3F] text-center
+                        <h3 className="font-black text-sm text-[#FF3B3F] text-center
                                        group-hover:text-[#2E3192] transition-colors uppercase">
                           {collaborator.name}
                         </h3>

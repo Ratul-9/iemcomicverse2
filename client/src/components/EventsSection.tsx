@@ -5,55 +5,54 @@ import { Badge } from "@/components/ui/badge";
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "wouter";
 import useEmblaCarousel from "embla-carousel-react";
-import segment1 from './segment1.png';
-import segment2 from './segment2.png';
-import segment3 from './segment3.png';
-import segment4 from './segment4.png';
-import segment5 from './segment5.png';
-import segment6 from './segment6.png';
-import segment7 from './segment7.png';
-
+import conpedia34 from "./CONPEDIA34.png"
+import greyquotient from "./Grey Quotiet.png"
+import iemgottalent from "./IEMGOTTALENT.png"
+import rCade from "./R-Cade.png"
+import zearena from "./Ze-Arena.png"
+import arts from "./arts.png"
+import qwerf from "./qwerf.png"
 // Sample events data (7 cards) - updated to route to individual event components
 const eventsData = [
   {
     id: 1,
-    image: segment1,
+    image: conpedia34,
     color: "bg-[#FF3B3F]",
     route: "/events/1"  // Routes to event1.tsx
   },
   {
     id: 2,
-    image: segment2,
+    image: greyquotient,
     color: "bg-[#2E3192]",
     route: "/events/2"  // Routes to event2.tsx
   },
   {
     id: 3,
-    image: segment3,
+    image: iemgottalent,
     color: "bg-[#FFEB3B] text-[#2E3192]",
     route: "/events/3"  // Routes to event3.tsx
   },
   {
     id: 4,
-    image: segment4,
+    image: rCade,
     color: "bg-[#FF3B3F]",
     route: "/events/4"  // Routes to event4.tsx
   },
   {
     id: 5,
-    image: segment5,
+    image: zearena,
     color: "bg-[#2E3192]",
     route: "/events/5"  // Routes to event5.tsx
   },
   {
     id: 6,
-    image: segment6,
+    image: arts,
     color: "bg-[#2E3192]",
     route: "/events/6"  // Routes to event6.tsx
   },
   {
     id: 7,
-    image: segment7,
+    image: qwerf,
     color: "bg-[#FF3B3F]",
     route: "/events/7"  // Routes to event7.tsx
   }

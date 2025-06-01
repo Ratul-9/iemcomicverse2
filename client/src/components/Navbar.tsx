@@ -20,7 +20,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-5xl rounded-xl backdrop-blur-md bg-white/20 border border-black shadow-xl">
+    <header className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-5xl rounded-xl backdrop-blur-md bg-white/5 border border-black shadow-xl">
       <div className="px-4">
         <nav className="flex items-center justify-between py-3 h-20 relative">
           {/* Logo */}
