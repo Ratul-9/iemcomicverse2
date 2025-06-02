@@ -323,7 +323,7 @@ const ZeArenaWebsite: React.FC = () => {
             opacity: 0;
           }
           100% {
-            transform: translateY(-280px);
+            transform: translateY(-250px);
             opacity: 1;
           }
         }
@@ -618,7 +618,7 @@ const ZeArenaWebsite: React.FC = () => {
               <h3 className="anime-card-title"></h3>
               <div className="speech-bubble">
                 <p style={{ fontFamily: "'Bropella', sans-serif", fontSize: '2rem', textAlign: 'center', marginLeft: '20px' }}>
-                  A captivating showcase of digital art inspired by anime and comics!
+                  A spinning top battle game where players compete for the longest spin or knock-out victory.
                 </p>
               </div>
             </div>
@@ -640,7 +640,7 @@ const ZeArenaWebsite: React.FC = () => {
               <h3 className="anime-card-title"></h3>
               <div className="speech-bubble">
                 <p style={{ fontFamily: "'Bropella', sans-serif", fontSize: '2rem', textAlign: 'center', marginLeft: '20px' }}>
-                  A short film-making contest showcasing storytelling evolution through the vibrant theme of comics.
+                  An adventurous game where participants solve puzzles to find hidden treasures.
                 </p>
               </div>
             </div>
@@ -662,7 +662,7 @@ const ZeArenaWebsite: React.FC = () => {
               <h3 className="anime-card-title"></h3>
               <div className="speech-bubble">
                 <p style={{ fontFamily: "'Bropella', sans-serif", fontSize: '2rem', textAlign: 'center', marginLeft: '20px' }}>
-                  Vibrant live graffiti creation infused with the spirit of comics!
+                  A competitive game testing agility and reflexes with quick foot positioning challenges.
                 </p>
               </div>
             </div>

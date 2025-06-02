@@ -1,650 +1,545 @@
 import React from 'react';
-import art5 from '../assets/art5.png';
-import carnival from '../assets/carnival.png';
-import cosplay2 from '../assets/cosplay2.png';
-
-
-
+import grey from '../assets/grey.png';
 import logo from '../assets/logo.png';
 import Akira_Expanded_Demo from '../assets/fonts/Akira Expanded Demo.otf';
 
-const CosplayCarnival: React.FC = () => {
+const ComicVerse: React.FC = () => {
   return (
-    <div className="min-h-screen bg-red-900 text-gray-800 overflow-x-hidden font-sans">
+    <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fredoka+One:wght@400&family=Comic+Neue:wght@400;700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-        
         :root {
-          --primary-color: #5a5ee3;
-          --accent-color-1: #9f17f3;
-          --accent-color-2: #f80898;
-          --teal-color: #0aeecf;
-          --orange-color: #e9640b;
-          --purple-color: #9207e9;
-          --light-text: #ffffff;
-          --dark-text: #333333;
-          --brown-bg: #8B4513;
-          --anti-color-1: #0AEECF;
-          --anti-color-2: #FFD700;
-          --anime-pink: #ff69b4;
-          --anime-blue: #00bfff;
-          --anime-yellow: #ffd700;
-          --anime-purple: #9966ff;
-          --anime-green: #00ff7f;
-          --neon-glow: 0 0 20px;
+            --primary-color: #5a5ee3;
+            --accent-color-1: #9f17f3;
+            --accent-color-2: #f80898;
+            --teal-color: #0aeecf;
+            --orange-color: #e9640b;
+            --purple-color: #9207e9;
+            --light-text: #ffffff;
+            --dark-text: #333333;
+            --brown-bg: #8B4513;
+            --anti-color-1: #0AEECF;
+            --anti-color-2: #FFD700;
+            --anime-pink: #ff69b4;
+            --anime-blue: #00bfff;
+            --anime-yellow: #ffd700;
+            --anime-purple: #9966ff;
+            --anime-green: #00ff7f;
+            --neon-glow: 0 0 20px;
         }
-
         .bangers-regular {
-          font-family: "Bangers", system-ui;
-          font-weight: 400;
-          font-style: normal;
+            font-family: "Bangers", system-ui;
+            font-weight: 400;
+            font-style: normal;
         }
-
         * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          font-family: 'Comic Sans MS', 'Chalkboard SE', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Arial', sans-serif;
         }
-
         body {
-          background-color: #470000;
-          color: var(--dark-text);
-          overflow-x: hidden;
+            background-color: #671c01;
+            color: var(--dark-text);
+            overflow-x: hidden;
         }
-
-        .header {
-          color: var(--light-text);
-          text-align: center;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-          position: relative;
-          z-index: 10;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 1rem 2rem;
+        header {
+            color: var(--light-text);
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 10;
         }
-
-        .header::before {
-          content: '';
-          position: absolute;
-          top: -50%;
-          left: -50%;
-          background: radial-gradient(circle, transparent, rgba(255, 255, 255, 0.15) 10%, transparent 80%);
-          animation: sparkle 10s infinite linear;
-          z-index: -1;
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(circle, transparent, rgba(255, 255, 255, 0.15) 10%, transparent 80%);
+            animation: sparkle 10s infinite linear;
+            z-index: -1;
         }
-
         .header-logo {
-          max-width: 100px;
-          height: auto;
-          display: block;
-          margin-left: 150px;
+            max-width: 100px;
+            height: auto;
+            display: block;
+            margin-left: 150px;
         }
-
-        .navbar {
-          display: flex;
-          gap: 3rem;
-        }
-
-        .nav-link {
-          font-family: 'Akira Expanded';
-          font-size: 1.3rem;
-          color: var(--light-text);
-          text-decoration: none;
-          text-transform: uppercase;
-          font-weight: normal;
-          transition: all 0.3s ease;
-        }
-
-        .nav-link:hover {
-          color: rgb(239, 169, 169);
-          transform: translateY(-3px);
-          text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-        }
-
         .hero {
-          position: relative;
-          height: 699px;
-          margin: 0 auto;
-          
-          background: url(${cosplay2}) no-repeat center center/cover;
-          background-size: cover;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          color: var(--light-text);
-          overflow: hidden;
+            position: relative;
+            height: 699px;
+            margin: 0 auto;
+            
+            background: url(${grey}) no-repeat center center/cover;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light-text);
+            overflow: hidden;
         }
-
         .comic-object {
-          position: absolute;
-          width: 50px;
-          height: 50px;
-          background-size: contain;
-          background-repeat: no-repeat;
-          animation: float-object 10s infinite linear;
-          opacity: 0.7;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: float-object 10s infinite linear;
+            opacity: 0.7;
         }
-
         .hero-content {
-          position: relative;
-          z-index: 2;
-          padding: 2rem;
-          max-width: 900px;
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            max-width: 900px;
         }
-
+        @font-face {
+            font-family: 'Bangers';
+            src: url('fonts/Bangers-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
         .event-title {
-          font-family: 'Bangers', sans-serif;
-          font-size: 12rem;
-          font-weight: bold;
-          text-transform: uppercase;
-          margin-bottom: 1rem;
-          text-shadow: 5px 5px 0px black;
-          letter-spacing: 12px;
-          animation: pulse 2s infinite, color-cycle 10s infinite;
+            font-family: 'Bangers', sans-serif;
+            font-size: 12rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            text-shadow: 5px 5px 0px black;
+            letter-spacing: 12px;
+            animation: pulse 2s infinite, color-cycle 10s infinite;
         }
-
         .event-details {
-          font-size: 1.6rem;
-          margin-bottom: 1.5rem;
-          text-shadow: 2px 2px 4px rgba(228, 15, 15, 0.3);
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(228, 15, 15, 0.3);
         }
-
         .event-tagline {
-          font-size: 2rem;
-          font-style: italic;
-          margin-bottom: 2rem;
-          max-width: 700px;
-          margin-left: auto;
-          margin-right: auto;
-          text-shadow: 2px 2px 4px rgba(209, 6, 6, 0.2);
+            font-size: 2rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 2px 2px 4px rgba(209, 6, 6, 0.2);
         }
-
         .section {
-          padding: 5rem 2rem;
-          max-width: 1200px;
-          margin: 0 auto;
-          position: relative;
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
         }
-
+        @font-face {
+            font-family: 'Akira Expanded';
+            src: url('fonts/Akira Expanded Demo.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
         .section-title {
-          font-size: 3.5rem;
-          font-family: 'Akira Expanded', sans-serif;
-          color: white;
-          font-weight: normal;
-          text-align: center;
-          margin-bottom: 2.5rem;
-          position: relative;
-          transition: transform 0.2s ease;
+            font-size: 3.5rem;
+            font-family: 'Akira Expanded', sans-serif;
+            color: white;
+            font-weight: normal;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+            transition: transform 0.2s ease;
         }
-
         .section-title::after {
-          content: '';
-          display: block;
-          width: 350px;
-          height: 5px;
-          background: linear-gradient(45deg, #470000, #e15a75, #470000);
-          margin: 0.7rem auto;
-          border-radius: 5px;
+            content: '';
+            display: block;
+            width: 350px;
+            height: 5px;
+            background: linear-gradient(45deg, #673101, #e8d6c2, #673101);
+            margin: 0.7rem auto;
+            border-radius: 5px;
         }
-
         .section-title:hover {
-          transform: scale(1.4);
+            transform: scale(1.4);
         }
-
         .event-container {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          grid-template-rows: repeat(2, auto);
-          gap: 1rem;
-          max-width: 100%;
-          padding: 2rem;
-          justify-items: center;
-          width: 100%;
-          box-sizing: border-box;
-          margin-left: -14rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, auto);
+            gap: 1rem;
+            max-width: 100%;
+            padding: 2rem;
+            justify-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            margin-left: -14rem;
         }
-
         .anime-card {
-          width: 1500px;
-          height: 500px;
-          position: relative;
-          cursor: pointer;
-          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-          transform-style: preserve-3d;
+            width: 1500px;
+            height: 500px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
         }
-
         .anime-card:hover {
-          transform: scale(1.05);
-          filter: drop-shadow(0 20px 40px rgba(253, 251, 252, 0.4));
+            transform: scale(1.05);
+            filter: drop-shadow(0 20px 40px rgba(253, 251, 252, 0.4));
         }
-
         .card-inner {
-          width: 100%;
-          height: 100%;
-          position: relative;
-          background-blend-mode: overlay;
-          border-radius: 25px;
-          padding: 20px;
-          box-sizing: border-box;
-          border: 5px solid #fff;
-          overflow: hidden;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-blend-mode: overlay;
+            border-radius: 25px;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 5px solid #fff;
+            overflow: hidden;
         }
-
         .anime-card-1 .card-inner {
-          
-          background: url(${carnival}) no-repeat center center/cover;
+            background: url('greyin.png') no-repeat center center/cover;
+            
         }
-
         .anime-card:hover .card-inner {
-          
-          background: url(${art5}) no-repeat center center/cover;
-          box-shadow: 0 0 10px 3px white;
-          animation: glow-pulse 0.6s ease-in-out;
+            background: url('art8.png') no-repeat center center/cover;
+            box-shadow: 0 0 10px 3px white;
+            animation: glow-pulse 0.6s ease-in-out;
         }
-
         .anime-card-title {
-          font-family: 'Bropella', sans-serif;
-          font-size: 2.5rem;
-          text-align: center;
-          margin-bottom: 5px;
-          position: relative;
-          z-index: 10;
+            font-family: 'Bropella', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 10;
         }
-
         .anime-card:hover .anime-card-title {
-          transform: scale(1.4);
+            transform: scale(1.4);
         }
-
+        @font-face {
+            font-family: 'Bropella';
+            src: url('fonts/Bropella.ttf') format('truetype'),
+                 url('fonts/Bropella.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'SK Reykjavik Rounded';
+            src: url('fonts/SK Reykjavik Rounded Slab Reg.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
         .speech-bubble {
-          color: white;
-          border-radius: 20px;
-          padding: 20px;
-          margin: 20px 0;
-          position: absolute;
-          bottom: -100px;
-          width: calc(100% - 40px);
-          font-weight: 700;
-          opacity: 0;
-          transform: translateY(100%);
-          z-index: 10;
-        }
-
-        .anime-card:hover .speech-bubble {
-          animation: slide-up 1s ease-out forwards;
-        }
-
-        @keyframes slide-up {
-          0% {
-            transform: translateY(100%);
+            color: white;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+            position: absolute;
+            bottom: -100px;
+            width: calc(100% - 40px);
+            font-weight: 700;
             opacity: 0;
-          }
-          100% {
-            transform: translateY(-210px);
-            opacity: 1;
-          }
+            transform: translateY(100%);
+            z-index: 10;
         }
-
+        .anime-card:hover .speech-bubble {
+            animation: slide-up 1s ease-out forwards;
+        }
+        @keyframes slide-up {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(-230px);
+                opacity: 1;
+            }
+        }
+        .event-details {
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
         .event-date {
-          color: var(--purple-color);
-          font-weight: bold;
-          font-size: 1.2rem;
+            color: var(--purple-color);
+            font-weight: bold;
+            font-size: 1.2rem;
         }
-
         .event-location {
-          color: var(--teal-color);
-          font-weight: bold;
+            color: var(--teal-color);
+            font-weight: bold;
         }
-
         .burst-container {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          pointer-events: none;
-          overflow: visible;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: visible;
         }
-
         .burst-star {
-          position: absolute;
-          font-size: 2rem;
-          opacity: 0;
-          pointer-events: none;
-          border: none;
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            border: none;
         }
-
         .anime-card:hover .burst-container .burst-star {
-          transform: scale(1.4);
+            transform: scale(1.4);
         }
-
         .anime-card:hover .sparkles .sparkle {
-          animation: sparkle-dance 1s ease-in-out infinite;
+            animation: sparkle-dance 1s ease-in-out infinite;
         }
-
         @keyframes sparkle-dance {
-          0%, 100% { opacity: 0; transform: scale(0); }
-          50% { opacity: 1; transform: scale(1); }
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
         }
-
         .sparkle1 { top: 15%; left: 20%; animation-delay: 0s; }
         .sparkle2 { top: 35%; left: 80%; animation-delay: 0.2s; }
         .sparkle3 { top: 65%; left: 15%; animation-delay: 0.4s; }
         .sparkle4 { top: 80%; left: 70%; animation-delay: 0.6s; }
         .sparkle5 { top: 25%; left: 60%; animation-delay: 0.3s; }
         .sparkle6 { top: 70%; left: 40%; animation-delay: 0.5s; }
-
         .anime-card::before {
-          content: '';
-          position: absolute;
-          top: -5px;
-          left: -5px;
-          right: -5px;
-          bottom: -5px;
-          border-radius: 30px;
-          z-index: -1;
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-
-        .anime-card:hover::before {
-          opacity: 0.7;
-          transform: scale(1.4);
-        }
-
-        .emoji-explosion {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-size: 3rem;
-          opacity: 0;
-          pointer-events: none;
-        }
-
-        .anime-card:hover .emoji-explosion {
-          transform: scale(1.4);
-        }
-
-        @keyframes emoji-burst {
-          0% {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(0);
-          }
-          50% {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1.5);
-          }
-          100% {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 30px;
+            z-index: -1;
             opacity: 0;
-            transform: translate(-50%, -50%) scale(2);
-          }
+            transition: opacity 0.3s ease;
         }
-
+        .anime-card:hover::before {
+            opacity: 0.7;
+            transform: scale(1.4);
+        }
+        .emoji-explosion {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .anime-card:hover .emoji-explosion {
+            transform: scale(1.4);
+        }
+        @keyframes emoji-burst {
+            0% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.5);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(2);
+            }
+        }
         .registration {
-          text-align: center;
-          margin-top: 5rem;
-        }
-
-        .btn {
-          font-family: 'Akira Expanded', sans-serif;
-          font-weight: normal;
-          display: inline-block;
-          padding: 1.5rem 3.5rem;
-          background: linear-gradient(45deg, #f4f3f1, #efa2bd);
-          color: #65002e;
-          border: none;
-          border-radius: 10px;
-          font-size: 1.3rem;
-          text-decoration: none;
-          margin-top: 1.5rem;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          position: relative;
-          overflow: hidden;
-          box-shadow: 0 5px 15px rgba(54, 0, 13, 0.4);
-        }
-
-        .btn:hover {
-          background: linear-gradient(45deg, #efa2b5, #e20066);
-          transform: translateY(-5px);
-          box-shadow: 0 10px 20px rgba(54, 0, 13, 0.4);
-          color: white;
-        }
-
-        .btn::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-          transition: 0.5s;
-        }
-
-        .btn:hover::before {
-          left: 100%;
-        }
-
-        .footer {
-          background: #eee8e0;
-          color: #b50c5e;
-          padding: 3rem 2rem;
-          text-align: left;
-          margin-top: 5rem;
-          position: relative;
-          overflow: hidden;
-          display: flex;
-          justify-content: center;
-        }
-
-        .footer::before {
-          content: '';
-          position: absolute;
-          top: -50%;
-          left: -50%;
-          width: 200%;
-          height: 200%;
-          background: radial-gradient(circle, transparent, rgba(255, 255, 255, 0.15) 10%, transparent 80%);
-          animation: sparkle 12s infinite linear;
-          z-index: -1;
-        }
-
-        .footer-content {
-          max-width: 1200px;
-          width: 100%;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          gap: 6rem 4rem;
-        }
-
-        .footer-logo {
-          font-size: 2.5rem;
-          margin-bottom: 1.5rem;
-          text-shadow: 3px 3px 0px var(--accent-color-1);
-        }
-
-        .footer-column {
-          flex: 1;
-          min-width: 150px;
-          margin-bottom: 2rem;
-        }
-
-        .footer-column h3 {
-          font-family: "Akira Expanded", system-ui;
-          font-size: 1.5rem;
-          margin-bottom: 1rem;
-          color: #65002e;
-          font-weight: normal;
-        }
-
-        .footer-links a, .resources a {
-          color: #b50c5e;
-          font-family: 'Montserrat', sans-serif;
-          text-decoration: none;
-          display: block;
-          margin: 0.5rem 0;
-          font-size: 1.1rem;
-          transition: all 0.3s ease;
-          font-weight: normal;
-        }
-
-        .footer-links a:hover, .resources a:hover {
-          color: rgb(255, 0, 183);
-          text-decoration: underline;
-        }
-
-        .newsletter input[type="email"] {
-          padding: 0.5rem;
-          width: 70%;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          margin-right: 0.5rem;
-          font-size: 1rem;
-        }
-
-        .copyright {
-          width: 100%;
-          font-family: 'Montserrat', sans-serif;
-          color: #b50c5e;
-          margin-top: 2rem;
-          font-size: 1.1rem;
-          opacity: 0.9;
-        }
-
-        .designed-by {
-          width: 100%;
-          text-align: center;
-          font-size: 0.9rem;
-          margin-top: 0.5rem;
-          color: #ccc;
-        }
-
-        @keyframes pulse {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.05); }
-        }
-
-        @keyframes color-cycle {
-          0% { color: #ff69b4; }
-          25% { color: #00bfff; }
-          50% { color: #ffd700; }
-          75% { color: #9966ff; }
-          100% { color: #ff69b4; }
-        }
-
-        @keyframes glow-pulse {
-          0%, 100% { box-shadow: 0 0 10px 3px white; }
-          50% { box-shadow: 0 0 20px 6px rgba(255, 255, 255, 0.8); }
-        }
-
-        @keyframes sparkle {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-
-        @keyframes float-object {
-          0% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-20px) rotate(180deg); }
-          100% { transform: translateY(0px) rotate(360deg); }
-        }
-
-        @media (max-width: 1024px) {
-          .event-container {
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(3, auto);
-            gap: 1rem;
-            margin-left: -1rem;
-          }
-          .anime-card {
-            width: 350px;
-            height: 450px;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .event-title {
-            font-size: 6rem;
-            letter-spacing: 8px;
-          }
-          .hero {
-            height: 500px;
-          }
-          .event-tagline {
-            font-size: 1.2rem;
-          }
-          .section {
-            padding: 3rem 1.5rem;
-          }
-          .event-container {
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(6, auto);
-            justify-items: center;
-            gap: 1rem;
-            margin-left: 0;
-          }
-          .anime-card {
-            width: 350px;
-            height: 450px;
-          }
-          .footer-content {
-            flex-direction: column;
-            align-items: center;
             text-align: center;
-          }
+            margin-top: 5rem;
         }
-
+        .btn {
+            font-family: 'Akira Expanded', sans-serif;
+            font-weight: normal;
+            display: inline-block;
+            padding: 1.5rem 3.5rem;
+            background: linear-gradient(45deg, #f4f3f1, #efd4a2);
+            color: #673101;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.4);
+        }
+        .btn:hover {
+            background: linear-gradient(45deg, #efcca2, #ff7300);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 136, 0, 0.5);
+            color: white;
+        }
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: 0.5s;
+        }
+        .btn:hover::before {
+            left: 100%;
+        }
+        footer {
+            background: #eee8e0;
+            color: #ff7300;
+            padding: 3rem 2rem;
+            text-align: left;
+            margin-top: 5rem;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        footer::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, transparent, rgba(255, 255, 255, 0.15) 10%, transparent 80%);
+            animation: sparkle 12s infinite linear;
+            z-index: -1;
+        }
+        .footer-content {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 6rem 4rem;
+        }
+        .footer-logo {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 0px var(--accent-color-1);
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 150px;
+            margin-bottom: 2rem;
+        }
+        .footer-column h3 {
+            font-family: "Akira Expanded", system-ui;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #673101;
+            font-weight: normal;
+        }
+        .footer-links a, .resources a {
+            color: #ff7300;
+            text-decoration: none;
+            display: block;
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            font-weight: normal;
+        }
+        .footer-links a:hover, .resources a:hover {
+            color: var(--accent-color-1);
+            text-decoration: underline;
+        }
+        .newsletter input[type="email"] {
+            padding: 0.5rem;
+            width: 70%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 0.5rem;
+            font-size: 1rem;
+        }
+        .copyright {
+            width: 100%;
+            margin-top: 2rem;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        .designed-by {
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            color: #ccc;
+        }
+        @media (max-width: 1024px) {
+            .event-container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, auto);
+                gap: 1rem;
+                margin-left: -1rem;
+            }
+            .anime-card {
+                width: 350px;
+                height: 450px;
+            }
+        }
+        @media (max-width: 768px) {
+            .event-title {
+                font-size: 6rem;
+                letter-spacing: 8px;
+            }
+            .hero {
+                height: 500px;
+            }
+            .event-tagline {
+                font-size: 1.2rem;
+            }
+            .section {
+                padding: 3rem 1.5rem;
+            }
+            .event-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(6, auto);
+                justify-items: center;
+                gap: 1rem;
+                margin-left: 0;
+            }
+            .anime-card {
+                width: 350px;
+                height: 450px;
+            }
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
         @media (max-width: 480px) {
-          .event-title {
-            font-size: 4rem;
-            letter-spacing: 5px;
-          }
-          .event-details {
-            font-size: 1.3rem;
-          }
-          .event-tagline {
-            font-size: 1.3rem;
-          }
-          .section-title {
-            font-size: 2.2rem;
-          }
-          .anime-card {
-            width: 300px;
-            height: 400px;
-          }
-          .anime-card-title {
-            font-size: 2rem;
-          }
-          .footer-column {
-            min-width: 100%;
-          }
+            .event-title {
+                font-size: 4rem;
+                letter-spacing: 5px;
+            }
+            .event-details {
+                font-size: 1.3rem;
+            }
+            .event-tagline {
+                font-size: 1.3rem;
+            }
+            .section-title {
+                font-size: 2.2rem;
+            }
+            .anime-card {
+                width: 300px;
+                height: 400px;
+            }
+            .anime-card-title {
+                font-size: 2rem;
+            }
+            .footer-column {
+                min-width: 100%;
+            }
         }
       `}</style>
-
-      {/* Animated Background */}
+      
+      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fredoka+One:wght@400&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet" />
+      
       <div className="animated-bg"></div>
-
-      {/* Header */}
-      <header className="header">
+      <header>
         <img src={logo} alt="ComicVerse 2025 Logo" className="header-logo" />
-        <nav className="navbar">
-          <a href="#" className="nav-link">Home</a>
-          <a href="#" className="nav-link">About Us</a>
-        </nav>
       </header>
-
-      {/* Hero Section */}
       <section className="hero">
-        {/* Hero content can be added here if needed */}
       </section>
-
-      {/* Events Section */}
       <section className="section events">
         <h2 className="section-title">Information</h2>
         <div className="event-container">
@@ -652,13 +547,8 @@ const CosplayCarnival: React.FC = () => {
             <div className="card-inner">
               <h3 className="anime-card-title"></h3>
               <div className="speech-bubble">
-                <p style={{ 
-                  fontFamily: 'Bropella, sans-serif', 
-                  fontSize: '2rem', 
-                  textAlign: 'center', 
-                  marginLeft: '20px' 
-                }}>
-                  THE COSPLAY CARNIVAL IS A VIBRANT CELEBRATION OF CREATIVITY AND FANDOM WHERE PARTICIPANTS DRESS AS THEIR FAVORITE COMIC CHARACTERS. THE EVENT FEATURES COLORFUL DESIGNS, COSTUME CONTESTS AND OPPORTUNITIES TO CONNECT WITH FELLOW FANS AND ARTISTS, CREATING A MEMORABLE EXPERIENCE FOR COSPLAYERS AND COMIC ENTHUSIASTS ALIKE
+                <p style={{fontFamily: 'Bropella, sans-serif', fontSize: '2rem', textAlign: 'center', marginLeft: '20px'}}>
+                  Grey quotient is an engaging quiz contest that dives into the vibrant worlds of comics and anime. Participants test their knowledge on a wide range of topics, from iconic superheroes to beloved anime characters, fostering a friendly competition. It's a thrilling event for fans to celebrate their passion and showcase their expertise.
                 </p>
               </div>
             </div>
@@ -668,13 +558,11 @@ const CosplayCarnival: React.FC = () => {
           <a href="#" className="btn">Register Now!</a>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="footer">
+      <footer>
         <div className="footer-content">
           <div className="footer-column">
             <h3>COMICVERSE</h3>
-            <p className="copyright">The ultimate celebration of comics, art, and pop culture on campus!</p>
+            <p>The ultimate celebration of comics, art, and pop culture on campus!</p>
             <p className="copyright">© 2025 IEM ComicVerse. All rights reserved.</p>
           </div>
           <div className="footer-column">
@@ -698,11 +586,15 @@ const CosplayCarnival: React.FC = () => {
               <a href="#">Press Kit</a>
             </div>
           </div>
+          <div className="footer-column">
+            <h3>NEWSLETTER</h3>
+            <p>Subscribe for updates and announcements!</p>
+          </div>
           <p className="designed-by">Designed with ❤️ by the ComicVerse Team</p>
         </div>
       </footer>
-    </div>
+    </>
   );
 };
 
-export default CosplayCarnival;
+export default ComicVerse;
