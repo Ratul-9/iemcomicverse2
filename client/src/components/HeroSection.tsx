@@ -1,24 +1,19 @@
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Star, Zap, Heart, Sparkles } from "lucide-react";
+import { ChevronDown, Star, Zap } from "lucide-react";
 import { useState, useEffect } from "react";
 import logo1 from './logo1.png';
-
 import bg1 from './bg1.png';
-
 import cmcLogo from './cmc.png';
 
 const HeroSection = () => {
   const { scrollY } = useScroll();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
-  
-  // Parallax transforms
+
   const backgroundY = useTransform(scrollY, [0, 500], [0, 150]);
   const textY = useTransform(scrollY, [0, 500], [0, -100]);
-  const floatingY = useTransform(scrollY, [0, 500], [0, -200]);
 
-  // Mouse tracking for interactive effects
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({
@@ -26,25 +21,13 @@ const HeroSection = () => {
         y: (e.clientY / window.innerHeight) * 100,
       });
     };
-
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Comic burst animation variants
-  const burstVariants = {
-    hidden: { scale: 0, rotate: 0, opacity: 0 },
-    visible: { 
-      scale: [0, 1.2, 1], 
-      rotate: [0, 180, 360], 
-      opacity: [0, 1, 0.8],
-      transition: { duration: 2, repeat: Infinity, repeatDelay: 3 }
-    }
-  };
-
   return (
-    <section 
-      id="home" 
+    <section
+      id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
       style={{
         backgroundImage: `url(${bg1})`,
@@ -54,15 +37,9 @@ const HeroSection = () => {
         backgroundAttachment: 'scroll'
       }}
     >
-      {/* Background Overlay for better text readability 
-      <motion.div 
-        className="absolute inset-0 bg-black/40"
-        style={{ y: backgroundY }}
-      />*/}
-      
       {/* Animated Grid Pattern */}
       <div className="absolute inset-0 opacity-10">
-        <motion.div 
+        <motion.div
           className="w-full h-full"
           style={{
             backgroundImage: `
@@ -73,7 +50,7 @@ const HeroSection = () => {
             transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`
           }}
           animate={{
-            backgroundPosition: ["0px 0px", "50px 50px"],
+            backgroundPosition: ["0px 0px", "50px 50px"]
           }}
           transition={{
             duration: 20,
@@ -87,17 +64,14 @@ const HeroSection = () => {
       <motion.div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(255,235,59,0.1) 0%, transparent 50%)`,
+          background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(255,235,59,0.1) 0%, transparent 50%)`
         }}
       />
-      
+
       <div className="container mx-auto px-4 z-10 relative">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <motion.div 
-            style={{ y: textY }}
-            className="text-white relative"
-          >
-            {/* Date Badge with Comic Style */}
+          {/* LEFT TEXT BLOCK */}
+          <motion.div style={{ y: textY }} className="text-white relative">
             <motion.div
               initial={{ opacity: 0, y: -30, rotateX: -90 }}
               animate={{ opacity: 1, y: 0, rotateX: 0 }}
@@ -114,30 +88,27 @@ const HeroSection = () => {
               </div>
             </motion.div>
 
-            {/* CMC Logo Image instead of Text */}
-            {/* CMC Logo Image - Adjustable positioning */}
-            <motion.div 
+            <motion.div
               className="mb-6 cursor-pointer flex justify-start"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, type: "spring", stiffness: 100 }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
                 rotate: [0, 2, -2, 0],
                 transition: { duration: 0.4, type: "spring", stiffness: 300 }
               }}
             >
-              
               <div className="relative -ml-10 md:-ml-12 flex items-center justify-center">
-                <motion.img 
-                  src={cmcLogo} 
-                  alt="CMC Logo" 
+                <motion.img
+                  src={cmcLogo}
+                  alt="CMC Logo"
                   className="h-32 md:h-40 w-auto object-contain"
                   style={{
-                    filter: isHovered 
-                      ? "drop-shadow(0 0 30px rgba(255,235,59,0.6)) drop-shadow(3px 3px 0 rgba(0,0,0,0.3))" 
+                    filter: isHovered
+                      ? "drop-shadow(0 0 30px rgba(255,235,59,0.6)) drop-shadow(3px 3px 0 rgba(0,0,0,0.3))"
                       : "drop-shadow(0 0 15px rgba(255,235,59,0.3)) drop-shadow(2px 2px 0 rgba(0,0,0,0.2))",
                     transition: "filter 0.3s ease"
                   }}
@@ -154,8 +125,6 @@ const HeroSection = () => {
                     ease: "easeInOut"
                   }}
                 />
-                
-                {/* Animated glow effect around the logo */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-[#FFEB3B]/20 via-[#FF3B3F]/20 to-[#00BCD4]/20 rounded-lg blur-lg -z-10"
                   animate={{
@@ -171,29 +140,24 @@ const HeroSection = () => {
               </div>
             </motion.div>
 
-            {/* Enhanced Description */}
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
               className="font-[Comic Neue] text-lg mb-8 leading-relaxed"
             >
-              Join us for the most <span className="text-[#FFEB3B] font-bold">exciting</span> comic convention on campus! 
-              Two days filled with <span className="text-[#FF3B3F] font-bold">amazing guests</span>, panels, 
+              Join us for the most <span className="text-[#FFEB3B] font-bold">exciting</span> comic convention on campus!
+              Two days filled with <span className="text-[#FF3B3F] font-bold">amazing guests</span>, panels,
               cosplay contests, and <span className="text-[#00BCD4] font-bold">much more!</span>
             </motion.p>
 
-            {/* Enhanced Buttons */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.2 }}
               className="flex flex-wrap gap-4"
             >
-              <motion.div
-                whileHover={{ scale: 1.05, rotate: 1 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <motion.div whileHover={{ scale: 1.05, rotate: 1 }} whileTap={{ scale: 0.95 }}>
                 <Button asChild className="px-8 py-6 h-auto bg-gradient-to-r from-[#FF3B3F] to-[#FF6B6F] text-white font-bold rounded-xl hover:from-[#FF6B6F] hover:to-[#FF3B3F] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
                   <a href="#events">
                     <motion.div
@@ -208,13 +172,10 @@ const HeroSection = () => {
                   </a>
                 </Button>
               </motion.div>
-              
-              <motion.div
-                whileHover={{ scale: 1.05, rotate: -1 }}
-                whileTap={{ scale: 0.95 }}
-              >
+
+              <motion.div whileHover={{ scale: 1.05, rotate: -1 }} whileTap={{ scale: 0.95 }}>
                 <Button asChild className="px-8 py-6 h-auto bg-gradient-to-r from-[#FFEB3B] to-[#FFF176] text-[#212121] font-bold rounded-xl hover:from-[#FFF176] hover:to-[#FFEB3B] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
-                  <a href="https://drive.google.com/file/d/1WCoWT4W_zpAIaO_3xuY1BDlSqw-Ev0iB/view?usp=drive_link" target="_blank">
+                  <a href="https://drive.google.com/file/d/1WCoWT4W_zpAIaO_3xuY1BDlSqw-Ev0iB/view?usp=drive_link" target="_blank" rel="noreferrer">
                     <motion.div
                       className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10"
                       animate={{ x: ["-100%", "100%"] }}
@@ -229,70 +190,55 @@ const HeroSection = () => {
               </motion.div>
             </motion.div>
           </motion.div>
-          
-          {/* Enhanced Three-Image Collage with Rounded Borders - Positioned Lower */}
-          <motion.div 
+
+          {/* RIGHT IMAGE BLOCK */}
+          <motion.div
             className="relative h-[600px] md:h-[700px] w-full group mt-16"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {/* Main Center Image - Positioned Lower with Increased Height */}
             <motion.div
               className="absolute top-10 left-1/2 transform -translate-x-1/2 z-30"
               initial={{ scale: 0, rotate: -20, y: 1, rotateY: 45 }}
               animate={{ scale: 1, rotate: 0, y: 0, rotateY: 0 }}
-              transition={{ 
-              duration: 1, 
-              delay: 0.6, 
-              type: "spring", 
-              stiffness: 80,
-              damping: 12
+              transition={{
+                duration: 1,
+                delay: 0.6,
+                type: "spring",
+                stiffness: 80,
+                damping: 12
               }}
-              whileHover={{ 
-              scale: 1.08, 
-              rotate: 3, 
-              y: -10,
-              zIndex: 40,
-              rotateY: 5,
-              transition: { duration: 0.4, type: "spring", stiffness: 300 }
+              whileHover={{
+                scale: 1.08,
+                rotate: 3,
+                y: -10,
+                zIndex: 40,
+                rotateY: 5,
+                transition: { duration: 0.4, type: "spring", stiffness: 300 }
               }}
-              style={{ height: "450px" }} // Increased from 340px to 450px
+              style={{ height: "450px" }}
             >
               <div className="relative">
-                <div 
-                  className="relative bg-white p-4 w-80 h-96 overflow-hidden shadow-2xl rounded-2xl border-4 border-white transform -rotate-3"
-                >
-                  <img 
-                    src={logo1} 
-                    alt="Main Comic Event" 
-                    className="w-full h-full object-cover rounded-xl"
-                  />
-                  {/* Enhanced Comic Halftone Overlay */}
+                <div className="relative bg-white p-4 w-80 h-96 overflow-hidden shadow-2xl rounded-2xl border-4 border-white transform -rotate-3">
+                  <img src={logo1} alt="Main Comic Event" className="w-full h-full object-cover rounded-xl" />
                   <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#FF3B3F]/15 to-[#FFEB3B]/25 mix-blend-multiply rounded-xl" />
                   <div className="absolute inset-0 bg-gradient-to-tl from-[#00BCD4]/10 to-transparent mix-blend-screen rounded-xl" />
-                  
-                 
-                  {/* Inner Border Effect */}
                   <div className="absolute inset-2 border-2 border-white/50 rounded-lg" />
                 </div>
               </div>
             </motion.div>
-
-            
-
-            
           </motion.div>
         </div>
-        
-        {/* Enhanced Scroll Indicator */}
-        <motion.div 
-          animate={{ y: [0, 15, 0] }} 
+
+        {/* SCROLL INDICATOR */}
+        <motion.div
+          animate={{ y: [0, 15, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
           className="absolute bottom-10 left-0 right-0 flex justify-center"
         >
-          <motion.a 
-            href="#events" 
+          <motion.a
+            href="#events"
             className="text-white flex flex-col items-center group cursor-pointer"
             whileHover={{ scale: 1.1 }}
           >
@@ -307,17 +253,6 @@ const HeroSection = () => {
             </motion.div>
           </motion.a>
         </motion.div>
-      </div>
-
-      {/* Comic Book Dots Pattern */}
-      <div className="absolute inset-0 pointer-events-none opacity-5">
-        <div 
-          className="w-full h-full"
-          style={{
-            backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
-            backgroundSize: "20px 20px",
-          }}
-        />
       </div>
     </section>
   );

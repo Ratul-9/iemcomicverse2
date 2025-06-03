@@ -137,7 +137,12 @@ const GuestsSection = () => {
           className="mt-10 text-center"
         >
           <div className="relative inline-block group">
-            
+            <a
+              href="#all-guests"
+              className="px-6 py-3 bg-[#FF3B3F] text-white font-black text-lg uppercase border-4 border-black rounded-2xl shadow-[4px_4px_0px_#000] hover:scale-105 hover:shadow-[6px_6px_0px_#000] transition-transform duration-300"
+            >
+              View All Guests
+            </a>
             <div className="absolute inset-0 bg-[#FF3B3F] rounded-2xl border-4 border-black
                            transform rotate-2 transition-transform duration-300
                            group-hover:rotate-3 -z-10"></div>

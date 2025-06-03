@@ -7,30 +7,25 @@ import ratul from './ratul.jpg';
 import ankita from './ankita.png';
 import himel from './himel.jpg';
 import md from './md.jpg';
+import { Key } from "react";
+
 const TeamSection = () => {
   const teamData = [
-    // Row 1
     { name: "Alex Johnson", role: "Event Director", image: sovan },
     { name: "Maria Garcia", role: "Creative Director", image: singharup },
     { name: "David Chen", role: "Guest Relations", image: ratul },
     { name: "Sarah Williams", role: "Logistics Manager", image: himel },
     { name: "Mike Thompson", role: "Marketing Head", image: md },
-    
-    // Row 2
     { name: "Emma Rodriguez", role: "Tech Lead", image: ankita },
     { name: "James Wilson", role: "PR Manager", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=JW" },
     { name: "Lisa Park", role: "Design Head", image: "https://via.placeholder.com/150x150/FFEB3B/2E3192?text=LP" },
     { name: "Tom Anderson", role: "Content Writer", image: "https://via.placeholder.com/150x150/2E3192/ffffff?text=TA" },
     { name: "Rachel Green", role: "Operations", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=RG" },
-    
-    // Row 3
     { name: "Kevin Lee", role: "Social Media", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=KL" },
     { name: "Sophie Miller", role: "Finance Head", image: "https://via.placeholder.com/150x150/2E3192/ffffff?text=SM" },
     { name: "Chris Evans", role: "HR Manager", image: "https://via.placeholder.com/150x150/FFEB3B/2E3192?text=CE" },
     { name: "Maya Patel", role: "Logistics", image: "https://via.placeholder.com/150x150/2E3192/ffffff?text=MP" },
     { name: "Ryan Clark", role: "Volunteer Coord", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=RC" },
-    
-    // Row 4
     { name: "Zoe Walker", role: "Sponsorship", image: "https://via.placeholder.com/150x150/2E3192/ffffff?text=ZW" },
     { name: "Ben Cooper", role: "Media Relations", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=BC" },
     { name: "Natalie Hall", role: "Web Developer", image: "https://via.placeholder.com/150x150/FFEB3B/2E3192?text=NH" },
@@ -38,7 +33,6 @@ const TeamSection = () => {
     { name: "Daniel Brown", role: "Security Head", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=DB" }
   ];
 
-  // Faculty data - 4 members
   const facultyData = [
     { name: "Dr. Sarah Mitchell", role: "Dean of Students", image: "https://via.placeholder.com/150x150/2E3192/ffffff?text=SM" },
     { name: "Prof. John Davis", role: "Academic Head", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=JD" },
@@ -46,7 +40,6 @@ const TeamSection = () => {
     { name: "Prof. Mark Wilson", role: "Department Chair", image: "https://via.placeholder.com/150x150/2E3192/ffffff?text=MW" }
   ];
 
-  // Advisory Committee data - 5 members
   const advisoryData = [
     { name: "Mr. Robert Taylor", role: "Industry Expert", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=RT" },
     { name: "Ms. Jennifer Lee", role: "Alumni Representative", image: "https://via.placeholder.com/150x150/2E3192/ffffff?text=JL" },
@@ -68,19 +61,13 @@ const TeamSection = () => {
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
   };
 
-  // Split members into rows of 5
   const memberRows = [];
   for (let i = 0; i < teamData.length; i += 5) {
     memberRows.push(teamData.slice(i, i + 5));
   }
 
-  // Helper function to render member cards
-  const renderMemberCard = (member, index) => (
-    <motion.div
-      key={index}
-      variants={item}
-      className="w-full h-full"
-    >
+  const renderMemberCard = (member: { name: any; role: any; image: any; }, index: Key | null | undefined) => (
+    <motion.div key={index} variants={item} className="w-full h-full">
       <div className="relative group cursor-pointer h-full">
         <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl border-4 border-black p-2
                        transform transition-all duration-300 ease-out
@@ -89,8 +76,6 @@ const TeamSection = () => {
                        hover:shadow-[10px_10px_0px_0px_#000000]
                        flex flex-col h-full"
                        style={{ minHeight: '220px' }}>
-          
-          {/* Profile Image - Fills most of the card with rounded edges and square aspect ratio */}
           <div className="flex-1 w-full overflow-hidden border-3 border-black mb-2 rounded-xl
                          group-hover:border-[#FF3B3F] transition-colors duration-300 aspect-square">
             <img 
@@ -99,20 +84,16 @@ const TeamSection = () => {
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
             />
           </div>
-          
-          {/* Compact text section at bottom */}
           <div className="text-center px-1">
             <h3 className="font-black text-xs text-[#FF3B3F] mb-0.5
                            group-hover:text-[#2E3192] transition-colors uppercase leading-tight">
               {member.name}
             </h3>
-            
             <p className="font-bold text-[#2E3192] text-xs">
               {member.role}
             </p>
           </div>
         </div>
-        
         <div className="absolute inset-0 bg-purple-800 bg-opacity-60 rounded-2xl
                        transform rotate-1 transition-transform duration-300
                        group-hover:rotate-2 -z-10"></div>
@@ -122,7 +103,6 @@ const TeamSection = () => {
 
   return (
     <section id="team" className="py-20 bg-transparent relative overflow-hidden">
-      {/* Background pattern */}
       <div className="absolute inset-0" style={{ 
         backgroundImage: `radial-gradient(circle at 25% 25%, #2E3192 2px, transparent 2px),
                          radial-gradient(circle at 75% 75%, #FF3B3F 1px, transparent 1px),
@@ -132,31 +112,17 @@ const TeamSection = () => {
       }}></div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="max-w-7xl mx-auto"
-        >
-          <div className="bg-purple-950 bg-opacity-60 rounded-3xl p-8 md:p-12 backdrop-blur-sm relative overflow-hidden">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-6xl md:text-7xl lg:text-8xl text-white mb-4 relative z-10 
-                           drop-shadow-[4px_4px_0px_#000000] font-black uppercase tracking-wider">
+        <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true }} className="max-w-7xl mx-auto">
+          <div className="bg-purple-950 bg-opacity-60 rounded-3xl p-4 md:p-8 lg:p-12 backdrop-blur-sm relative overflow-hidden">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8 md:mb-12">
+              <h2 className="text-4xl md:text-6xl lg:text-7xl text-white mb-4 relative z-10 drop-shadow-[4px_4px_0px_#000000] font-black uppercase tracking-wider">
                 Team
               </h2>
             </motion.div>
-            
-            {/* Grid Layout - 4 rows of 5 members each */}
+
             <div className="space-y-6">
               {memberRows.map((row, rowIndex) => (
-                <div key={rowIndex} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div key={rowIndex} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                   {row.map((member, memberIndex) => renderMemberCard(member, `${rowIndex}-${memberIndex}`))}
                 </div>
               ))}
@@ -165,58 +131,28 @@ const TeamSection = () => {
         </motion.div>
 
         {/* Faculty Section */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="max-w-7xl mx-auto mt-12"
-        >
-          <div className="bg-purple-950 bg-opacity-60 rounded-3xl p-8 md:p-12 backdrop-blur-sm relative overflow-hidden">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-6xl md:text-7xl lg:text-8xl text-white mb-4 relative z-10 
-                           drop-shadow-[4px_4px_0px_#000000] font-black uppercase tracking-wider">
+        <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true }} className="max-w-7xl mx-auto mt-12">
+          <div className="bg-purple-950 bg-opacity-60 rounded-3xl p-4 md:p-8 lg:p-12 backdrop-blur-sm relative overflow-hidden">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8 md:mb-12">
+              <h2 className="text-4xl md:text-6xl lg:text-7xl text-white mb-4 relative z-10 drop-shadow-[4px_4px_0px_#000000] font-black uppercase tracking-wider">
                 Faculty
               </h2>
             </motion.div>
-            
-            {/* Faculty Grid - 4 members */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-center">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-center">
               {facultyData.map((member, index) => renderMemberCard(member, `faculty-${index}`))}
             </div>
           </div>
         </motion.div>
 
         {/* Advisory Committee Section */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="max-w-7xl mx-auto mt-12"
-        >
-          <div className="bg-purple-950 bg-opacity-60 rounded-3xl p-8 md:p-12 backdrop-blur-sm relative overflow-hidden">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-6xl md:text-7xl lg:text-8xl text-white mb-4 relative z-10 
-                           drop-shadow-[4px_4px_0px_#000000] font-black uppercase tracking-wider">
+        <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true }} className="max-w-7xl mx-auto mt-12">
+          <div className="bg-purple-950 bg-opacity-60 rounded-3xl p-4 md:p-8 lg:p-12 backdrop-blur-sm relative overflow-hidden">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8 md:mb-12">
+              <h2 className="text-4xl md:text-6xl lg:text-7xl text-white mb-4 relative z-10 drop-shadow-[4px_4px_0px_#000000] font-black uppercase tracking-wider">
                 Advisory Committee
               </h2>
             </motion.div>
-            
-            {/* Advisory Committee Grid - 5 members */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
               {advisoryData.map((member, index) => renderMemberCard(member, `advisory-${index}`))}
             </div>
           </div>
