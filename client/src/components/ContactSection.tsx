@@ -56,7 +56,8 @@ const ContactSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-6xl font-[akira-expanded] font-extrabold tracking-wider text-yellow-400 mb-4 uppercase drop-shadow-xl">Contact Us</h2>
+            <h2 className="text-6xl font-[akira-expanded] font-extrabold tracking-wider text-yellow-400 mb-4 uppercase drop-shadow-xl"
+            style={{ fontFamily: "'Akira Expanded Demo', sans-serif" }}>Contact Us</h2>
             <p className="text-lg text-gray-300 mb-8 max-w-md">
               Have any questions or feedback? We're here to assist you anytime.
             </p>

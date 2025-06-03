@@ -1,4 +1,6 @@
 import React from 'react';
+import greyquotient from '../assets/Grey Quotient.jpg';
+import orangebackground from '../assets/orangeBackground.jpg';
 import grey from '../assets/grey.png';
 import logo from '../assets/logo.png';
 import Akira_Expanded_Demo from '../assets/fonts/Akira Expanded Demo.otf';
@@ -138,7 +140,7 @@ const ComicVerse: React.FC = () => {
         }
         .section-title {
             font-size: 3.5rem;
-            font-family: 'Akira Expanded', sans-serif;
+            font-family: 'Akira Expanded Demo', sans-serif;
             color: white;
             font-weight: normal;
             text-align: center;
@@ -194,11 +196,11 @@ const ComicVerse: React.FC = () => {
             overflow: hidden;
         }
         .anime-card-1 .card-inner {
-            background: url('greyin.png') no-repeat center center/cover;
+            background: url(${greyquotient}) no-repeat center center/cover;
             
         }
         .anime-card:hover .card-inner {
-            background: url('art8.png') no-repeat center center/cover;
+            background: url(${orangebackground}) no-repeat center center/cover;
             box-shadow: 0 0 10px 3px white;
             animation: glow-pulse 0.6s ease-in-out;
         }
@@ -248,7 +250,7 @@ const ComicVerse: React.FC = () => {
                 opacity: 0;
             }
             100% {
-                transform: translateY(-230px);
+                transform: translateY(-210px);
                 opacity: 1;
             }
         }
@@ -344,7 +346,7 @@ const ComicVerse: React.FC = () => {
             margin-top: 5rem;
         }
         .btn {
-            font-family: 'Akira Expanded', sans-serif;
+            font-family: 'Akira Expanded Demo', sans-serif;
             font-weight: normal;
             display: inline-block;
             padding: 1.5rem 3.5rem;
@@ -421,7 +423,7 @@ const ComicVerse: React.FC = () => {
             margin-bottom: 2rem;
         }
         .footer-column h3 {
-            font-family: "Akira Expanded", system-ui;
+            font-family: "Akira Expanded Demo", system-ui;
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: #673101;
@@ -555,7 +557,7 @@ const ComicVerse: React.FC = () => {
           </div>
         </div>
         <div className="registration">
-          <a href="#" className="btn">Register Now!</a>
+          <a href="#" className="btn" onClick={()=> alert("Registrations opening Soon")}>Register Now!</a>
         </div>
       </section>
       <footer>

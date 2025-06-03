@@ -70,7 +70,8 @@ const GuestsSection = () => {
               className="text-center mb-12"
             >
               <h2 className="text-6xl md:text-7xl lg:text-8xl text-white mb-4 relative z-10 
-                           drop-shadow-[4px_4px_0px_#000000] font-black uppercase tracking-wider">
+                           drop-shadow-[4px_4px_0px_#000000] font-black uppercase tracking-wider"
+                           style={{ fontFamily: "'Akira Expanded Demo', sans-serif" }}>
                 Guests
               </h2>
             </motion.div>

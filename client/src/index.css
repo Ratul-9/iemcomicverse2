@@ -42,8 +42,8 @@
   opacity: 0.3;
 }
 @font-face {
-  font-family: 'AkiraExpanded';
-  src: url('./assets/AkiraExpanded.otf') format('opentype');
+  font-family: 'Akira Expanded Demo';
+  src: url('../public/fonts/Akira\ Expanded\ Demo.otf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -57,6 +57,12 @@
 @font-face {
   font-family: 'HighRise';
   src: url('./assets/HighriseFont-Bold-Demo.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bropella';
+  src: url('../public/fonts/Bropella.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }

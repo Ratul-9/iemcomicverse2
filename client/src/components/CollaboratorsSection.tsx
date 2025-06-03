@@ -57,7 +57,8 @@ const CollaboratorsSection = () => {
               className="text-center mb-10 sm:mb-12"
             >
               <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-4 relative z-10
-                             drop-shadow-[3px_3px_0px_#000000] font-black uppercase tracking-wider leading-tight">
+                             drop-shadow-[3px_3px_0px_#000000] font-black uppercase tracking-wider leading-tight"
+                             style={{ fontFamily: "'Akira Expanded Demo', sans-serif" }}>
                 OUR COLLABORATORS
               </h2>
             </motion.div>

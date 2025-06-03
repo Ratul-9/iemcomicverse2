@@ -165,7 +165,7 @@ const ComicVerse: React.FC = () => {
 
     .section-title {
       font-size: 3.5rem;
-      font-family: 'Arial Black', sans-serif;
+      font-family: 'Akira Expanded Demo', sans-serif;
       color: white;
       font-weight: normal;
       text-align: center;
@@ -388,7 +388,7 @@ const ComicVerse: React.FC = () => {
     }
 
     .btn {
-      font-family: 'Arial Black', sans-serif;
+      font-family: 'Akira Expanded Demo', sans-serif;
       font-weight: normal;
       display: inline-block;
       padding: 1.5rem 3.5rem;
@@ -474,7 +474,7 @@ const ComicVerse: React.FC = () => {
     }
 
     .footer-column h3 {
-      font-family: "Akira Expanded", system-ui;
+      font-family: "Akira Expanded Demo", system-ui;
       font-size: 1.5rem;
       margin-bottom: 1rem;
       color: #0b378a;
@@ -622,7 +622,7 @@ const ComicVerse: React.FC = () => {
                 <h3 className="anime-card-title"></h3>
                 <div className="speech-bubble">
                   <p style={{
-                    fontFamily: 'Bropella, sans-serif',
+                    fontFamily: "Bropella, sans-serif",
                     fontSize: '2rem',
                     textAlign: 'center',
                     marginLeft: '20px',
@@ -635,7 +635,7 @@ const ComicVerse: React.FC = () => {
             </div>
           </div>
           <div className="registration">
-            <a href="#" className="btn">Register Now!</a>
+            <a href="#" className="btn" onClick={()=> alert("Registrations opening Soon")}>Register Now!</a>
           </div>
         </section>
         

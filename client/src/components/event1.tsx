@@ -5,7 +5,7 @@ import m5 from '../assets/m5.png';
 import m6 from '../assets/m6.png';
 import m7 from '../assets/m7.png';
 import logo from '../assets/logo.png';
-import Akira_Expanded_Demo from '../assets/fonts/Akira Expanded Demo.otf';
+
 
 const ComicVerse = () => {
   const styles = `
@@ -157,9 +157,16 @@ const ComicVerse = () => {
       position: relative;
     }
 
+    @font-face {
+  font-family: 'Akira Expanded Demo';
+  src: url('../assets/Akira Expanded Demo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
     .section-title {
       font-size: 3.5rem;
-      font-family: 'Akira Expanded', sans-serif;
+      font-family: 'Akira Expanded Demo', sans-serif;
       color: white;
       font-weight: normal;
       text-align: center;
@@ -314,7 +321,7 @@ const ComicVerse = () => {
     }
 
     .btn {
-      font-family: 'Akira Expanded', sans-serif;
+      font-family: 'Akira Expanded Demo', sans-serif;
       font-weight: normal;
       display: inline-block;
       padding: 1.5rem 3.5rem;
@@ -405,7 +412,7 @@ const ComicVerse = () => {
     }
 
     .footer-column h3 {
-      font-family: "Akira Expanded", system-ui;
+      font-family: "Akira Expanded Demo", system-ui;
       font-size: 1.5rem;
       margin-bottom: 1rem;
       color: #20044a;
@@ -627,7 +634,7 @@ const ComicVerse = () => {
             </div>
           </div>
 
-          <p className="designed-by">Designed with ❤️ by the ComicVerse Team</p>
+          <p className="designed-by">Designed with ❤ by the ComicVerse Team</p>
         </div>
       </footer>
     </div>

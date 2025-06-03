@@ -49,7 +49,7 @@ const CosplayCarnival: React.FC = () => {
         }
 
         body {
-          background-color: #470000;
+          background-color: #000000;
           color: var(--dark-text);
           overflow-x: hidden;
         }
@@ -173,7 +173,7 @@ const CosplayCarnival: React.FC = () => {
 
         .section-title {
           font-size: 3.5rem;
-          font-family: 'Akira Expanded', sans-serif;
+          font-family: 'Akira Expanded Demo', sans-serif;
           color: white;
           font-weight: normal;
           text-align: center;
@@ -391,7 +391,7 @@ const CosplayCarnival: React.FC = () => {
         }
 
         .btn {
-          font-family: 'Akira Expanded', sans-serif;
+          font-family: 'Akira Expanded Demo', sans-serif;
           font-weight: normal;
           display: inline-block;
           padding: 1.5rem 3.5rem;
@@ -477,7 +477,7 @@ const CosplayCarnival: React.FC = () => {
         }
 
         .footer-column h3 {
-          font-family: "Akira Expanded", system-ui;
+          font-family: "Akira Expanded Demo", system-ui;
           font-size: 1.5rem;
           margin-bottom: 1rem;
           color: #65002e;
@@ -633,10 +633,6 @@ const CosplayCarnival: React.FC = () => {
       {/* Header */}
       <header className="header">
         <img src={logo} alt="ComicVerse 2025 Logo" className="header-logo" />
-        <nav className="navbar">
-          <a href="#" className="nav-link">Home</a>
-          <a href="#" className="nav-link">About Us</a>
-        </nav>
       </header>
 
       {/* Hero Section */}
@@ -668,7 +664,7 @@ const CosplayCarnival: React.FC = () => {
           </div>
         </div>
         <div className="registration">
-          <a href="#" className="btn">Register Now!</a>
+          <a href="#" className="btn" onClick={()=> alert("Registrations opening Soon")}>Register Now!</a>
         </div>
       </section>
 

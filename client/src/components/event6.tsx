@@ -151,7 +151,7 @@ const ComicFest2025: React.FC = () => {
 
         .section-title {
           font-size: 3.5rem;
-          font-family: 'Akira Expanded', sans-serif;
+          font-family: 'Akira Expanded Demo', sans-serif;
           color: white;
           font-weight: normal;
           text-align: center;
@@ -305,7 +305,7 @@ const ComicFest2025: React.FC = () => {
         }
 
         .btn {
-          font-family: 'Akira Expanded', sans-serif;
+          font-family: 'Akira Expanded Demo', sans-serif;
           font-weight: normal;
           display: inline-block;
           padding: 1.5rem 3.5rem;
@@ -385,7 +385,7 @@ const ComicFest2025: React.FC = () => {
         }
 
         .footer-column h3 {
-          font-family: "Akira Expanded", system-ui;
+          font-family: "Akira Expanded Demo", system-ui;
           font-size: 1.5rem;
           margin-bottom: 1rem;
           color: #0b378a;
@@ -562,7 +562,7 @@ const ComicFest2025: React.FC = () => {
           ))}
         </div>
         <div className="registration">
-          <button className="btn" onClick={handleRegistration}>
+          <button className="btn" onClick={()=> alert("Registrations opening Soon")}>
             Register Now!
           </button>
         </div>

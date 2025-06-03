@@ -179,7 +179,7 @@ const ZeArenaWebsite: React.FC = () => {
 
         .section-title {
           font-size: 3.5rem;
-          font-family: 'Akira Expanded', sans-serif;
+          font-family: 'Akira Expanded Demo', sans-serif;
           color: white;
           font-weight: normal;
           text-align: center;
@@ -323,7 +323,7 @@ const ZeArenaWebsite: React.FC = () => {
             opacity: 0;
           }
           100% {
-            transform: translateY(-250px);
+            transform: translateY(-270px);
             opacity: 1;
           }
         }
@@ -350,7 +350,7 @@ const ZeArenaWebsite: React.FC = () => {
         }
 
         .btn {
-          font-family: 'Akira Expanded', sans-serif;
+          font-family: 'Akira Expanded Demo', sans-serif;
           font-weight: normal;
           display: inline-block;
           padding: 1.5rem 3.5rem;
@@ -436,7 +436,7 @@ const ZeArenaWebsite: React.FC = () => {
         }
 
         .footer-column h3 {
-          font-family: "Akira Expanded", system-ui;
+          font-family: "Akira Expanded Demo", system-ui;
           font-size: 1.5rem;
           margin-bottom: 1rem;
           color: #19393b;
@@ -600,10 +600,6 @@ const ZeArenaWebsite: React.FC = () => {
       
       <header className="header">
         <img src={logo} alt="ComicVerse 2025 Logo" className="header-logo" />
-        <nav className="navbar">
-          <a href="#" className="nav-link">Home</a>
-          <a href="#" className="nav-link">About Us</a>
-        </nav>
       </header>
 
       <section className="hero">
@@ -681,7 +677,7 @@ const ZeArenaWebsite: React.FC = () => {
         </div>
         
         <div className="registration">
-          <a href="#" className="btn">Register Now!</a>
+          <a href="#" className="btn" onClick={()=> alert("Registrations opening Soon")}>Register Now!</a>
         </div>
       </section>
 
