@@ -29,7 +29,7 @@ const Home = () => {
       <HeroSection />
       <EventsSection />
       <CollaboratorsSection />
-      <GuestsSection />
+      {/* <GuestsSection /> */}
       <TeamSection />
       <ContactSection />
       <Footer />
