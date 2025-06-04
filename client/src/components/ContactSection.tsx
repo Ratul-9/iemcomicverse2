@@ -91,7 +91,7 @@ const ContactSection = () => {
               <div className="flex space-x-4 text-white">
                 <a href="#" className="hover:text-red-400"><Instagram size={20} /></a>
                 <a href="#" className="hover:text-yellow-400"><Facebook size={20} /></a>
-                <a href="#" className="hover:text-red-400"><Twitter size={20} /></a>
+
               </div>
             </div>
           </motion.div>
@@ -150,7 +150,7 @@ const ContactSection = () => {
           className="mt-16"
         >
           <div className="bg-[#f8f6ff] border border-purple-200 p-4 rounded-lg">
-            <h3 className="text-xl font-bold text-center text-yellow-600 mb-4">Event Location</h3>
+            <h3 className="text-xl font-akira text-center text-purple-950 mb-4">Event Location</h3>
             <div className="w-full h-80 rounded-lg overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.1729990665267!2d88.43483987507773!3d22.572632079491672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275a90e337bc3%3A0x83415f007fc5f363!2sInstitute%20of%20Engineering%20and%20Management%20Block-GP!5e0!3m2!1sen!2sin!4v1747723691025!5m2!1sen!2sin"

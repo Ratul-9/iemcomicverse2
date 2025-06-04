@@ -115,9 +115,9 @@ const TeamSection = () => {
         <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true }} className="max-w-7xl mx-auto">
           <div className="bg-purple-950 bg-opacity-60 rounded-3xl p-4 md:p-8 lg:p-12 backdrop-blur-sm relative overflow-hidden">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8 md:mb-12">
-              <h2 className="text-4xl md:text-6xl lg:text-7xl text-white mb-4 relative z-10 drop-shadow-[4px_4px_0px_#000000] font-black uppercase tracking-wider"
+              <h2 className="text-4xl md:text-6xl lg:text-5xl text-white mb-4 relative z-10 drop-shadow-[4px_4px_0px_#000000] font-black uppercase tracking-wider"
               style={{ fontFamily: "'Akira Expanded Demo', sans-serif" }}>
-                Team
+                Meet Our Team
               </h2>
             </motion.div>
 
@@ -135,7 +135,7 @@ const TeamSection = () => {
         <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true }} className="max-w-7xl mx-auto mt-12">
           <div className="bg-purple-950 bg-opacity-60 rounded-3xl p-4 md:p-8 lg:p-12 backdrop-blur-sm relative overflow-hidden">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8 md:mb-12">
-              <h2 className="text-4xl md:text-6xl lg:text-7xl text-white mb-4 relative z-10 drop-shadow-[4px_4px_0px_#000000] font-black uppercase tracking-wider"
+              <h2 className="text-4xl md:text-6xl lg:text-5xl text-white mb-4 relative z-10 drop-shadow-[4px_4px_0px_#000000] font-black uppercase tracking-wider"
               style={{ fontFamily: "'Akira Expanded Demo', sans-serif" }}>
                 Faculty
               </h2>
@@ -150,7 +150,7 @@ const TeamSection = () => {
         <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true }} className="max-w-7xl mx-auto mt-12">
           <div className="bg-purple-950 bg-opacity-60 rounded-3xl p-4 md:p-8 lg:p-12 backdrop-blur-sm relative overflow-hidden">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8 md:mb-12">
-              <h2 className="text-4xl md:text-6xl lg:text-7xl text-white mb-4 relative z-10 drop-shadow-[4px_4px_0px_#000000] font-black uppercase tracking-wider"
+              <h2 className="text-4xl md:text-6xl lg:text-5xl text-white mb-4 relative z-10 drop-shadow-[4px_4px_0px_#000000] font-black uppercase tracking-wider"
               style={{ fontFamily: "'Akira Expanded Demo', sans-serif" }}>
                 Advisory Committee
               </h2>

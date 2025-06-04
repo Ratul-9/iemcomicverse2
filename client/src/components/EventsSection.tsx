@@ -74,12 +74,11 @@ const EventsSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
           <div className="inline-block relative">
-            <h2 className="font-[Bangers] text-5xl text-white mb-4 relative z-10"
+            <h2 className="text-5xl text-white mb-4 relative z-10"
             style={{ fontFamily: "'Akira Expanded Demo', sans-serif" }}>
-              EVENTS
-              <div className="absolute -bottom-2 left-0 right-0 h-2 bg-[#FF3B3F] transform skew-x-[-12deg]"></div>
+              OUR SEGMENTS
             </h2>
-            <div className="absolute -top-2 -left-2 -right-2 -bottom-2 bg-[#FFEB3B] rounded-lg opacity-20 transform rotate-2 z-0"></div>
+            <div className="absolute -top-4 -left-7 -right-7 -bottom-1 bg-purple-950 rounded-lg bg-opacity-60 transform rotate-0 z-0"></div>
           </div>
         </motion.div>
 
