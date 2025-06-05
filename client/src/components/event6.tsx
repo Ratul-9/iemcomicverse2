@@ -375,7 +375,7 @@ const ComicFest2025: React.FC = () => {
           display: flex;
           flex-wrap: wrap;
           justify-content: space-between;
-          gap: 6rem 4rem;
+          gap: 12rem 10rem;
         }
 
         .footer-column {
@@ -394,6 +394,7 @@ const ComicFest2025: React.FC = () => {
 
         .footer-links a {
           color: #0084ff;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
           text-decoration: none;
           display: block;
           margin: 0.5rem 0;
@@ -417,6 +418,7 @@ const ComicFest2025: React.FC = () => {
         }
 
         .copyright {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
           width: 100%;
           margin-top: 2rem;
           font-size: 1rem;

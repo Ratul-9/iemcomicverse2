@@ -411,6 +411,7 @@ const ComicVerse: React.FC = () => {
             flex-wrap: wrap;
             justify-content: space-between;
             gap: 6rem 4rem;
+            
         }
         .footer-logo {
             font-size: 2.5rem;
@@ -430,6 +431,7 @@ const ComicVerse: React.FC = () => {
             font-weight: normal;
         }
         .footer-links a, .resources a {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             color: #ff7300;
             text-decoration: none;
             display: block;
@@ -451,9 +453,10 @@ const ComicVerse: React.FC = () => {
             font-size: 1rem;
         }
         .copyright {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             width: 100%;
             margin-top: 2rem;
-            font-size: 1rem;
+            font-size: 1.1rem;
             opacity: 0.9;
         }
         .designed-by {
@@ -564,7 +567,7 @@ const ComicVerse: React.FC = () => {
         <div className="footer-content">
           <div className="footer-column">
             <h3>COMICVERSE</h3>
-            <p>The ultimate celebration of comics, art, and pop culture on campus!</p>
+            <p className="copyright">The ultimate celebration of comics, art, and pop culture on campus!</p>
             <p className="copyright">© 2025 IEM ComicVerse. All rights reserved.</p>
           </div>
           <div className="footer-column">
@@ -589,8 +592,7 @@ const ComicVerse: React.FC = () => {
             </div>
           </div>
           <div className="footer-column">
-            <h3>NEWSLETTER</h3>
-            <p>Subscribe for updates and announcements!</p>
+            
           </div>
           <p className="designed-by">Designed with ❤️ by the ComicVerse Team</p>
         </div>

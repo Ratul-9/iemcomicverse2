@@ -486,7 +486,7 @@ const CosplayCarnival: React.FC = () => {
 
         .footer-links a, .resources a {
           color: #b50c5e;
-          font-family: 'Montserrat', sans-serif;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
           text-decoration: none;
           display: block;
           margin: 0.5rem 0;
@@ -511,7 +511,7 @@ const CosplayCarnival: React.FC = () => {
 
         .copyright {
           width: 100%;
-          font-family: 'Montserrat', sans-serif;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
           color: #b50c5e;
           margin-top: 2rem;
           font-size: 1.1rem;

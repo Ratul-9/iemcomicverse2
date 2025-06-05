@@ -445,7 +445,7 @@ const ZeArenaWebsite: React.FC = () => {
 
         .footer-links a, .resources a {
           color: #0097b2;
-          font-family: 'Montserrat', sans-serif;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
           font-weight: 700;
           text-decoration: none;
           display: block;
@@ -472,7 +472,7 @@ const ZeArenaWebsite: React.FC = () => {
         .copyright {
           width: 100%;
           margin-top: 2rem;
-          font-family: 'Montserrat', sans-serif;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
           font-weight: 700;
           font-size: 1rem;
           opacity: 0.9;

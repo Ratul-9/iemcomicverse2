@@ -569,13 +569,13 @@ const RcadeComponent: React.FC = () => {
 
         .footer-links a,
         .resources a {
-          font-family: 'Montserrat', sans-serif;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
           color: #b50c5e;
           font-weight: 700;
           text-decoration: none;
           display: block;
           margin: 0.5rem 0;
-          font-size: 1.2rem;
+          font-size: 1.1rem;
           transition: all 0.3s ease;
           cursor: pointer;
         }
@@ -598,8 +598,8 @@ const RcadeComponent: React.FC = () => {
         .copyright {
           width: 100%;
           margin-top: 2rem;
-          font-size: 1.2rem;
-          font-family: 'Montserrat', sans-serif;
+          font-size: 1.1rem;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
           color: #b50c5e;
           font-weight: 700;
           opacity: 0.9;

@@ -5,9 +5,20 @@ import m5 from '../assets/m5.png';
 import m6 from '../assets/m6.png';
 import m7 from '../assets/m7.png';
 import logo from '../assets/logo.png';
-
+import Home from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import EventsSection from "@/components/EventsSection";
+import GuestsSection from "@/components/GuestsSection";
+import TeamSection from "@/components/TeamSection";
+import CollaboratorsSection from "@/components/CollaboratorsSection";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
 
 const ComicVerse = () => {
+
+
+  
   const styles = `
     :root {
       --primary-color: #5a5ee3;
@@ -420,14 +431,16 @@ const ComicVerse = () => {
     }
 
     .footer-links a, .resources a {
-      color: #9d00ff;
-      text-decoration: none;
-      display: block;
-      margin: 0.5rem 0;
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-      font-weight: normal;
-    }
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #9d00ff;
+  text-decoration: none;
+  display: block;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  font-weight: normal;
+}
+
 
     .footer-links a:hover, .resources a:hover {
       color: var(--accent-color-1);
@@ -444,9 +457,10 @@ const ComicVerse = () => {
     }
 
     .copyright {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       width: 100%;
       margin-top: 2rem;
-      font-size: 1rem;
+      font-size: 1.1rem;
       opacity: 0.9;
     }
 
@@ -607,20 +621,21 @@ const ComicVerse = () => {
         <div className="footer-content">
           <div className="footer-column">
             <h3>COMICVERSE</h3>
-            <p>The ultimate celebration of comics, art, and pop culture on campus!</p>
+            <p className="copyright">The ultimate celebration of comics, art, and pop culture on campus!</p>
             <p className="copyright">© 2025 IEM ComicVerse. All rights reserved.</p>
           </div>
           
           <div className="footer-column">
             <h3>QUICK LINKS</h3>
             <div className="footer-links">
-              <a href="#">Home</a>
-              <a href="#">Events</a>
-              <a href="#">Collaborators</a>
-              <a href="#">Guests</a>
-              <a href="#">Team</a>
-              <a href="#">Contact</a>
-            </div>
+  <a href="#home">Home</a>
+  <a href="#events">Events</a>
+  <a href="#collaborators">Collaborators</a>
+  <a href="#guests">Guests</a>
+  <a href="#team">Team</a>
+  <a href="#contact">Contact</a>
+</div>
+
           </div>
 
           <div className="footer-column">
