@@ -43,7 +43,7 @@
 }
 @font-face {
   font-family: 'Akira Expanded Demo';
-  src: url('../public/fonts/Akira\ Expanded\ Demo.otf') format('truetype');
+  src: url('fonts/Akira\ Expanded\ Demo.otf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
