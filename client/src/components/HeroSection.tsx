@@ -165,7 +165,7 @@ const HeroSection = () => {
                       animate={{ x: ["-100%", "100%"] }}
                       transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 2 }}
                     />
-                    <span className="relative z-10 flex items-center gap-2">
+                    <span className="font-akira relative z-10 flex items-center gap-2">
                       <Zap size={20} />
                       Explore Events
                     </span>
@@ -181,7 +181,7 @@ const HeroSection = () => {
                       animate={{ x: ["-100%", "100%"] }}
                       transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 2 }}
                     />
-                    <span className="relative z-10 flex items-center gap-2">
+                    <span className="font-akira relative z-10 flex items-center gap-2">
                       <Star size={20} />
                       Register Now
                     </span>
