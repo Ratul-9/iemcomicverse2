@@ -1,6 +1,6 @@
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Layers, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 
@@ -17,62 +17,105 @@ const Footer = () => {
     setEmail("");
   };
 
+  const styles = {
+    footer: {
+      backgroundColor: "#1C0036",
+      color: "white",
+      padding: "2.5rem 0",
+    },
+    container: {
+      maxWidth: "1200px",
+      margin: "0 auto",
+      padding: "0 1rem",
+    },
+    grid: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+      gap: "12rem",
+    },
+    sectionTitle: {
+      fontFamily: "Akira Expanded Demo",
+      fontSize: "1.5rem",
+      color: "#FFEB3B",
+      marginBottom: "1rem",
+    },
+    sectionTitleMain: {
+      fontFamily: "Akira Expanded Demo",
+      fontSize: "1.5rem",
+      color: "#FFEB3B",
+      marginBottom: "1rem",
+    },
+    text: {
+      fontFamily: "Segoe UI",
+      marginBottom: "1rem",
+    },
+    link: {
+      fontFamily: "Segoe UI",
+      color: "white",
+      textDecoration: "none",
+      display: "block",
+      marginBottom: "0.5rem",
+      transition: "color 0.2s ease",
+      cursor: "pointer",
+    },
+    linkHover: {
+      color: "#FFEB3B",
+    },
+    bottomText: {
+      fontFamily: "Comic Neue",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      borderTop: "1px solidrgb(237, 10, 199)",
+      paddingTop: "1.5rem",
+      marginTop: "2.5rem",
+      fontSize: "0.875rem",
+    },
+    heartIcon: {
+      color: "#FF3B3F",
+      margin: "0 0.25rem",
+      width: "1rem",
+      height: "1rem",
+    },
+  };
+
   return (
-    <footer className="bg-[#424242] text-white py-10">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer style={styles.footer}>
+      <div style={styles.container}>
+        <div style={styles.grid}>
           <div>
-            <h4 className="font-[Bangers] text-2xl text-[#FFEB3B] mb-4">COMICVERSE</h4>
-            <p className="font-[Comic Neue] mb-4">The ultimate celebration of comics, art, and pop culture on campus!</p>
-            <p className="font-[Comic Neue] text-sm">© 2025 IEM ComicVerse. All rights reserved.</p>
+            <h4 style={styles.sectionTitleMain}>COMICVERSE</h4>
+            <p style={styles.text}>The ultimate celebration of comics, art, and pop culture on campus!</p>
+            <p style={{ ...styles.text, fontSize: "0.875rem" }}>© 2025 IEM ComicVerse. All rights reserved.</p>
           </div>
-          
+
           <div>
-            <h4 className="font-[Bangers] text-xl text-[#FFEB3B] mb-4">QUICK LINKS</h4>
-            <ul className="space-y-2">
-              <li><a href="#home" className="font-[Comic Neue] hover:text-[#FFEB3B] transition-colors">Home</a></li>
-              <li><a href="#events" className="font-[Comic Neue] hover:text-[#FFEB3B] transition-colors">Events</a></li>
-              <li><a href="#collaborators" className="font-[Comic Neue] hover:text-[#FFEB3B] transition-colors">Collaborators</a></li>
-              <li><a href="#guests" className="font-[Comic Neue] hover:text-[#FFEB3B] transition-colors">Guests</a></li>
-              <li><a href="#team" className="font-[Comic Neue] hover:text-[#FFEB3B] transition-colors">Team</a></li>
-              <li><a href="#contact" className="font-[Comic Neue] hover:text-[#FFEB3B] transition-colors">Contact</a></li>
+            <h4 style={styles.sectionTitle}>QUICK LINKS</h4>
+            <ul style={{ listStyle: "none", padding: 0 }}>
+              {["Home", "Events", "Collaborators", "Guests", "Team", "Contact"].map((item) => (
+                <li key={item}>
+                  <a href={`#${item.toLowerCase()}`} style={styles.link}>
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
-          
+
           <div>
-            <h4 className="font-[Bangers] text-xl text-[#FFEB3B] mb-4">RESOURCES</h4>
-            <ul className="space-y-2">
-              <li><a onClick={()=>{alert('Coming Soon')}} className="font-[Comic Neue] hover:text-[#FFEB3B] transition-colors">FAQ</a></li>
-              <li><a onClick={()=>{alert('Coming Soon')}} className="font-[Comic Neue] hover:text-[#FFEB3B] transition-colors">Event Rules</a></li>
-              <li><a href="https://drive.google.com/file/d/1WCoWT4W_zpAIaO_3xuY1BDlSqw-Ev0iB/view?usp=drive_link" className="font-[Comic Neue] hover:text-[#FFEB3B] transition-colors">Event Brochure</a></li>
-              <li><a onClick={()=>{alert('Coming Soon')}} className="font-[Comic Neue] hover:text-[#FFEB3B] transition-colors">Full Schedule</a></li>
-              <li><a onClick={()=>{alert('Coming Soon')}} className="font-[Comic Neue] hover:text-[#FFEB3B] transition-colors">Press Kit</a></li>
+            <h4 style={styles.sectionTitle}>RESOURCES</h4>
+            <ul style={{ listStyle: "none", padding: 0 }}>
+              <li><span onClick={() => alert("Coming Soon")} style={styles.link}>FAQ</span></li>
+              <li><span onClick={() => alert("Coming Soon")} style={styles.link}>Event Rules</span></li>
+              <li><a href="https://drive.google.com/file/d/1WCoWT4W_zpAIaO_3xuY1BDlSqw-Ev0iB/view?usp=drive_link" style={styles.link}>Event Brochure</a></li>
+              <li><span onClick={() => alert("Coming Soon")} style={styles.link}>Full Schedule</span></li>
+              <li><span onClick={() => alert("Coming Soon")} style={styles.link}>Press Kit</span></li>
             </ul>
-          </div>
-          
-          <div>
-            <h4 className="font-[Bangers] text-xl text-[#FFEB3B] mb-4">NEWSLETTER</h4>
-            <p className="font-[Comic Neue] mb-4">Subscribe for updates and announcements!</p>
-            <form className="flex" onSubmit={handleSubscribe}>
-              <Input 
-                type="email" 
-                placeholder="Your email" 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-grow px-4 py-2 rounded-l-md focus:outline-none bg-white text-[#212121]"
-                required
-              />
-              <Button type="submit" className="bg-[#FF3B3F] px-4 py-2 rounded-r-md hover:bg-opacity-90 transition-colors">
-                <Layers className="h-4 w-4" />
-              </Button>
-            </form>
           </div>
         </div>
-        
-        <div className="mt-10 pt-6 border-t border-gray-700 text-center text-sm">
-          <p className="font-[Comic Neue] flex items-center justify-center">
-            Designed with <Heart className="text-[#FF3B3F] mx-1 h-4 w-4" /> by the ComicVerse Team
-          </p>
+
+        <div style={styles.bottomText}>
+          Designed with <Heart style={styles.heartIcon} /> by the ComicVerse Team
         </div>
       </div>
     </footer>

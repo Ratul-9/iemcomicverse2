@@ -458,7 +458,7 @@ const ComicVerse: React.FC = () => {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 6rem 4rem;
+      gap: 14rem 12rem;
     }
 
     .footer-logo {
@@ -482,6 +482,7 @@ const ComicVerse: React.FC = () => {
     }
 
     .footer-links a, .resources a {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       color: #0084ff;
       text-decoration: none;
       display: block;
@@ -506,6 +507,7 @@ const ComicVerse: React.FC = () => {
     }
 
     .copyright {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       width: 100%;
       margin-top: 2rem;
       font-size: 1rem;
@@ -667,10 +669,7 @@ const ComicVerse: React.FC = () => {
                 <a href="#">Press Kit</a>
               </div>
             </div>
-            <div className="footer-column">
-              <h3>NEWSLETTER</h3>
-              <p>Subscribe for updates and announcements!</p>
-            </div>
+            
             <p className="designed-by">Designed with ❤️ by the ComicVerse Team</p>
           </div>
         </footer>
