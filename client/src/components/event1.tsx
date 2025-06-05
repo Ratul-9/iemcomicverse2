@@ -5,6 +5,7 @@ import m5 from '../assets/m5.png';
 import m6 from '../assets/m6.png';
 import m7 from '../assets/m7.png';
 import logo from '../assets/logo.png';
+import { Link } from 'wouter';
 
 
 const ComicVerse = () => {

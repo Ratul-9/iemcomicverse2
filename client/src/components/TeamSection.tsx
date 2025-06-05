@@ -6,31 +6,28 @@ import singharup from './singharup.png';
 import ratul from './ratul.jpg';
 import ankita from './ankita.png';
 import himel from './himel.jpg';
+import aniruddha from './ANIRUDDHA GHOSH.png'
+import ankitaM from "./ANKITA MANDAL.jpg"
+import saurya from "./Saurya Das (1).jpg"
 import md from './md.jpg';
+import soumyajeet from "./Soumyajeet Chowdhury.png"
+import archisman from "./ARCHISMAN SAHA.jpg"
+import sridatri from "./ANIRUDDHA GHOSH.png"
 import { Key } from "react";
 
 const TeamSection = () => {
   const teamData = [
-    { name: "Alex Johnson", role: "Event Director", image: sovan },
-    { name: "Maria Garcia", role: "Creative Director", image: singharup },
-    { name: "David Chen", role: "Guest Relations", image: ratul },
-    { name: "Sarah Williams", role: "Logistics Manager", image: himel },
-    { name: "Mike Thompson", role: "Marketing Head", image: md },
-    { name: "Emma Rodriguez", role: "Tech Lead", image: ankita },
-    { name: "James Wilson", role: "PR Manager", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=JW" },
-    { name: "Lisa Park", role: "Design Head", image: "https://via.placeholder.com/150x150/FFEB3B/2E3192?text=LP" },
-    { name: "Tom Anderson", role: "Content Writer", image: "https://via.placeholder.com/150x150/2E3192/ffffff?text=TA" },
-    { name: "Rachel Green", role: "Operations", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=RG" },
-    { name: "Kevin Lee", role: "Social Media", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=KL" },
-    { name: "Sophie Miller", role: "Finance Head", image: "https://via.placeholder.com/150x150/2E3192/ffffff?text=SM" },
-    { name: "Chris Evans", role: "HR Manager", image: "https://via.placeholder.com/150x150/FFEB3B/2E3192?text=CE" },
-    { name: "Maya Patel", role: "Logistics", image: "https://via.placeholder.com/150x150/2E3192/ffffff?text=MP" },
-    { name: "Ryan Clark", role: "Volunteer Coord", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=RC" },
-    { name: "Zoe Walker", role: "Sponsorship", image: "https://via.placeholder.com/150x150/2E3192/ffffff?text=ZW" },
-    { name: "Ben Cooper", role: "Media Relations", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=BC" },
-    { name: "Natalie Hall", role: "Web Developer", image: "https://via.placeholder.com/150x150/FFEB3B/2E3192?text=NH" },
-    { name: "Grace Kim", role: "Photographer", image: "https://via.placeholder.com/150x150/2E3192/ffffff?text=GK" },
-    { name: "Daniel Brown", role: "Security Head", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=DB" }
+    { name: "Sovan Ghosh", role: "Event Director", image: sovan },
+    { name: "Singharup Bagchi", role: "Creative Director", image: singharup },
+    { name: "Ratul Mukherjee", role: "Guest Relations", image: ratul },
+    { name: "Himel Jana", role: "Logistics Manager", image: himel },
+    { name: "MD. Akram Molla", role: "Marketing Head", image: md },
+    { name: "Ankita Karmakar", role: "Tech Lead", image: ankita },
+    { name: "Aniruddha Ghosh", role: "PR Manager", image: aniruddha },
+    { name: "Ankita Mandal", role: "Design Head", image: ankitaM },
+    { name: "Archisman Saha", role: "Content Writer", image: archisman },
+    { name: "Saurya Das", role: "Operations", image: saurya },
+    { name: "Soumyajeet Chowdhury", role: "Social Media", image: soumyajeet },
   ];
 
   const facultyData = [
