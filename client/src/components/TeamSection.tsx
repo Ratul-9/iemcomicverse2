@@ -20,6 +20,7 @@ import atri from './AtriP.jpg'
 import spandan from './Spandan-Samanta.jpeg'
 import adrika from './Adrika K.jpg'
 import deboleena from './Deboleena .jpg'
+import sdb from './SDB.jpg'
 import atreyee from './Atreyi.jpg'
 import saheb from './Sahrb.jpg'
 import director from './Director3.jpg .jpg'
@@ -56,7 +57,7 @@ const TeamSection = () => {
   const facultyData = [
     { name: "Prof. Dr. Satyajit Chakrabarti", role: "Director of IEM-UEM Group", image: director },
     { name: "Prof. Dr. Prabir Kumar Das", role: "HOD - BSH", image: pkd },
-    { name: "Dr. Samapika Das Biswas", role: "Asst. HOD - BSH", image: "https://via.placeholder.com/150x150/FFEB3B/2E3192?text=LC" },
+    { name: "Dr. Samapika Das Biswas", role: "Asst. HOD - BSH", image: sdb },
     { name: "Deboleena Chakraborty", role: "Faculty Coordinator", image: deboleena },
     { name: "Atreyee Chaudhuri", role: "Faculty Coordinator", image: atreyee }
   ];

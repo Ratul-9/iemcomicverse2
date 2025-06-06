@@ -37,7 +37,6 @@ const HeroSection = () => {
         backgroundAttachment: 'scroll'
       }}
     >
-      {/* Animated Grid Pattern */}
       <div className="absolute inset-0 opacity-10">
         <motion.div
           className="w-full h-full"

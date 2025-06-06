@@ -20,7 +20,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-5xl rounded-xl backdrop-blur-md bg-white/5 border border-black shadow-xl">
+    <header className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-5xl rounded-xl backdrop-blur-md bg-white/2 border border-black shadow-xl">
       <div className="px-4">
         <nav className="flex items-center justify-between py-3 h-20 relative">
           {/* Logo */}
@@ -47,7 +47,7 @@ const Navbar = () => {
                 className={`relative group font-[Comic Neue] font-bold text-lg tracking-wide ${
                   item.isButton
                     ? "px-5 py-2 rounded-lg bg-red-500 text-white border-2 border-black shadow-md hover:bg-red-600 transition-all cursor-pointer"
-                    : "text-[#212121] hover:text-blue-600 transition-colors cursor-pointer"
+                    : "text-white hover:text-blue-600 transition-colors cursor-pointer"
                 }`}
               >
                 {item.label}
