@@ -225,8 +225,31 @@ const HeroSection = () => {
                   <div className="absolute inset-2 border-2 border-white/50 rounded-lg" />
                 </div>
               </div>
+
+                <motion.div
+                  className="mt-8 flex justify-center"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.4 }}
+                >
+                  <div className="bg-[#FFEB3B] text-[#212121] px-6 py-2 rounded-full font-[Comic Neue] font-bold relative overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
+                      animate={{ x: ["-100%", "100%"] }}
+                      transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                    />
+                    <button onClick={()=>window.open("#", "_blank")}><span className="relative z-10">Tap to see our comic book!!</span></button>
+                  </div>
+                </motion.div>
+
             </motion.div>
+
+            
           </motion.div>
+
+          
+
+          
         </div>
 
         {/* SCROLL INDICATOR */}

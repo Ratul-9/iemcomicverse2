@@ -4,45 +4,54 @@ import { Button } from "@/components/ui/button";
 import sovan from './sovan.jpg';
 import singharup from './singharup.png';
 import ratul from './ratul.jpg';
-import ankita from './ankita.png';
+import ankita from "./AnkitaK.png"
 import himel from './himel.jpg';
 import aniruddha from './ANIRUDDHA GHOSH.png';
 import ankitaM from "./ANKITA MANDAL.jpg";
 import saurya from "./Saurya Das (1).jpg";
 import md from './md.jpg';
-import soumyajeet from "./Soumyajeet Chowdhury.png";
+import soumyajeet from './Soumyajeet.png .png'
 import archisman from "./ARCHISMAN SAHA.jpg";
 import ayush from './Ayush Bera.jpeg'
+import megha from './Megha Biswas .jpg'
+import atri from './Atri-Panda.jpeg'
+import spandan from './Spandan-Samanta.jpeg'
+import deboleena from './Deboleena .jpg'
+import atreyee from './Atreyi.jpg'
+import director from './Director.jpg'
+import pkd from './PKD.jpg'
+import sridatri from './SRIDATRI-PURAKAIT.jpeg'
 import { Key } from "react";
 
 const TeamSection = () => {
   const teamData = [
-    { name: "Sovan Ghosh", role: "Event Director", image: sovan },
-    { name: "Singharup Bagchi", role: "Creative Director", image: singharup },
-    { name: "Ratul Mukherjee", role: "Guest Relations", image: ratul },
-    { name: "Himel Jana", role: "Logistics Manager", image: himel },
-    { name: "MD. Akram Molla", role: "Marketing Head", image: md },
-    { name: "Ankita Karmakar", role: "Tech Lead", image: ankita },
-    { name: "Aniruddha Ghosh", role: "PR Manager", image: aniruddha },
-    { name: "Ankita Mandal", role: "Design Head", image: ankitaM },
-    { name: "Archisman Saha", role: "Content Writer", image: archisman },
-    { name: "Saurya Das", role: "Operations", image: saurya },
-    { name: "Soumyajeet Chowdhury", role: "Social Media", image: soumyajeet },
+    { name: "Sovan Ghosh", role: "", image: sovan },
+    { name: "Singharup Bagchi", role: "", image: singharup },
+    { name: "Ratul Mukherjee", role: "", image: ratul },
+    { name: "Himel Jana", role: "", image: himel },
+    { name: "MD. Akram Molla", role: "", image: md },
+    { name: "Ankita Karmakar", role: "", image: ankita },
+    { name: "Aniruddha Ghosh", role: "", image: aniruddha },
+    { name: "Ankita Mandal", role: "", image: ankitaM },
+    { name: "Archisman Saha", role: "", image: archisman },
+    { name: "Saurya Das", role: "", image: saurya },
+    { name: "Soumyajeet Chowdhury", role: "", image: soumyajeet },
+    { name: "Sridatri Purakait", role: "", image: sridatri },
   ];
 
   const facultyData = [
-    { name: "Dr. Sarah Mitchell", role: "Dean of Students", image: "https://via.placeholder.com/150x150/2E3192/ffffff?text=SM" },
-    { name: "Prof. John Davis", role: "Academic Head", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=JD" },
-    { name: "Dr. Lisa Chen", role: "Research Director", image: "https://via.placeholder.com/150x150/FFEB3B/2E3192?text=LC" },
-    { name: "Prof. Mark Wilson", role: "Department Chair", image: "https://via.placeholder.com/150x150/2E3192/ffffff?text=MW" }
+    { name: "Prof. Dr. Satyajit Chakrabarti", role: "Director of IEM-UEM Group", image: director },
+    { name: "Prof. Dr. Prabir Kumar Das", role: "HOD - BSH", image: pkd },
+    { name: "Dr. Samapika Das Biswas", role: "Asst. HOD - BSH", image: "https://via.placeholder.com/150x150/FFEB3B/2E3192?text=LC" },
+    { name: "Deboleena Chakraborty", role: "Faculty Coordinator", image: deboleena },
+    { name: "Atreyee Chaudhuri", role: "Faculty Coordinator", image: atreyee }
   ];
 
   const advisoryData = [
-    { name: "Spandan Samanta", role: "Industry Expert", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=RT" },
-    { name: "Ms. Jennifer Lee", role: "Alumni Representative", image: "https://via.placeholder.com/150x150/2E3192/ffffff?text=JL" },
-    { name: "Ayush Bera", role: "External Advisor", image: ayush },
-    { name: "Ms. Patricia White", role: "Community Leader", image: "https://via.placeholder.com/150x150/2E3192/ffffff?text=PW" },
-    { name: "Mr. David Johnson", role: "Board Member", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=DJ" }
+    { name: "Spandan Sarkar", role: "  ", image: spandan },
+    { name: "Megha Biswas", role: "", image: megha},
+    { name: "Ayush Bera", role: "", image: ayush },
+    { name: "Atri Panda", role: "", image: atri },
   ];
 
   const container = {
