@@ -14,20 +14,13 @@ import NotFound from './pages/not-found';
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
+  const [showBot, setShowBot] = useState(false); // New modal control
 
   const handleVideoEnd = () => {
     setIsLoading(false);
     setTimeout(() => {
       setShowContent(true);
     }, 500);
-  };
-
-  const openChatbot = () => {
-    window.open(
-      "https://cdn.botpress.cloud/webchat/v3.0/shareable.html?configUrl=https://files.bpcontent.cloud/2025/02/17/03/20250217030619-PB4Z3EPI.json",
-      "_blank",
-      "width=400,height=600"
-    );
   };
 
   const handleSkipIntro = () => {
@@ -39,13 +32,14 @@ function App() {
 
   return (
     <div className="App">
+      
       {isLoading && (
         <VideoLoader 
           onVideoEnd={handleVideoEnd}
           onSkip={handleSkipIntro}
         />
       )}
-      
+
       {showContent && (
         <div className={`transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
           <Router>
@@ -62,12 +56,27 @@ function App() {
             </Switch>
           </Router>
 
-          {/* Floating Chatbot with Left-side Message */}
+          {/* Enhanced Floating Chatbot with Fire and Flare Animations */}
           <div className="fixed bottom-8 right-8 z-50">
             <div className="relative group">
+              {/* Energy Effects Container */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="energy-ring"></div>
+                <div className="energy-particles">
+                  <div className="particle"></div>
+                  <div className="particle"></div>
+                  <div className="particle"></div>
+                  <div className="particle"></div>
+                  <div className="particle"></div>
+                  <div className="particle"></div>
+                </div>
+                <div className="flare-burst"></div>
+              </div>
+
+              {/* Floating Button */}
               <button
-                onClick={openChatbot}
-                className="transition-transform duration-300 hover:scale-105 focus:outline-none"
+                onClick={() => setShowBot(true)}
+                className="chatbot-glow transition-transform duration-300 hover:scale-105 focus:outline-none relative z-10"
                 aria-label="Chat with RYZN"
               >
                 <img 
@@ -76,8 +85,8 @@ function App() {
                   className="h-36 w-auto drop-shadow-lg hover:drop-shadow-xl"
                 />
               </button>
-              
-              {/* Left-side Message Box - Appears on hover */}
+
+              {/* Hover Tooltip */}
               <div className="absolute bottom-0 right-full mb-6 mr-4 w-64 bg-white rounded-lg p-4 shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                    style={{ fontFamily: "'Arial Rounded MT Bold', 'Comic Sans MS', sans-serif" }}>
                 <div className="text-black font-bold text-lg mb-1">
@@ -88,11 +97,31 @@ function App() {
                   I'm here to help you with<br />
                   all your questions!
                 </div>
-                {/* Speech bubble pointer (right side) */}
                 <div className="absolute top-1/2 -right-2 transform -translate-y-1/2 w-0 h-0 border-t-8 border-b-8 border-l-8 border-t-transparent border-b-transparent border-l-white"></div>
               </div>
             </div>
           </div>
+
+          {/* Modal Chatbot */}
+          {showBot && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+              <div className="bg-white rounded-lg w-[400px] h-[600px] shadow-2xl relative">
+                <button
+                  className="absolute top-2 right-2 text-gray-700 hover:text-red-500 text-xl"
+                  onClick={() => setShowBot(false)}
+                >
+                  ×
+                </button>
+                <iframe
+                  src="https://cdn.botpress.cloud/webchat/v3.0/shareable.html?configUrl=https://files.bpcontent.cloud/2025/02/17/03/20250217030619-PB4Z3EPI.json"
+                  width="100%"
+                  height="100%"
+                  className="rounded-b-lg"
+                  title="RYZN Chatbot"
+                ></iframe>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>

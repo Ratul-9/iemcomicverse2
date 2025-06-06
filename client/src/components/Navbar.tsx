@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { scrollToSection } from "@/lib/utils";
 import logo from "../assets/logo.png";
-
+import Akira_Expanded_Demo from '../assets/fonts/Akira Expanded Demo.otf';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -96,11 +96,11 @@ const Navbar = () => {
                       scale: 1.05,
                       boxShadow: "0px 4px 15px rgba(0,0,0,0.2)",
                     }}
-                    className={`font-[Comic Neue] font-extrabold text-lg py-3 px-4 rounded-lg ${
-                      item.isButton
-                        ? "bg-red-500 text-white text-center border-2 border-black shadow hover:bg-red-600 transition-all cursor-pointer"
-                        : "text-[#212121] hover:bg-yellow-100 transition-colors cursor-pointer"
-                    }`}
+  className={`${
+                        item.isButton
+                          ? "px-5 py-2 rounded-lg bg-red-500 text-white border-2 border-black shadow-md hover:bg-red-600 transition-all cursor-pointer font-[Comic Neue] font-bold text-lg tracking-wide"
+                          : "font-[Akira Expanded Demo] font-extrabold text-lg py-3 px-4 rounded-lg text-[#212121] hover:bg-yellow-100 transition-colors cursor-pointer"
+                      }`}
                   >
                     {item.label}
                   </motion.a>
