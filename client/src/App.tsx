@@ -17,10 +17,17 @@ function App() {
 
   const handleVideoEnd = () => {
     setIsLoading(false);
-    // Small delay for smooth transition
     setTimeout(() => {
       setShowContent(true);
     }, 500);
+  };
+
+  const openChatbot = () => {
+    window.open(
+      "https://cdn.botpress.cloud/webchat/v3.0/shareable.html?configUrl=https://files.bpcontent.cloud/2025/02/17/03/20250217030619-PB4Z3EPI.json",
+      "_blank",
+      "width=400,height=600"
+    );
   };
 
   const handleSkipIntro = () => {
@@ -54,6 +61,38 @@ function App() {
               <Route component={NotFound} />
             </Switch>
           </Router>
+
+          {/* Floating Chatbot with Left-side Message */}
+          <div className="fixed bottom-8 right-8 z-50">
+            <div className="relative group">
+              <button
+                onClick={openChatbot}
+                className="transition-transform duration-300 hover:scale-105 focus:outline-none"
+                aria-label="Chat with RYZN"
+              >
+                <img 
+                  src="/src/components/chatbot.png" 
+                  alt="RYZN Chatbot" 
+                  className="h-36 w-auto drop-shadow-lg hover:drop-shadow-xl"
+                />
+              </button>
+              
+              {/* Left-side Message Box - Appears on hover */}
+              <div className="absolute bottom-0 right-full mb-6 mr-4 w-64 bg-white rounded-lg p-4 shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                   style={{ fontFamily: "'Arial Rounded MT Bold', 'Comic Sans MS', sans-serif" }}>
+                <div className="text-black font-bold text-lg mb-1">
+                  Hi I'm RYZN!
+                </div>
+                <div className="text-gray-700 text-sm">
+                  The superhero of IEM<br />
+                  I'm here to help you with<br />
+                  all your questions!
+                </div>
+                {/* Speech bubble pointer (right side) */}
+                <div className="absolute top-1/2 -right-2 transform -translate-y-1/2 w-0 h-0 border-t-8 border-b-8 border-l-8 border-t-transparent border-b-transparent border-l-white"></div>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>
