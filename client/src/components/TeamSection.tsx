@@ -9,7 +9,6 @@ import aniruddha from './ANIRUDDHA GHOSH.png';
 import ankitaM from "./AnkitaM.jpg";
 import saurya from "./Saurya Das (1).jpg";
 import md from './md.jpg';
-import ratul from './Ratul.jpg'
 import soumyajeet from './Soumyajeet.png .png'
 import archisman from "./archis.png";
 import trishan from './Trishan.jpg'
@@ -52,7 +51,6 @@ const TeamSection = () => {
     { name: "Soumyajeet Chowdhury", role: "", image: soumyajeet },
     { name: "Sridatri Purakait", role: "", image: sridatri },
     { name: "Sounak Maji", role: "", image: sounak },
-    { name: "Ratul Mukherjee", role: "", image:ratul},
     
   ];
 
