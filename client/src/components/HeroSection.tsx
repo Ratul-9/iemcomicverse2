@@ -144,11 +144,11 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
-              className="font-[Comic Neue] text-lg mb-8 leading-relaxed"
+              className="font-akira text-lg mb-8 leading-relaxed"
             >
-              Join us for the most <span className="text-[#FFEB3B] font-bold">exciting</span> comic convention on campus!
-              Two days filled with <span className="text-[#FF3B3F] font-bold">amazing guests</span>, panels,
-              cosplay contests, and <span className="text-[#00BCD4] font-bold">much more!</span>
+              {/* Join us for the most <span className="text-[#FFEB3B] font-bold">exciting</span> comic carnival on campus!
+              Two days filled with <span className="text-[#FFEB3B] font-bold">amazing guests</span>, panels,
+              cosplay contests, and <span className="text-[#00BCD4] font-bold">much more!</span> */}
             </motion.p>
 
             <motion.div
@@ -166,7 +166,6 @@ const HeroSection = () => {
                       transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 2 }}
                     />
                     <span className="font-akira relative z-10 flex items-center gap-2">
-                      <Zap size={20} />
                       Explore Events
                     </span>
                   </a>
@@ -182,7 +181,6 @@ const HeroSection = () => {
                       transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 2 }}
                     />
                     <span className="font-akira relative z-10 flex items-center gap-2">
-                      <Star size={20} />
                       Register Now
                     </span>
                   </a>

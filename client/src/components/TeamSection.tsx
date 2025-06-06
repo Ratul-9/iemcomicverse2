@@ -6,13 +6,13 @@ import singharup from './singharup.png';
 import ratul from './ratul.jpg';
 import ankita from './ankita.png';
 import himel from './himel.jpg';
-import aniruddha from './ANIRUDDHA GHOSH.png'
-import ankitaM from "./ANKITA MANDAL.jpg"
-import saurya from "./Saurya Das (1).jpg"
+import aniruddha from './ANIRUDDHA GHOSH.png';
+import ankitaM from "./ANKITA MANDAL.jpg";
+import saurya from "./Saurya Das (1).jpg";
 import md from './md.jpg';
-import soumyajeet from "./Soumyajeet Chowdhury.png"
-import archisman from "./ARCHISMAN SAHA.jpg"
-import sridatri from "./ANIRUDDHA GHOSH.png"
+import soumyajeet from "./Soumyajeet Chowdhury.png";
+import archisman from "./ARCHISMAN SAHA.jpg";
+import ayush from './Ayush Bera.jpeg'
 import { Key } from "react";
 
 const TeamSection = () => {
@@ -38,9 +38,9 @@ const TeamSection = () => {
   ];
 
   const advisoryData = [
-    { name: "Mr. Robert Taylor", role: "Industry Expert", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=RT" },
+    { name: "Spandan Samanta", role: "Industry Expert", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=RT" },
     { name: "Ms. Jennifer Lee", role: "Alumni Representative", image: "https://via.placeholder.com/150x150/2E3192/ffffff?text=JL" },
-    { name: "Dr. Michael Brown", role: "External Advisor", image: "https://via.placeholder.com/150x150/FFEB3B/2E3192?text=MB" },
+    { name: "Ayush Bera", role: "External Advisor", image: ayush },
     { name: "Ms. Patricia White", role: "Community Leader", image: "https://via.placeholder.com/150x150/2E3192/ffffff?text=PW" },
     { name: "Mr. David Johnson", role: "Board Member", image: "https://via.placeholder.com/150x150/FF3B3F/ffffff?text=DJ" }
   ];
