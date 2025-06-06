@@ -1,0 +1,12 @@
+{
+  "botId": "ryzn",
+  "hostUrl": "https://cdn.botpress.cloud/webchat/v3",
+  "messagingUrl": "https://cdn.botpress.cloud",
+  "clientId": "PB4Z3EPI",
+  "webhookId": "PB4Z3EPI",
+  "botName": "Ryzn",
+  "avatarUrl": "https://i.imgur.com/superheroAvatar.png", 
+  "stylesheet": "@font-face { font-family: 'Akira Expanded'; src: url('/fonts/Akira Expanded Demo.otf'); }\n@font-face { font-family: 'Highrise'; src: url('/fonts/HighriseFont-Bold-Demo.otf'); }\n.bpw-layout { border-radius: 20px !important; box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4); background: rgba(255, 255, 255, 0.9); font-family: 'Akira Expanded', 'Poppins', sans-serif !important; backdrop-filter: blur(10px); }\n.bpw-header { background: linear-gradient(90deg, #ff0057, #6e00ff) !important; color: white !important; font-family: 'Highrise', sans-serif; font-size: 18px; border-top-left-radius: 20px; border-top-right-radius: 20px; }\n.bpw-header__title { font-size: 22px !important; font-weight: bold; }\n.bpw-chat-bubble { border-radius: 18px !important; padding: 10px 14px !important; }\n.bpw-from-bot .bpw-chat-bubble { background-color: #fff6e6 !important; color: #333; border-left: 4px solid #ff6600; }\n.bpw-from-user .bpw-chat-bubble { background-color: #eceeff !important; color: #222; border-right: 4px solid #6e00ff; }\n.bpw-composer { border-radius: 14px !important; background-color: #ffffff !important; border: 2px solid #6e00ff !important; }\n.bpw-composer textarea { font-family: 'Highrise', sans-serif; padding: 8px !important; font-size: 15px !important; }\n.bpw-send-button { background-color: #ff9100 !important; border-radius: 50% !important; }\n.bpw-bot-avatar img, .bpw-user-avatar img { border-radius: 8px !important; }",
+  "enableConversationDeletion": true,
+  "showPoweredBy": false
+}
