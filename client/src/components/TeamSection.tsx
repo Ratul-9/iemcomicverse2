@@ -28,7 +28,7 @@ import pkd from './PKD.jpg'
 import sridatri from './SRIDATRI-PURAKAIT.jpeg'
 import ankana from './Ankana.jpg'
 
-import sounak from './SOUNAK MAJI.png'
+import sounak from './Sounak.jpg'
 import { Key } from "react";
 
 const TeamSection = () => {
