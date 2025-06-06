@@ -47,7 +47,7 @@ const Navbar = () => {
                 className={`relative group font-[Comic Neue] font-bold text-lg tracking-wide ${
                   item.isButton
                     ? "px-5 py-2 rounded-lg bg-red-500 text-white border-2 border-black shadow-md hover:bg-red-600 transition-all cursor-pointer"
-                    : "text-white hover:text-blue-600 transition-colors cursor-pointer"
+                    : "text-white font-akira text-sm hover:text-blue-600 transition-colors cursor-pointer"
                 }`}
               >
                 {item.label}
