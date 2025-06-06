@@ -84,7 +84,7 @@ const HeroSection = () => {
                   animate={{ x: ["-100%", "100%"] }}
                   transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
                 />
-                <span className="relative z-10">July 19 to 20, 2025</span>
+                <span className="relative z-10 font-akira">19th - 20th July, 2025</span>
               </div>
             </motion.div>
 
@@ -224,16 +224,16 @@ const HeroSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 1.4 }}
                 >
-                  <div className="bg-[#FFEB3B] text-[#212121] px-6 py-2 mb-3 rounded-full font-[Comic Neue] font-bold relative overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+                  <div className="bg-transparent text-white px-6 py-2 mb-3 rounded-full font-akira font-bold relative overflow-hidden cursor-pointer hover:scale-105 transition-transform">
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
                       animate={{ x: ["-100%", "100%"] }}
                       transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
                     />
-                    <button onClick={()=>window.open("#", "_blank")}><span className="relative z-10">Tap to see our comic book!!</span></button>
+                    <button onClick={()=>window.open("https://drive.google.com/file/d/1_2FG0j1_Q4lrwkAA2K4j-3-1WXSNFqr6/view?usp=drive_link", "_blank")}><span className="relative z-10 text-sm">Tap to see our comic book!!</span></button>
                   </div>
                 </motion.div>
-              <div className="relative">
+              <div className="relative" onClick={()=>window.open("https://drive.google.com/file/d/1_2FG0j1_Q4lrwkAA2K4j-3-1WXSNFqr6/view?usp=drive_link")}>
                 <div className="relative bg-white p-4 w-80 h-96 overflow-hidden shadow-2xl rounded-2xl border-4 border-white transform -rotate-3">
                   <img src={logo1} alt="Main Comic Event" className="w-full h-full object-cover rounded-xl" />
                   <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#FF3B3F]/15 to-[#FFEB3B]/25 mix-blend-multiply rounded-xl" />
