@@ -27,6 +27,7 @@ import director from './Director3.jpg .jpg'
 import ayushB from  './Ayush Bekar.jpg'
 import pkd from './PKD.jpg'
 import sridatri from './SRIDATRI-PURAKAIT.jpeg'
+import ankana from './Ankana.jpg'
 
 import sounak from './SOUNAK MAJI.png'
 import { Key } from "react";
@@ -46,11 +47,12 @@ const TeamSection = () => {
     { name: "MD. Akram Islam", role: "", image: md },
     { name: "Ankita Mandal", role: "", image: ankitaM },
     { name: "Archisman Saha", role: "", image: archisman },
-    { name: "Ratul Mukherjee", role: "", image:ratul},
+    { name: "Aankana Aradha Das", role: "", image:ankana},
     { name: "Saurya Das", role: "", image: saurya },
     { name: "Soumyajeet Chowdhury", role: "", image: soumyajeet },
     { name: "Sridatri Purakait", role: "", image: sridatri },
     { name: "Sounak Maji", role: "", image: sounak },
+    { name: "Ratul Mukherjee", role: "", image:ratul},
     
   ];
 

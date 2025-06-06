@@ -1,6 +1,7 @@
+// HeroSection.tsx
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Star, Zap } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import logo1 from './logo1.png';
 import bg1 from './bg1.png';
@@ -59,7 +60,6 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Interactive Light Effect */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -71,24 +71,9 @@ const HeroSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* LEFT TEXT BLOCK */}
           <motion.div style={{ y: textY }} className="text-white relative">
-            <motion.div
-              initial={{ opacity: 0, y: -30, rotateX: -90 }}
-              animate={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="inline-block mb-4"
-            >
-              <div className="bg-[#FFEB3B] text-[#212121] px-6 py-2 rounded-full font-[Comic Neue] font-bold relative overflow-hidden">
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
-                  animate={{ x: ["-100%", "100%"] }}
-                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-                />
-                <span className="relative z-10 font-akira">19th - 20th July, 2025</span>
-              </div>
-            </motion.div>
 
             <motion.div
-              className="mb-6 cursor-pointer flex justify-start"
+              className="mb-6 cursor-pointer flex flex-col items-center justify-start"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
@@ -100,24 +85,25 @@ const HeroSection = () => {
                 transition: { duration: 0.4, type: "spring", stiffness: 300 }
               }}
             >
-              <div className="relative -ml-10 md:-ml-12 flex items-center justify-center">
+              <div className="relative flex items-center justify-center">
                 <motion.img
                   src={cmcLogo}
                   alt="CMC Logo"
                   className="h-32 md:h-40 w-auto object-contain"
                   style={{
                     filter: isHovered
-                      ? "drop-shadow(0 0 30px rgba(255,235,59,0.6)) drop-shadow(3px 3px 0 rgba(0,0,0,0.3))"
-                      : "drop-shadow(0 0 15px rgba(255,235,59,0.3)) drop-shadow(2px 2px 0 rgba(0,0,0,0.2))",
+                      ? "drop-shadow(3px 3px 0 rgba(0,0,0,0.3))"
+                      : "drop-shadow(2px 2px 0 rgba(0,0,0,0.2))",
                     transition: "filter 0.3s ease"
                   }}
                   animate={{
                     filter: [
-                      "drop-shadow(0 0 15px rgba(255,235,59,0.3))",
-                      "drop-shadow(0 0 25px rgba(255,235,59,0.5))",
-                      "drop-shadow(0 0 15px rgba(255,235,59,0.3))"
+                      "drop-shadow(2px 2px 0 rgba(0,0,0,0.2))",
+                      "drop-shadow(3px 3px 0 rgba(0,0,0,0.3))",
+                      "drop-shadow(2px 2px 0 rgba(0,0,0,0.2))"
                     ]
                   }}
+
                   transition={{
                     duration: 3,
                     repeat: Infinity,
@@ -137,6 +123,22 @@ const HeroSection = () => {
                   }}
                 />
               </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: -30, rotateX: -90 }}
+                animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="mt-1"
+              >
+                <div className="bg-transparent text-white px-6 py-2 rounded-full font-akira text-lg relative overflow-hidden">
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
+                    animate={{ x: ["-100%", "100%"] }}
+                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                  />
+                  <span className="relative z-10 text-2xl font-akira">19th - 20th July, 2025</span>
+                </div>
+              </motion.div>
             </motion.div>
 
             <motion.p
@@ -145,9 +147,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 1 }}
               className="font-akira text-lg mb-8 leading-relaxed"
             >
-              {/* Join us for the most <span className="text-[#FFEB3B] font-bold">exciting</span> comic carnival on campus!
-              Two days filled with <span className="text-[#FFEB3B] font-bold">amazing guests</span>, panels,
-              cosplay contests, and <span className="text-[#00BCD4] font-bold">much more!</span> */}
+              {/* Optional description text here */}
             </motion.p>
 
             <motion.div
@@ -157,7 +157,7 @@ const HeroSection = () => {
               className="flex flex-wrap gap-4"
             >
               <motion.div whileHover={{ scale: 1.05, rotate: 1 }} whileTap={{ scale: 0.95 }}>
-                <Button asChild className="px-8 py-6 h-auto bg-gradient-to-r from-[#FF3B3F] to-[#FF6B6F] text-white font-bold rounded-xl hover:from-[#FF6B6F] hover:to-[#FF3B3F] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
+                <Button asChild className="px-8 py-6 ml-20 h-auto bg-gradient-to-r from-[#FF3B3F] to-[#FF6B6F] text-white font-bold rounded-xl hover:from-[#FF6B6F] hover:to-[#FF3B3F] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
                   <a href="#events">
                     <motion.div
                       className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20"
@@ -172,8 +172,8 @@ const HeroSection = () => {
               </motion.div>
 
               <motion.div whileHover={{ scale: 1.05, rotate: -1 }} whileTap={{ scale: 0.95 }}>
-                <Button asChild className="px-8 py-6 h-auto bg-gradient-to-r from-[#FFEB3B] to-[#FFF176] text-[#212121] font-bold rounded-xl hover:from-[#FFF176] hover:to-[#FFEB3B] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
-                  <a onClick={()=>alert('Coming Soon')} target="_blank" rel="noreferrer">
+                <Button asChild className="px-8 py-6 ml-20 h-auto bg-gradient-to-r from-[#FFEB3B] to-[#FFF176] text-[#212121] font-bold rounded-xl hover:from-[#FFF176] hover:to-[#FFEB3B] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
+                  <a onClick={() => alert('Coming Soon')} target="_blank" rel="noreferrer">
                     <motion.div
                       className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10"
                       animate={{ x: ["-100%", "100%"] }}
@@ -196,7 +196,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <motion.div
-              className="absolute top - 0 left-1/2 transform -translate-x-1/2 z-30"
+              className="absolute top-0 left-1/2 transform -translate-x-1/2 z-30"
               initial={{ scale: 0, rotate: -20, y: 1, rotateY: 45 }}
               animate={{ scale: 1, rotate: 0, y: 0, rotateY: 0 }}
               transition={{
@@ -218,21 +218,24 @@ const HeroSection = () => {
             >
 
               <motion.div
-                  className="mt-8 flex justify-center"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.4 }}
-                >
-                  <div className="bg-transparent text-white px-6 py-2 mb-3 rounded-full font-akira font-bold relative overflow-hidden cursor-pointer hover:scale-105 transition-transform">
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
-                      animate={{ x: ["-100%", "100%"] }}
-                      transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-                    />
-                    <button onClick={()=>window.open("https://drive.google.com/file/d/1_2FG0j1_Q4lrwkAA2K4j-3-1WXSNFqr6/view?usp=drive_link", "_blank")}><span className="relative z-10 text-sm">Tap to see our comic book!!</span></button>
-                  </div>
-                </motion.div>
-              <div className="relative" onClick={()=>window.open("https://drive.google.com/file/d/1_2FG0j1_Q4lrwkAA2K4j-3-1WXSNFqr6/view?usp=drive_link")}>
+                className="mt-8 flex justify-center"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.4 }}
+              >
+                <div className="bg-transparent text-white px-6 py-2 mb-3 rounded-full font-akira font-bold relative overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
+                    animate={{ x: ["-100%", "100%"] }}
+                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                  />
+                  <button onClick={() => window.open("https://drive.google.com/file/d/1_2FG0j1_Q4lrwkAA2K4j-3-1WXSNFqr6/view?usp=drive_link", "_blank")}>
+                    <span className="relative z-10 text-sm">Tap to see our comic book!!</span>
+                  </button>
+                </div>
+              </motion.div>
+
+              <div className="relative" onClick={() => window.open("https://drive.google.com/file/d/1_2FG0j1_Q4lrwkAA2K4j-3-1WXSNFqr6/view?usp=drive_link")}>
                 <div className="relative bg-white p-4 w-80 h-96 overflow-hidden shadow-2xl rounded-2xl border-4 border-white transform -rotate-3">
                   <img src={logo1} alt="Main Comic Event" className="w-full h-full object-cover rounded-xl" />
                   <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#FF3B3F]/15 to-[#FFEB3B]/25 mix-blend-multiply rounded-xl" />
@@ -241,16 +244,8 @@ const HeroSection = () => {
                 </div>
               </div>
 
-                
-
             </motion.div>
-
-            
           </motion.div>
-
-          
-
-          
         </div>
 
         {/* SCROLL INDICATOR */}
