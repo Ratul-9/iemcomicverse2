@@ -197,7 +197,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <motion.div
-              className="absolute top-10 left-1/2 transform -translate-x-1/2 z-30"
+              className="absolute top - 0 left-1/2 transform -translate-x-1/2 z-30"
               initial={{ scale: 0, rotate: -20, y: 1, rotateY: 45 }}
               animate={{ scale: 1, rotate: 0, y: 0, rotateY: 0 }}
               transition={{
@@ -217,6 +217,22 @@ const HeroSection = () => {
               }}
               style={{ height: "450px" }}
             >
+
+              <motion.div
+                  className="mt-8 flex justify-center"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.4 }}
+                >
+                  <div className="bg-[#FFEB3B] text-[#212121] px-6 py-2 mb-3 rounded-full font-[Comic Neue] font-bold relative overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
+                      animate={{ x: ["-100%", "100%"] }}
+                      transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                    />
+                    <button onClick={()=>window.open("#", "_blank")}><span className="relative z-10">Tap to see our comic book!!</span></button>
+                  </div>
+                </motion.div>
               <div className="relative">
                 <div className="relative bg-white p-4 w-80 h-96 overflow-hidden shadow-2xl rounded-2xl border-4 border-white transform -rotate-3">
                   <img src={logo1} alt="Main Comic Event" className="w-full h-full object-cover rounded-xl" />
@@ -226,21 +242,7 @@ const HeroSection = () => {
                 </div>
               </div>
 
-                <motion.div
-                  className="mt-8 flex justify-center"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.4 }}
-                >
-                  <div className="bg-[#FFEB3B] text-[#212121] px-6 py-2 rounded-full font-[Comic Neue] font-bold relative overflow-hidden cursor-pointer hover:scale-105 transition-transform">
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
-                      animate={{ x: ["-100%", "100%"] }}
-                      transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-                    />
-                    <button onClick={()=>window.open("#", "_blank")}><span className="relative z-10">Tap to see our comic book!!</span></button>
-                  </div>
-                </motion.div>
+                
 
             </motion.div>
 
