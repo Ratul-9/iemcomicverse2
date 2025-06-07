@@ -306,8 +306,8 @@ const HeroSection = () => {
                     animate={{ x: ["-100%", "100%"] }}
                     transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
                   />
-                  <button onClick={() => window.open("https://drive.google.com/file/d/1_2FG0j1_Q4lrwkAA2K4j-3-1WXSNFqr6/view?usp=drive_link", "_blank")}>
-                    <span className="relative z-10 text-sm whitespace-nowrap">Tap to see our comic book!!</span>
+                  <button onClick={() => window.open("https://drive.google.com/file/d/163STf4jfMOpw54EiizIJmtPM0c2bNeme/view?usp=drive_link", "_blank")}>
+                    <span className="relative z-10 text-sm whitespace-nowrap">Tap to see our Brochure!!</span>
                   </button>
                 </motion.div>
               </motion.div>
