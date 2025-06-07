@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import logo1 from './logo1.png';
 import bg1 from './bg1.png';
 import cmcLogo from './cmc.png';
-
+import brochure from './brochure.png';
 const HeroSection = () => {
   const { scrollY } = useScroll();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -72,10 +72,9 @@ const HeroSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* LEFT TEXT BLOCK */}
           <motion.div
-  style={{ y: textY }}
-  className="text-white relative mt-16 md:mt-12"
->
-
+            style={{ y: textY }}
+            className="text-white relative mt-16 md:mt-12"
+          >
             <motion.div
               className="mb-6 cursor-pointer flex flex-col items-center justify-start"
               onMouseEnter={() => setIsHovered(true)}
@@ -107,7 +106,6 @@ const HeroSection = () => {
                       "drop-shadow(2px 2px 0 rgba(0,0,0,0.2))"
                     ]
                   }}
-
                   transition={{
                     duration: 3,
                     repeat: Infinity,
@@ -134,46 +132,42 @@ const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="flex gap-6 justify-center"
               >
-<div className="bg-transparent text-white px-6 py-2 rounded-full font-akira text-lg relative overflow-hidden">
-  <motion.div
-    className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
-    animate={{ x: ["-100%", "100%"] }}
-    transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-  />
-  
-  {/* Date text with black shadow effect */}
-  <div className="relative z-10 text-3xl md:text-2.5xl font-akira">
-    {/* Shadow behind */}
-    <div className="relative inline-block">
-      {/* Shadow text */}
-      <span 
-        className="absolute text-black font-akira"
-        style={{
-          left: '2px',
-          top: '2px',
-          zIndex: -3,
-          display: 'inline-block',
-          width: '100%',
-          whiteSpace: 'pre',
-        }}
-      >
-        19TH – 20TH JULY, 2025  
-      </span>
+                <div className="bg-transparent text-white px-6 py-2 rounded-full font-akira text-lg relative overflow-hidden">
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
+                    animate={{ x: ["-100%", "100%"] }}
+                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                  />
+                  
+                  <div className="relative z-10 text-3xl md:text-2.5xl font-akira">
+                    <div className="relative inline-block">
+                      <span 
+                        className="absolute text-black font-akira"
+                        style={{
+                          left: '2px',
+                          top: '2px',
+                          zIndex: -3,
+                          display: 'inline-block',
+                          width: '100%',
+                          whiteSpace: 'pre',
+                        }}
+                      >
+                        19TH – 20TH JULY, 2025  
+                      </span>
 
-      {/* Main white text */}
-      <span 
-        className="relative text-white font-akira"
-        style={{
-          display: 'inline-block',
-          width: '100%',
-          whiteSpace: 'pre',
-        }}
-      >
-        19TH – 20TH JULY, 2025  
-      </span>
-    </div>
-  </div>
-</div>
+                      <span 
+                        className="relative text-white font-akira"
+                        style={{
+                          display: 'inline-block',
+                          width: '100%',
+                          whiteSpace: 'pre',
+                        }}
+                      >
+                        19TH – 20TH JULY, 2025  
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             </motion.div>
 
@@ -186,47 +180,45 @@ const HeroSection = () => {
               {/* Optional description text here */}
             </motion.p>
 
-           <motion.div
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 1.2 }}
-  className="flex gap-6 justify-start pl-12 mt-16"
->
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+              className="flex gap-6 justify-start pl-12 mt-16"
+            >
+              <motion.div whileHover={{ scale: 1.05, rotate: 1 }} whileTap={{ scale: 0.95 }}>
+                <Button asChild className="px-8 py-6 h-auto bg-gradient-to-r from-[#FF3B3F] to-[#FF6B6F] text-white font-bold rounded-xl hover:from-[#FF6B6F] hover:to-[#FF3B3F] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
+                  <a href="#events">
+                    <motion.div
+                      className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20"
+                      animate={{ x: ["-100%", "100%"] }}
+                      transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 2 }}
+                    />
+                    <span className="font-akira relative z-10 flex items-center gap-2">
+                      Explore Events
+                    </span>
+                  </a>
+                </Button>
+              </motion.div>
 
-  <motion.div whileHover={{ scale: 1.05, rotate: 1 }} whileTap={{ scale: 0.95 }}>
-    <Button asChild className="px-8 py-6 h-auto bg-gradient-to-r from-[#FF3B3F] to-[#FF6B6F] text-white font-bold rounded-xl hover:from-[#FF6B6F] hover:to-[#FF3B3F] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
-      <a href="#events">
-        <motion.div
-          className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20"
-          animate={{ x: ["-100%", "100%"] }}
-          transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 2 }}
-        />
-        <span className="font-akira relative z-10 flex items-center gap-2">
-          Explore Events
-        </span>
-      </a>
-    </Button>
-  </motion.div>
-
-  <motion.div whileHover={{ scale: 1.05, rotate: -1 }} whileTap={{ scale: 0.95 }}>
-    <Button asChild className="px-8 py-6 h-auto bg-gradient-to-r from-[#FFEB3B] to-[#FFF176] text-[#212121] font-bold rounded-xl hover:from-[#FFF176] hover:to-[#FFEB3B] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
-      <a onClick={() => alert('Coming Soon')} target="_blank" rel="noreferrer">
-        <motion.div
-          className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10"
-          animate={{ x: ["-100%", "100%"] }}
-          transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 2 }}
-        />
-        <span className="font-akira relative z-10 flex items-center gap-2">
-          Register Now
-        </span>
-      </a>
-    </Button>
-  </motion.div>
-</motion.div>
-
+              <motion.div whileHover={{ scale: 1.05, rotate: -1 }} whileTap={{ scale: 0.95 }}>
+                <Button asChild className="px-8 py-6 h-auto bg-gradient-to-r from-[#FFEB3B] to-[#FFF176] text-[#212121] font-bold rounded-xl hover:from-[#FFF176] hover:to-[#FFEB3B] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
+                  <a onClick={() => alert('Coming Soon')} target="_blank" rel="noreferrer">
+                    <motion.div
+                      className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10"
+                      animate={{ x: ["-100%", "100%"] }}
+                      transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 2 }}
+                    />
+                    <span className="font-akira relative z-10 flex items-center gap-2">
+                      Register Now
+                    </span>
+                  </a>
+                </Button>
+              </motion.div>
+            </motion.div>
           </motion.div>
 
-          {/* RIGHT IMAGE BLOCK */}
+          {/* RIGHT IMAGE BLOCKS */}
           <motion.div
             className="relative h-[600px] md:h-[700px] w-full group mt-16"
             initial={{ opacity: 0 }}
@@ -235,8 +227,46 @@ const HeroSection = () => {
             onMouseEnter={() => setIsComicHovered(true)}
             onMouseLeave={() => setIsComicHovered(false)}
           >
+            
+            {/* BACKGROUND IMAGE BLOCK (Right tilted) */}
             <motion.div
-              className="absolute top-0 left-1/2 transform -translate-x-1/2 z-30"
+              className="absolute top-24 right-0 z-20 cursor-pointer"
+
+
+              initial={{ scale: 0, rotate: 15, x: 100, rotateY: -45 }}
+              animate={{ scale: 1, rotate: 0, x: 0, rotateY: 0 }}
+              transition={{
+                duration: 1,
+                delay: 0.8,
+                type: "spring",
+                stiffness: 70,
+                damping: 15
+              }}
+              whileHover={{
+                scale: 1.08,
+                rotate: 8,
+                x: -8,
+                y: -5,
+                zIndex: 40,
+                rotateY: -5,
+                transition: { duration: 0.4, type: "spring", stiffness: 300 }
+              }}
+              onClick={() => window.open("https://drive.google.com/file/d/1_2FG0j1_Q4lrwkAA2K4j-3-1WXSNFqr6/view?usp=drive_link", "_blank")}
+            >
+              <div className="relative">
+                <div className="relative bg-white p-4 w-72 h-88 overflow-hidden shadow-xl rounded-xl border-4 border-white transform rotate-6">
+                  <img src={logo1} alt="Secondary Comic Event" className="w-full h-full object-cover rounded-lg" />
+                  <div className="absolute inset-0 bg-gradient-to-bl from-[#00BCD4]/20 via-transparent to-[#FF3B3F]/15 mix-blend-multiply rounded-lg" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#FFEB3B]/10 to-transparent mix-blend-screen rounded-lg" />
+                  <div className="absolute inset-2 border-2 border-white/50 rounded-md" />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* MAIN IMAGE BLOCK (Left tilted) */}
+            <motion.div
+              className="absolute top-0 left-56 z-30"
+
               initial={{ scale: 0, rotate: -20, y: 1, rotateY: 45 }}
               animate={{ scale: 1, rotate: 0, y: 0, rotateY: 0 }}
               transition={{
@@ -248,15 +278,15 @@ const HeroSection = () => {
               }}
               whileHover={{
                 scale: 1.08,
-                rotate: 3,
+                rotate: -4,
                 y: -10,
-                zIndex: 40,
-                rotateY: 5,
+                x: 5,
+                zIndex: 50,
+                rotateY: 3,
                 transition: { duration: 0.4, type: "spring", stiffness: 300 }
               }}
               style={{ height: "450px" }}
             >
-
               <motion.div
                 className="mt-8 flex justify-center"
                 initial={{ opacity: 0, y: 30 }}
@@ -264,8 +294,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 1.4 }}
               >
                 <motion.div 
-                  className="bg-transparent text-white px-6 py-2 mb-3 rounded-full font-akira font-bold relative overflow-hidden cursor-pointer hover:scale-105 transition-transform ml-[-20px]"
-
+                  className="bg-transparent text-white px-6 py-2 mb-3 rounded-full font-akira font-bold relative overflow-hidden cursor-pointer hover:scale-105 transition-transform"
                   animate={{ 
                     opacity: isComicHovered ? 0 : 1,
                     y: isComicHovered ? -10 : 0 
@@ -279,21 +308,20 @@ const HeroSection = () => {
                   />
                   <button onClick={() => window.open("https://drive.google.com/file/d/1_2FG0j1_Q4lrwkAA2K4j-3-1WXSNFqr6/view?usp=drive_link", "_blank")}>
                     <span className="relative z-10 text-sm whitespace-nowrap">Tap to see our comic book!!</span>
-
                   </button>
                 </motion.div>
               </motion.div>
 
-              <div className="relative" onClick={() => window.open("https://drive.google.com/file/d/1_2FG0j1_Q4lrwkAA2K4j-3-1WXSNFqr6/view?usp=drive_link")}>
+              <div className="relative cursor-pointer" onClick={() => window.open("https://drive.google.com/file/d/1_2FG0j1_Q4lrwkAA2K4j-3-1WXSNFqr6/view?usp=drive_link", "_blank")}>
                 <div className="relative bg-white p-4 w-80 h-96 overflow-hidden shadow-2xl rounded-2xl border-4 border-white transform -rotate-3">
-                  <img src={logo1} alt="Main Comic Event" className="w-full h-full object-cover rounded-xl" />
+                  <img src={brochure} alt="Main Comic Event" className="w-full h-full object-cover rounded-xl" />
                   <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#FF3B3F]/15 to-[#FFEB3B]/25 mix-blend-multiply rounded-xl" />
                   <div className="absolute inset-0 bg-gradient-to-tl from-[#00BCD4]/10 to-transparent mix-blend-screen rounded-xl" />
                   <div className="absolute inset-2 border-2 border-white/50 rounded-lg" />
                 </div>
               </div>
-
             </motion.div>
+
           </motion.div>
         </div>
 
