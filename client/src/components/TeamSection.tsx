@@ -34,23 +34,23 @@ import { Key } from "react";
 const TeamSection = () => {
   const teamData = [
     { name: "Debnath Mukherjee", role: "", image: saheb },
-    { name: "Ayush Banerjee", role: "", image: ayushB },
     { name: "Trishan Manna", role: "", image: trishan },
     { name: "Paramartha Ghosh", role: "", image: paramartha },
-    { name: "Adrika Kundu", role: "", image: adrika },
-    { name: "Singharup Bagchi", role: "", image: singharup },
-    { name: "Sovan Ghosh", role: "", image: sovan },
-    { name: "Himel Jana", role: "", image: himel },
-    { name: "Aniruddha Ghosh", role: "", image: aniruddha },
-    { name: "Ankita Karmakar", role: "", image: ankita },
+    { name: "Ayush Banerjee", role: "", image: ayushB },
     { name: "MD. Akram Islam", role: "", image: md },
+    { name: "Adrika Kundu", role: "", image: adrika },
+    { name: "Ankita Karmakar", role: "", image: ankita },
+    { name: "Sounak Maji", role: "", image: sounak },
+    { name: "Sovan Ghosh", role: "", image: sovan },
+    { name: "Saurya Das", role: "", image: saurya },
+    { name: "Sridatri Purakait", role: "", image: sridatri },
+    { name: "Aniruddha Ghosh", role: "", image: aniruddha },
+    { name: "Singharup Bagchi", role: "", image: singharup },
     { name: "Ankita Mandal", role: "", image: ankitaM },
     { name: "Archisman Saha", role: "", image: archisman },
     { name: "Aankana Aradha Das", role: "", image:ankana},
-    { name: "Saurya Das", role: "", image: saurya },
     { name: "Soumyajeet Chowdhury", role: "", image: soumyajeet },
-    { name: "Sridatri Purakait", role: "", image: sridatri },
-    { name: "Sounak Maji", role: "", image: sounak },
+    { name: "Himel Jana", role: "", image: himel },
     
   ];
 
