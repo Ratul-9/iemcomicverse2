@@ -89,7 +89,7 @@ const HeroSection = () => {
                 <motion.img
                   src={cmcLogo}
                   alt="CMC Logo"
-                  className="h-24 md:h-32 lg:h-40 w-auto object-contain"
+                  className="h-24 md:h-32 lg:h-30 w-auto object-contain"
                   style={{
                     filter: isHovered
                       ? "drop-shadow(3px 3px 0 rgba(0,0,0,0.3))"
@@ -156,14 +156,12 @@ const HeroSection = () => {
                   </div>
                 </div>
               </motion.div>
-            </motion.div>
 
-            {/* BUTTONS */}
-            <motion.div
+              <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.2 }}
-              className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start pl-0 sm:pl-12 mt-12 sm:mt-16"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start pl-0 sm:pl-1 mt-12 sm:mt-16"
             >
               <motion.div whileHover={{ scale: 1.05, rotate: 1 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                 <Button asChild className="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-6 bg-gradient-to-r from-[#FF3B3F] to-[#FF6B6F] text-white font-bold rounded-xl hover:from-[#FF6B6F] hover:to-[#FF3B3F] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
@@ -196,111 +194,119 @@ const HeroSection = () => {
               </motion.div>
             </motion.div>
           </motion.div>
-
-          {/* RIGHT IMAGE BLOCK: smaller, aligned right */}
-          <motion.div
-            className="relative w-full h-auto flex flex-col items-center justify-center group mt-12 md:mt-16 md:col-span-4 md:justify-end"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            onMouseEnter={() => setIsComicHovered(true)}
-            onMouseLeave={() => setIsComicHovered(false)}
-          >
-            {/* BACKGROUND IMAGE */}
-            <motion.div
-              className="absolute z-50"
-              initial={{ scale: 0, rotate: 15, x: 50, rotateY: -45 }}
-              animate={{ scale: 1, rotate: 0, x: 0, rotateY: 0 }}
-              transition={{
-                duration: 1,
-                delay: 0.8,
-                type: "spring",
-                stiffness: 70,
-                damping: 15
-              }}
-              whileHover={{
-                scale: 1.08,
-                rotate: 8,
-                x: -8,
-                y: -5,
-                zIndex: 70,
-                rotateY: -5,
-                transition: { duration: 0.4, type: "spring", stiffness: 300 }
-              }}
-              onClick={() => window.open("https://drive.google.com/file/d/1_2FG0j1_Q4lrwkAA2K4j-3-1WXSNFqr6/view?usp=drive_link", "_blank")}
-              style={{
-                width: "38vw",
-                maxWidth: "10rem",
-                height: "auto",
-                aspectRatio: "3/4",
-                left: "8%",
-              }}
-            >
-              <div className="relative bg-white p-3 sm:p-4 w-full h-full overflow-hidden shadow-xl rounded-xl border-4 border-white transform rotate-6">
-                <img src={logo1} alt="Secondary Comic Event" className="w-full h-full object-cover rounded-lg" />
-              </div>
             </motion.div>
 
-            {/* MAIN IMAGE */}
-            <motion.div
-              className="absolute top-0 left-56 z-30"
-
-              initial={{ scale: 0, rotate: -20, y: 1, rotateY: 45 }}
-              animate={{ scale: 1, rotate: 0, y: 0, rotateY: 0 }}
-              transition={{
-                duration: 1,
-                delay: 0.6,
-                type: "spring",
-                stiffness: 80,
-                damping: 12
-              }}
-              whileHover={{
-                scale: 1.08,
-                rotate: -4,
-                y: -10,
-                x: 5,
-                zIndex: 50,
-                rotateY: 3,
-                transition: { duration: 0.4, type: "spring", stiffness: 300 }
-              }}
-              style={{ height: "450px" }}
-            >
+          {/* RIGHT IMAGE BLOCK - BOOK STYLE LAYOUT */}
               <motion.div
-                className="mt-8 flex justify-center"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.4 }}
+                className="relative flex-1 flex items-center justify-end h-full w-full max-w-xl mt-10 md:mt-0 pr-16 md:pr-24 ml-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <motion.div 
-                  className="bg-transparent text-white px-6 py-2 mb-3 rounded-full font-akira font-bold relative overflow-hidden cursor-pointer hover:scale-105 transition-transform"
-                  animate={{ 
-                    opacity: isComicHovered ? 0 : 1,
-                    y: isComicHovered ? -10 : 0 
-                  }}
-                  transition={{ duration: 0.3 }}
-                >
+                <div className="relative w-full h-[400px] flex items-center justify-end">
+                  {/* COMIC BOOK (background page) - More inclined */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
-                    animate={{ x: ["-100%", "100%"] }}
-                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-                  />
-                  <button onClick={() => window.open("https://drive.google.com/file/d/163STf4jfMOpw54EiizIJmtPM0c2bNeme/view?usp=drive_link", "_blank")}>
-                    <span className="relative z-10 text-sm whitespace-nowrap">Tap to see our Brochure!!</span>
-                  </button>
-                </motion.div>
-              </motion.div>
+                    className="absolute z-30"
+                    initial={{ scale: 0.8, rotate: -15, x: -40, y: 20, opacity: 0 }}
+                    animate={{ scale: 1, rotate: -12, x: -30, y: 15, opacity: 1 }}
+                    transition={{
+                      duration: 0.8,
+                      delay: 0.6,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10
+                    }}
+                    whileHover={{
+                      rotate: -14,
+                      y: 10,
+                      transition: { duration: 0.3 }
+                    }}
+                    style={{
+                      width: "280px",
+                      height: "360px",
+                      left: "90px" // Push more to the right
+                    }}
+                  >
+                    <div className="relative bg-white p-4 w-full h-full overflow-hidden shadow-lg rounded-xl border-4 border-white">
+                      <img 
+                        src={logo1} 
+                        alt="Comic Book" 
+                        className="w-full h-full object-cover rounded-lg" 
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#FFEB3B]/10 via-[#FF3B3F]/10 to-[#00BCD4]/10" />
+                    </div>
+                  </motion.div>
 
-              <div className="relative cursor-pointer" onClick={() => window.open("https://drive.google.com/file/d/1_2FG0j1_Q4lrwkAA2K4j-3-1WXSNFqr6/view?usp=drive_link", "_blank")}>
-                <div className="relative bg-white p-4 w-80 h-96 overflow-hidden shadow-2xl rounded-2xl border-4 border-white transform -rotate-3">
-                  <img src={brochure} alt="Main Comic Event" className="w-full h-full object-cover rounded-xl" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#FF3B3F]/15 to-[#FFEB3B]/25 mix-blend-multiply rounded-xl" />
-                  <div className="absolute inset-0 bg-gradient-to-tl from-[#00BCD4]/10 to-transparent mix-blend-screen rounded-xl" />
-                  <div className="absolute inset-2 border-2 border-white/50 rounded-lg" />
+                  {/* BROCHURE (foreground page) - Positioned more to the right */}
+                  <motion.div
+                    className="absolute z-40"
+                    initial={{ scale: 0.8, rotate: 5, x: 40, y: 10, opacity: 0 }}
+                    animate={{ scale: 1, rotate: 3, x: 0, y: 0, opacity: 1 }}
+                    transition={{
+                      duration: 0.8,
+                      delay: 0.8,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10
+                    }}
+                    whileHover={{
+                      rotate: 5,
+                      y: -5,
+                      transition: { duration: 0.3 }
+                    }}
+                    style={{
+                      width: "280px",
+                      height: "360px",
+                      left: "90px" // Positioned further right
+                    }}
+                  >
+                    {/* Brochure label - Now clearly visible */}
+                    <motion.div
+                      className="flex justify-center mb-3"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 1.2 }}
+                      style={{
+                        position: 'absolute',
+                        top: '-50px',
+                        right: '0',
+                        left: '0'
+                      }}
+                    >
+                      <motion.div 
+                        className="bg-transparent text-white px-6 py-2 rounded-full font-akira font-bold relative overflow-hidden cursor-pointer hover:scale-105 transition-transform"
+                      >
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
+                          animate={{ x: ["-100%", "100%"] }}
+                          transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                        />
+                        <button onClick={() => window.open("https://drive.google.com/file/d/163STf4jfMOpw54EiizIJmtPM0c2bNeme/view?usp=drive_link", "_blank")}>
+                          <span className="relative z-10 text-xs whitespace-nowrap">Tap to see our Brochure!!</span>
+                        </button>
+                      </motion.div>
+                    </motion.div>
+
+                    {/* Brochure content */}
+                    <div 
+                      className="relative cursor-pointer w-full h-full"
+                      onClick={() => window.open("https://drive.google.com/file/d/1_2FG0j1_Q4lrwkAA2K4j-3-1WXSNFqr6/view?usp=drive_link", "_blank")}
+                    >
+                      <div className="relative bg-white p-4 w-full h-full overflow-hidden shadow-xl rounded-xl border-4 border-white transform rotate-1">
+                        <img 
+                          src={brochure} 
+                          alt="Event Brochure" 
+                          className="w-full h-full object-cover rounded-lg" 
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#FF3B3F]/15 to-[#FFEB3B]/25 mix-blend-multiply" />
+                        <div className="absolute inset-0 bg-gradient-to-tl from-[#00BCD4]/10 to-transparent mix-blend-screen" />
+                        <div className="absolute inset-2 border-2 border-white/50 rounded-md" />
+                      </div>
+                    </div>
+                  </motion.div>
                 </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
+              </motion.div>
+            </div>
 
         {/* SCROLL INDICATOR */}
         <motion.div
