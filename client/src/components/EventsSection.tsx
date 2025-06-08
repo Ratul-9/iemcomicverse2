@@ -83,22 +83,22 @@ const EventsSection = () => {
         </motion.div>
 
         <div className="relative max-w-[1200px] mx-auto">
-          <div className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-12 z-10">
+          <div className="absolute top-1/2 left-8 transform -translate-y-1/2 -translate-x-12 z-10">
             <Button onClick={scrollPrev} variant="outline" size="icon" className="rounded-full w-12 h-12 bg-white shadow-lg text-[#FF3B3F] hover:bg-[#FF3B3F] hover:text-white border-none transition-colors" aria-label="Previous slide">
               <ChevronLeft className="h-6 w-6" />
             </Button>
           </div>
 
-          <div className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-12 z-10">
+          <div className="absolute top-1/2 right-8 transform -translate-y-1/2 translate-x-12 z-10">
             <Button onClick={scrollNext} variant="outline" size="icon" className="rounded-full w-12 h-12 bg-white shadow-lg text-[#FF3B3F] hover:bg-[#FF3B3F] hover:text-white border-none transition-colors" aria-label="Next slide">
               <ChevronRight className="h-6 w-6" />
             </Button>
           </div>
 
-          <div className="overflow-hidden relative z-10" ref={viewportRef}>
+          <div className="overflow-hidden relative z-9" ref={viewportRef}>
             <div className="flex">
               {eventsData.map((event, index) => (
-                <div key={`${event.id}-${index}`} className="flex-[0_0_25%] min-w-0 py-8 pl-4 first:pl-0 lg:flex-[0_0_33.333%] md:flex-[0_0_50%] sm:flex-[0_0_66.666%] xs:flex-[0_0_100%]" onMouseEnter={() => setHoveredId(event.id)} onMouseLeave={() => setHoveredId(null)}>
+                <div key={`${event.id}-${index}`} className="flex-[0_0_100%] sm:flex-[0_0_70%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] xl:flex-[0_0_25%] min-w-0 px-2" onMouseEnter={() => setHoveredId(event.id)} onMouseLeave={() => setHoveredId(null)}>
                   <Link href={event.route}>
                     <motion.div className="transition-all duration-500 cursor-pointer mx-2 overflow-visible" whileHover={{ y: -8, scale: 1.05, transition: { duration: 0.3, ease: "easeOut" } }} whileTap={{ scale: 0.95 }}>
                       <div className="relative h-80 bg-white rounded-2xl overflow-hidden shadow-2xl border-4 border-[#2E3192] group hover:border-[#FF3B3F] transition-all duration-300">

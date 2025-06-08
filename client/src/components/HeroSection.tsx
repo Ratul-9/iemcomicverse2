@@ -1,4 +1,3 @@
-// HeroSection.tsx
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
@@ -7,6 +6,7 @@ import logo1 from './logo1.png';
 import bg1 from './bg1.png';
 import cmcLogo from './cmc.png';
 import brochure from './brochure.png';
+
 const HeroSection = () => {
   const { scrollY } = useScroll();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -34,11 +34,12 @@ const HeroSection = () => {
       style={{
         backgroundImage: `url(${bg1})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'scroll'
+        backgroundAttachment: 'fixed',
       }}
     >
+      {/* Background grid overlay */}
       <div className="absolute inset-0 opacity-10">
         <motion.div
           className="w-full h-full"
@@ -50,17 +51,12 @@ const HeroSection = () => {
             backgroundSize: "50px 50px",
             transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`
           }}
-          animate={{
-            backgroundPosition: ["0px 0px", "50px 50px"]
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
+          animate={{ backgroundPosition: ["0px 0px", "50px 50px"] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
       </div>
 
+      {/* Radial spotlight effect */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -69,12 +65,13 @@ const HeroSection = () => {
       />
 
       <div className="container mx-auto px-4 z-10 relative">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* LEFT TEXT BLOCK */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+          {/* LEFT TEXT BLOCK: spans 8/12 */}
           <motion.div
             style={{ y: textY }}
-            className="text-white relative mt-16 md:mt-12"
+            className="text-white relative mt-12 md:mt-16 md:col-span-8"
           >
+            {/* Logo and date */}
             <motion.div
               className="mb-6 cursor-pointer flex flex-col items-center justify-start"
               onMouseEnter={() => setIsHovered(true)}
@@ -92,7 +89,7 @@ const HeroSection = () => {
                 <motion.img
                   src={cmcLogo}
                   alt="CMC Logo"
-                  className="h-32 md:h-40 w-auto object-contain"
+                  className="h-24 md:h-32 lg:h-40 w-auto object-contain"
                   style={{
                     filter: isHovered
                       ? "drop-shadow(3px 3px 0 rgba(0,0,0,0.3))"
@@ -130,86 +127,68 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: -30, rotateX: -90 }}
                 animate={{ opacity: 1, y: 0, rotateX: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="flex gap-6 justify-center"
+                className="flex gap-4 md:gap-6 justify-center px-2"
               >
-                <div className="bg-transparent text-white px-6 py-2 rounded-full font-akira text-lg relative overflow-hidden">
+                <div className="bg-transparent text-white px-4 md:px-6 py-1 md:py-2 rounded-full font-akira text-lg md:text-xl relative overflow-hidden max-w-full text-center">
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
                     animate={{ x: ["-100%", "100%"] }}
                     transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
                   />
-                  
-                  <div className="relative z-10 text-3xl md:text-2.5xl font-akira">
-                    <div className="relative inline-block">
-                      <span 
-                        className="absolute text-black font-akira"
-                        style={{
-                          left: '2px',
-                          top: '2px',
-                          zIndex: -3,
-                          display: 'inline-block',
-                          width: '100%',
-                          whiteSpace: 'pre',
-                        }}
-                      >
-                        19TH – 20TH JULY, 2025  
-                      </span>
 
-                      <span 
-                        className="relative text-white font-akira"
-                        style={{
-                          display: 'inline-block',
-                          width: '100%',
-                          whiteSpace: 'pre',
-                        }}
-                      >
-                        19TH – 20TH JULY, 2025  
-                      </span>
-                    </div>
+                  <div className="relative z-10 whitespace-nowrap">
+                    <span 
+                      className="absolute text-black font-akira"
+                      style={{
+                        left: '2px',
+                        top: '2px',
+                        zIndex: -3,
+                        display: 'inline-block',
+                        whiteSpace: 'pre',
+                      }}
+                    >
+                      19TH – 20TH JULY, 2025
+                    </span>
+
+                    <span className="relative text-white font-akira">
+                      19TH – 20TH JULY, 2025
+                    </span>
                   </div>
                 </div>
               </motion.div>
             </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }}
-              className="flex gap-6 justify-center"
-            >
-              {/* Optional description text here */}
-            </motion.p>
-
+            {/* BUTTONS */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.2 }}
-              className="flex gap-6 justify-start pl-12 mt-16"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start pl-0 sm:pl-12 mt-12 sm:mt-16"
             >
-              <motion.div whileHover={{ scale: 1.05, rotate: 1 }} whileTap={{ scale: 0.95 }}>
-                <Button asChild className="px-8 py-6 h-auto bg-gradient-to-r from-[#FF3B3F] to-[#FF6B6F] text-white font-bold rounded-xl hover:from-[#FF6B6F] hover:to-[#FF3B3F] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
-                  <a href="#events">
+              <motion.div whileHover={{ scale: 1.05, rotate: 1 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+                <Button asChild className="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-6 bg-gradient-to-r from-[#FF3B3F] to-[#FF6B6F] text-white font-bold rounded-xl hover:from-[#FF6B6F] hover:to-[#FF3B3F] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
+                  <a href="#events" className="flex justify-center">
                     <motion.div
                       className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20"
                       animate={{ x: ["-100%", "100%"] }}
                       transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 2 }}
                     />
-                    <span className="font-akira relative z-10 flex items-center gap-2">
+                    <span className="font-akira relative z-10 flex items-center gap-2 justify-center">
                       Explore Events
                     </span>
                   </a>
                 </Button>
               </motion.div>
 
-              <motion.div whileHover={{ scale: 1.05, rotate: -1 }} whileTap={{ scale: 0.95 }}>
-                <Button asChild className="px-8 py-6 h-auto bg-gradient-to-r from-[#FFEB3B] to-[#FFF176] text-[#212121] font-bold rounded-xl hover:from-[#FFF176] hover:to-[#FFEB3B] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
-                  <a onClick={() => alert('Coming Soon')} target="_blank" rel="noreferrer">
+              <motion.div whileHover={{ scale: 1.05, rotate: -1 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+                <Button asChild className="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-6 bg-gradient-to-r from-[#FFEB3B] to-[#FFF176] text-[#212121] font-bold rounded-xl hover:from-[#FFF176] hover:to-[#FFEB3B] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
+                  <a onClick={() => alert('Coming Soon')} target="_blank" rel="noreferrer" className="flex justify-center cursor-pointer">
                     <motion.div
                       className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10"
                       animate={{ x: ["-100%", "100%"] }}
                       transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 2 }}
                     />
-                    <span className="font-akira relative z-10 flex items-center gap-2">
+                    <span className="font-akira relative z-10 flex items-center gap-2 justify-center">
                       Register Now
                     </span>
                   </a>
@@ -218,22 +197,19 @@ const HeroSection = () => {
             </motion.div>
           </motion.div>
 
-          {/* RIGHT IMAGE BLOCKS */}
+          {/* RIGHT IMAGE BLOCK: smaller, aligned right */}
           <motion.div
-            className="relative h-[600px] md:h-[700px] w-full group mt-16"
+            className="relative w-full h-auto flex flex-col items-center justify-center group mt-12 md:mt-16 md:col-span-4 md:justify-end"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             onMouseEnter={() => setIsComicHovered(true)}
             onMouseLeave={() => setIsComicHovered(false)}
           >
-            
-            {/* BACKGROUND IMAGE BLOCK (Right tilted) */}
+            {/* BACKGROUND IMAGE */}
             <motion.div
-              className="absolute top-24 right-0 z-20 cursor-pointer"
-
-
-              initial={{ scale: 0, rotate: 15, x: 100, rotateY: -45 }}
+              className="absolute z-50"
+              initial={{ scale: 0, rotate: 15, x: 50, rotateY: -45 }}
               animate={{ scale: 1, rotate: 0, x: 0, rotateY: 0 }}
               transition={{
                 duration: 1,
@@ -247,23 +223,25 @@ const HeroSection = () => {
                 rotate: 8,
                 x: -8,
                 y: -5,
-                zIndex: 40,
+                zIndex: 70,
                 rotateY: -5,
                 transition: { duration: 0.4, type: "spring", stiffness: 300 }
               }}
               onClick={() => window.open("https://drive.google.com/file/d/1_2FG0j1_Q4lrwkAA2K4j-3-1WXSNFqr6/view?usp=drive_link", "_blank")}
+              style={{
+                width: "38vw",
+                maxWidth: "10rem",
+                height: "auto",
+                aspectRatio: "3/4",
+                left: "8%",
+              }}
             >
-              <div className="relative">
-                <div className="relative bg-white p-4 w-72 h-88 overflow-hidden shadow-xl rounded-xl border-4 border-white transform rotate-6">
-                  <img src={logo1} alt="Secondary Comic Event" className="w-full h-full object-cover rounded-lg" />
-                  <div className="absolute inset-0 bg-gradient-to-bl from-[#00BCD4]/20 via-transparent to-[#FF3B3F]/15 mix-blend-multiply rounded-lg" />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#FFEB3B]/10 to-transparent mix-blend-screen rounded-lg" />
-                  <div className="absolute inset-2 border-2 border-white/50 rounded-md" />
-                </div>
+              <div className="relative bg-white p-3 sm:p-4 w-full h-full overflow-hidden shadow-xl rounded-xl border-4 border-white transform rotate-6">
+                <img src={logo1} alt="Secondary Comic Event" className="w-full h-full object-cover rounded-lg" />
               </div>
             </motion.div>
 
-            {/* MAIN IMAGE BLOCK (Left tilted) */}
+            {/* MAIN IMAGE */}
             <motion.div
               className="absolute top-0 left-56 z-30"
 
@@ -321,7 +299,6 @@ const HeroSection = () => {
                 </div>
               </div>
             </motion.div>
-
           </motion.div>
         </div>
 
@@ -329,7 +306,7 @@ const HeroSection = () => {
         <motion.div
           animate={{ y: [0, 15, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          className="absolute bottom-10 left-0 right-0 flex justify-center"
+          className="absolute bottom-10 left-0 right-0 flex justify-center px-4"
         >
           <motion.a
             href="#events"

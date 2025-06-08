@@ -241,6 +241,17 @@ const ZeArenaWebsite: React.FC = () => {
           overflow: hidden;
         }
 
+        .speech-text {
+  font-family: 'Bropella', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+  padding: 0.5rem;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
         .anime-card-1 .card-inner {
           
           background: url(${p3}) no-repeat center center/cover;
@@ -613,7 +624,7 @@ const ZeArenaWebsite: React.FC = () => {
             <div className="card-inner">
               <h3 className="anime-card-title"></h3>
               <div className="speech-bubble">
-                <p style={{ fontFamily: "'Bropella', sans-serif", fontSize: '2rem', textAlign: 'center', marginLeft: '20px' }}>
+<p className="speech-text">
                   A spinning top battle game where players compete for the longest spin or knock-out victory.
                 </p>
               </div>
@@ -635,8 +646,8 @@ const ZeArenaWebsite: React.FC = () => {
             <div className="card-inner">
               <h3 className="anime-card-title"></h3>
               <div className="speech-bubble">
-                <p style={{ fontFamily: "'Bropella', sans-serif", fontSize: '2rem', textAlign: 'center', marginLeft: '20px' }}>
-                  An adventurous game where participants solve puzzles to find hidden treasures.
+<p className="speech-text">
+                    An adventurous game where participants solve puzzles to find hidden treasures.
                 </p>
               </div>
             </div>
@@ -657,8 +668,8 @@ const ZeArenaWebsite: React.FC = () => {
             <div className="card-inner">
               <h3 className="anime-card-title"></h3>
               <div className="speech-bubble">
-                <p style={{ fontFamily: "'Bropella', sans-serif", fontSize: '2rem', textAlign: 'center', marginLeft: '20px' }}>
-                  A competitive game testing agility and reflexes with quick foot positioning challenges.
+<p className="speech-text">
+                    A competitive game testing agility and reflexes with quick foot positioning challenges.
                 </p>
               </div>
             </div>

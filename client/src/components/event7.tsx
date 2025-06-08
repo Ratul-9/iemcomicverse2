@@ -104,21 +104,17 @@ const CosplayCarnival: React.FC = () => {
           text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
         }
 
-        .hero {
-          position: relative;
-          height: 699px;
-          margin: 0 auto;
-          
-          background: url(${cosplay2}) no-repeat center center/cover;
-          background-size: cover;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          color: var(--light-text);
-          overflow: hidden;
-        }
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-image: url(${cosplay2});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
 
         .comic-object {
           position: absolute;
@@ -234,6 +230,7 @@ const CosplayCarnival: React.FC = () => {
           border: 5px solid #fff;
           overflow: hidden;
         }
+          
 
         .anime-card-1 .card-inner {
           
@@ -384,6 +381,18 @@ const CosplayCarnival: React.FC = () => {
             transform: translate(-50%, -50%) scale(2);
           }
         }
+
+.speech-text {
+  font-family: 'Bropella', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+  padding: 0.5rem;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
 
         .registration {
           text-align: center;
@@ -573,9 +582,12 @@ const CosplayCarnival: React.FC = () => {
             font-size: 6rem;
             letter-spacing: 8px;
           }
-          .hero {
-            height: 500px;
-          }
+         .hero {
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+}
+
           .event-tagline {
             font-size: 1.2rem;
           }
@@ -648,13 +660,8 @@ const CosplayCarnival: React.FC = () => {
             <div className="card-inner">
               <h3 className="anime-card-title"></h3>
               <div className="speech-bubble">
-                <p style={{ 
-                  fontFamily: 'Bropella, sans-serif', 
-                  fontSize: '2rem', 
-                  textAlign: 'center', 
-                  marginLeft: '20px' ,
-                  letterSpacing: '0.01em'
-                }}>
+               <p className="speech-text">
+
                   The cosplay carnival is a vibrant celebration of creativity and fandom where participants dress as their favorite comic characters. The event features colorful designs, costume contests and opportunities to connect with fellow fans and artists, creating a memorable experience for cosplayers and comic enthusiasts alike.
 
 

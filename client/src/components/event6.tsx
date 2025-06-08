@@ -451,9 +451,20 @@ const ComicFest2025: React.FC = () => {
             font-size: 6rem;
             letter-spacing: 8px;
           }
-          .hero {
-            height: 500px;
-          }
+.hero {
+  width: 100%;
+  height: 320px;
+  background-image: url(${back2});
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 1rem;
+  position: relative;
+}
+
           .event-tagline {
             font-size: 1.2rem;
           }
@@ -496,6 +507,17 @@ const ComicFest2025: React.FC = () => {
             width: 300px;
             height: 400px;
           }
+                    .speech-text {
+  font-family: 'Bropella', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+  padding: 0.5rem;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
           .anime-card-title {
             font-size: 2rem;
           }
@@ -550,12 +572,8 @@ const ComicFest2025: React.FC = () => {
               <div className="card-inner">
                 <h3 className="anime-card-title"></h3>
                 <div className="speech-bubble">
-                  <p style={{
-                    fontFamily: 'Bropella, sans-serif',
-                    fontSize: '2rem',
-                    textAlign: 'center',
-                    marginLeft: '20px'
-                  }}>
+<p className="speech-text">
+
                     {event.description}
                   </p>
                 </div>

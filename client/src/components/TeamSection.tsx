@@ -1,35 +1,31 @@
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import sovan from './sovan.jpg';
 import singharup from './singharup.png';
-import ankita from "./AnkitaK.png"
+import ankita from "./AnkitaK.png";
 import himel from './Himel.png';
 import aniruddha from './ANIRUDDHA GHOSH.png';
 import ankitaM from "./AnkitaM.jpg";
 import saurya from "./Saurya Das (1).jpg";
 import md from './md.jpg';
-import soumyajeet from './Soumyajeet.png .png'
+import soumyajeet from './Soumyajeet.png .png';
 import archisman from "./archis.png";
-import trishan from './Trishan.jpg'
-import paramartha from './paramartha.jpg'
-import ayush from './Ayush Beraaa.jpg'
-import megha from './Megha Biswas .jpg'
-import atri from './AtriP.jpg'
-import spandan from './Spandan-Samanta.jpeg'
-import adrika from './Adrika K.jpg'
-import deboleena from './Deboleena .jpg'
-import sdb from './SDB.jpg'
-import atreyee from './Atreyi.jpg'
-import saheb from './Sahrb.jpg'
-import director from './Director3.jpg .jpg'
-import ayushB from  './Ayush Bekar.jpg'
-import pkd from './PKD.jpg'
-import sridatri from './SRIDATRI-PURAKAIT.jpeg'
-import ankana from './Ankana.jpg'
-
-import sounak from './Sounak.jpg'
-import { Key } from "react";
+import trishan from './Trishan.jpg';
+import paramartha from './paramartha.jpg';
+import ayush from './Ayush Beraaa.jpg';
+import megha from './Megha Biswas .jpg';
+import atri from './AtriP.jpg';
+import spandan from './Spandan-Samanta.jpeg';
+import adrika from './Adrika K.jpg';
+import deboleena from './Deboleena .jpg';
+import sdb from './SDB.jpg';
+import atreyee from './Atreyi.jpg';
+import saheb from './Sahrb.jpg';
+import director from './Director3.jpg .jpg';
+import ayushB from  './Ayush Bekar.jpg';
+import pkd from './PKD.jpg';
+import sridatri from './SRIDATRI-PURAKAIT.jpeg';
+import ankana from './Ankana.jpg';
+import sounak from './Sounak.jpg';
 
 const TeamSection = () => {
   const teamData = [
@@ -48,10 +44,9 @@ const TeamSection = () => {
     { name: "Singharup Bagchi", role: "", image: singharup },
     { name: "Ankita Mandal", role: "", image: ankitaM },
     { name: "Archisman Saha", role: "", image: archisman },
-    { name: "Aankana Aradha Das", role: "", image:ankana},
+    { name: "Aankana Aradha Das", role: "", image: ankana },
     { name: "Soumyajeet Chowdhury", role: "", image: soumyajeet },
     { name: "Himel Jana", role: "", image: himel },
-    
   ];
 
   const facultyData = [
@@ -63,8 +58,8 @@ const TeamSection = () => {
   ];
 
   const advisoryData = [
-    { name: "Spandan Sarkar", role: "  ", image: spandan },
-    { name: "Megha Biswas", role: "", image: megha},
+    { name: "Spandan Sarkar", role: "", image: spandan },
+    { name: "Megha Biswas", role: "", image: megha },
     { name: "Ayush Bera", role: "", image: ayush },
     { name: "Atri Panda", role: "", image: atri },
   ];
@@ -82,12 +77,7 @@ const TeamSection = () => {
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
   };
 
-  const memberRows = [];
-  for (let i = 0; i < teamData.length; i += 5) {
-    memberRows.push(teamData.slice(i, i + 5));
-  }
-
-  const renderMemberCard = (member: { name: any; role: any; image: any; }, index: Key | null | undefined) => (
+  const renderMemberCard = (member, index) => (
     <motion.div key={index} variants={item} className="w-full h-full">
       <div className="relative group cursor-pointer h-full">
         <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl border-4 border-black p-2
@@ -98,11 +88,12 @@ const TeamSection = () => {
                        flex flex-col h-full"
                        style={{ minHeight: '220px' }}>
           <div className="flex-1 w-full overflow-hidden border-3 border-black mb-2 rounded-xl
-                         group-hover:border-[#FF3B3F] transition-colors duration-300 aspect-square">
+                         group-hover:border-[#FF3B3F] transition-colors duration-300
+                         aspect-square">
             <img 
               src={member.image} 
               alt={member.name}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300"
             />
           </div>
           <div className="text-center px-1">
@@ -133,23 +124,23 @@ const TeamSection = () => {
       }}></div>
 
       {/* Faculty Section */}
-        <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true }} className="max-w-7xl mx-auto mt-12">
-          <div className="bg-purple-950 bg-opacity-60 rounded-3xl p-4 md:p-8 lg:p-12 backdrop-blur-sm relative overflow-hidden">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8 md:mb-12">
-              <h2 className="text-4xl md:text-6xl lg:text-5xl text-white mb-4 relative z-10 drop-shadow-[4px_4px_0px_#000000] font-black uppercase tracking-wider"
-              style={{ fontFamily: "'Akira Expanded Demo', sans-serif" }}>
-                Faculty
-              </h2>
-            </motion.div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 justify-center">
-              {facultyData.map((member, index) => renderMemberCard(member, `faculty-${index}`))}
-            </div>
+      <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true }} className="max-w-7xl mx-auto mt-12">
+        <div className="bg-purple-950 bg-opacity-60 rounded-3xl p-4 md:p-8 lg:p-12 backdrop-blur-sm relative overflow-hidden">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8 md:mb-12">
+            <h2 className="text-4xl md:text-6xl lg:text-5xl text-white mb-4 relative z-10 drop-shadow-[4px_4px_0px_#000000] font-black uppercase tracking-wider"
+            style={{ fontFamily: "'Akira Expanded Demo', sans-serif" }}>
+              Faculty
+            </h2>
+          </motion.div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 justify-center">
+            {facultyData.map((member, index) => renderMemberCard(member, `faculty-${index}`))}
           </div>
-        </motion.div>
+        </div>
+      </motion.div>
 
-        <br></br>
-        <br></br>
+      <br /><br />
 
+      {/* Team Section */}
       <div className="container mx-auto px-4 relative z-10">
         <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true }} className="max-w-7xl mx-auto">
           <div className="bg-purple-950 bg-opacity-60 rounded-3xl p-4 md:p-8 lg:p-12 backdrop-blur-sm relative overflow-hidden">
@@ -160,17 +151,13 @@ const TeamSection = () => {
               </h2>
             </motion.div>
 
-            <div className="space-y-6">
-              {memberRows.map((row, rowIndex) => (
-                <div key={rowIndex} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                  {row.map((member, memberIndex) => renderMemberCard(member, `${rowIndex}-${memberIndex}`))}
-                </div>
-              ))}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              {teamData.map((member, index) => renderMemberCard(member, index))}
             </div>
           </div>
         </motion.div>
 
-        
+        <br /><br />
 
         {/* Advisory Committee Section */}
         <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true }} className="max-w-7xl mx-auto mt-12">
