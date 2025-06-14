@@ -182,7 +182,7 @@ const HeroSection = () => {
 
               <motion.div whileHover={{ scale: 1.05, rotate: -1 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                 <Button asChild className="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-6 bg-gradient-to-r from-[#FFEB3B] to-[#FFF176] text-[#212121] font-bold rounded-xl hover:from-[#FFF176] hover:to-[#FFEB3B] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
-                  <a onClick={() => alert('Coming Soon')} target="_blank" rel="noreferrer" className="flex justify-center cursor-pointer">
+                  <a href="https://forms.gle/mSoq1bWgrNoD3fZ6A" target="_blank" rel="noreferrer" className="flex justify-center cursor-pointer">
                     <motion.div
                       className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10"
                       animate={{ x: ["-100%", "100%"] }}
